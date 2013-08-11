@@ -1,0 +1,64 @@
+% Packages.
+\usepackage{tikz}
+\usepackage{lmodern}
+\usepackage{fancybox}  % Box [shadowbox, fbox, doublebox, ovalbox, Ovalbox].
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{multimedia}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb,amsmath}
+
+% Template.
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+% See http://goo.gl/p0Phn for other colors.
+\usecolortheme[named=OliveGreen]{structure}
+
+% See deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html for other themes.
+\usetheme{Madrid}
+
+% Specify other colors and options as required.
+\useoutertheme{infolines}  % Add info lines at the bottom.
+\setbeamertemplate{items}[square]
+\setbeamercolor{alerted text}{fg=Maroon}
+\setbeamertemplate{navigation symbols}{}  % Remove lower navigation panel.
+
+% Progress bar.
+\usetikzlibrary{calc}
+
+\definecolor{pbgray}{HTML}{575757}  % Background color for the progress bar.
+
+\makeatletter
+\def\progressbar@progressbar{}  % Progress bar.
+\newcount\progressbar@tmpcounta  % Auxiliary counter.
+\newcount\progressbar@tmpcountb  % Auxiliary counter.
+\newdimen\progressbar@pbht  % Progressbar height.
+\newdimen\progressbar@pbwd  % Progressbar width.
+\newdimen\progressbar@tmpdim  % Auxiliary dimension.
+
+\progressbar@pbwd=\linewidth
+\progressbar@pbht=1pt
+
+\def\progressbar@progressbar{%
+    \progressbar@tmpcountb=\inserttotalframenumber
+    \progressbar@tmpdim=\progressbar@pbwd
+    \multiply\progressbar@tmpdim by \progressbar@tmpcounta
+    \divide\progressbar@tmpdim by \progressbar@tmpcountb
+  \begin{tikzpicture}[very thin]
+    \draw[pbgray!30,line width=\progressbar@pbht]
+      (0pt, 0pt) -- ++ (\progressbar@pbwd,0pt);
+    \draw[draw=none]  (\progressbar@pbwd,0pt) -- ++ (2pt,0pt);
+    \draw[fill=pbgray!30,draw=pbgray] %
+       ( $ (\progressbar@tmpdim, \progressbar@pbht) + (0,1.5pt) $ ) -- ++(60:3pt) -- ++(180:3pt) ;
+    \node[draw=pbgray!30,text width=3.5em,align=center,inner sep=1pt,
+      text=pbgray!70,anchor=east] at (0,0) {\insertframenumber/\inserttotalframenumber};
+  \end{tikzpicture}
+}
+
+\addtobeamertemplate{headline}{}
+{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=5ex,center,dp=1ex]{white}%
+    \progressbar@progressbar
+  \end{beamercolorbox}
+}
+\makeatother
