@@ -70,7 +70,7 @@ Bibliografia complementar:
 | 15   | 2013-11-08    | Ondas infl. pela rotação da Terra 2   | Análise de dados    |
 |      | 2013-11-15    |                                       | Feriado             |
 | 16   | 2013-11-22    | Marés                                 | Lista 11            |
-|      | 2013-11-29    |                                       | Seminário           |
+|      | 2013-11-29    | Marés                                 | Seminário           |
 |      | 2013-12-06    |                                       | Prova 2             |
 |      | 2013-12-13    |                                       | Revisão             |
 |      | 2013-12-20    |                                       | Prova Alternativa   |
