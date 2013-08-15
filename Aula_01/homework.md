@@ -14,7 +14,8 @@ período, e entre número de onda e comprimento de onda:
 
 $y = A(z, t) \cos(\omega t - kz + \phi)$:
 
-<!--* $y \rightarrow $ Equação da forma da onda;
+
+* $y \rightarrow $ Equação da forma da onda;
 * $t \rightarrow $ Coordenada Tempo [s];
 * $z \rightarrow $ Coordenada Distância vertical [m];
 * $A(z, t) \rightarrow $ Envelope da onda;
@@ -24,4 +25,6 @@ $y = A(z, t) \cos(\omega t - kz + \phi)$:
 * $\lambda = \frac{k}{2\pi} \rightarrow $ Comprimento de onda;
 * $\frac{1}{T} = f = \frac{\omega}{2\pi} \rightarrow $ Frequência de onda.
 
-![Descrição de uma onda.](./figures/Wave-i18n.png "http://upload.wikimedia.org/wikipedia/commons/4/41/Wave-i18n.png")-->
+![Definições.](./figures/wave_definitions.pdf "Definições")
+
+![Licença de uso.](../common/by-nc-sa.pdf)
