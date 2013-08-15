@@ -1,0 +1,250 @@
+% \documentclass[14pt,xcolor=dvipsnames]{beamer}
+\documentclass[handout,14pt,xcolor=dvipsnames]{beamer}
+
+% Notes.
+\usepackage{handoutWithNotes}  % Handout mode.
+\pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]
+% \pgfpagesuselayout{1 on 1 with notes landscape}[a4paper,border shrink=5mm]
+
+\usepackage{lmodern}
+
+% See http://goo.gl/p0Phn for other colors
+\usecolortheme[named=OliveGreen]{structure}  % Specify base color
+% \setbeamercolor{structure}{fg=OliveGreen!50!black}
+
+% See deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html for other themes.
+\usetheme{Madrid}
+% \usetheme{Warsaw}
+
+% Specify other colors and options as required.
+\setbeamercolor{alerted text}{fg=Maroon}
+\setbeamertemplate{items}[square]
+% \setbeamertemplate{navigation symbols}{}  % Remove lower navigation panel.
+\useoutertheme{infolines}  % Add info lines at the bottom.
+
+% Packages.
+\usepackage{amssymb,amsmath}
+\usepackage{fancybox}  % Box [shadowbox, fbox, doublebox, ovalbox, Ovalbox].
+\usepackage[framed,numbered]{mcode}
+\usepackage{multimedia}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+% Progress bar.
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\definecolor{pbgray}{HTML}{575757}  % Background color for the progress bar.
+
+\makeatletter
+\def\progressbar@progressbar{}  % Progress bar.
+\newcount\progressbar@tmpcounta  % Auxiliary counter.
+\newcount\progressbar@tmpcountb  % Auxiliary counter.
+\newdimen\progressbar@pbht  % Progressbar height.
+\newdimen\progressbar@pbwd  % Progressbar width.
+\newdimen\progressbar@tmpdim  % Auxiliary dimension.
+
+\progressbar@pbwd=\linewidth
+\progressbar@pbht=1pt
+
+% Progress bar.
+\def\progressbar@progressbar{%
+
+    \progressbar@tmpcounta=\insertframenumber
+    \progressbar@tmpcountb=\inserttotalframenumber
+    \progressbar@tmpdim=\progressbar@pbwd
+    \multiply\progressbar@tmpdim by \progressbar@tmpcounta
+    \divide\progressbar@tmpdim by \progressbar@tmpcountb
+
+  \begin{tikzpicture}[very thin]
+    \draw[pbgray!30,line width=\progressbar@pbht]
+      (0pt, 0pt) -- ++ (\progressbar@pbwd,0pt);
+    \draw[draw=none]  (\progressbar@pbwd,0pt) -- ++ (2pt,0pt);
+
+    \draw[fill=pbgray!30,draw=pbgray] %
+       ( $ (\progressbar@tmpdim, \progressbar@pbht) + (0,1.5pt) $ ) -- ++(60:3pt) -- ++(180:3pt) ;
+
+    \node[draw=pbgray!30,text width=3.5em,align=center,inner sep=1pt,
+      text=pbgray!70,anchor=east] at (0,0) {\insertframenumber/\inserttotalframenumber};
+  \end{tikzpicture}
+}
+
+\addtobeamertemplate{headline}{}
+{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=5ex,center,dp=1ex]{white}%
+    \progressbar@progressbar
+  \end{beamercolorbox}
+}
+\makeatother
+
+% Title page.
+\title[Aula 02]{Ondas e Marés}
+\subtitle{Introdução}
+\author[Filipe Fernandes]{Filipe P. A. Fernandes}
+\institute[unimonte]{Centro Universitário Monte Serrat}
+\date[Agosto 2012]{20 de Agosto 2012}
+
+\logo{\includegraphics[scale=0.4]{../figures/unimonte.png}}
+
+\begin{document}
+
+% The title page frame.
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section*{Outline}
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Aula 02 -- Introdução}
+\section{{Introdução: O que são ondas e como são geradas?}}
+\begin{frame}
+\frametitle{Introdução: O que são ondas e como são geradas?}
+    \begin{block}{}
+    Ondas são deformações periódicas em uma interface.  Em oceanografia, ondas
+    de superfície são deformações da superfície dos oceanos, i.e., na interface
+    oceano-atmosfera.
+
+    As deformações se propagam com a velocidade de onda,
+    enquanto as partículas descrevem movimentos oscilatórios ou orbitais com
+    velocidade de partículas e permanecem, em média, na mesma posição.
+    \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Introdução: O que são ondas e como são geradas?}
+    \begin{block}{}
+    Em águas profundas, os caminhos das partículas são circulares. Em águas
+    mais rasas, os caminhos percorridos pelas partículas se achatam e ficam
+    parecendo elipses.  Uma onda de águas profundas passa a ser considerada
+    como de águas rasas quando o comprimento de onda $\lambda$ se torna maior
+    do que o dobro da profundidade local da água $h$.  As mudanças nas
+    propriedades das ondas entretanto ocorrem antes disso, quando
+    $\lambda = 20 h$
+    \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{ Teoria linear de ondas de gravidade livres}
+\small{
+    \begin{block}{}
+        Considera o movimento oscilatório (ondulatório) apenas a partir do
+        momento em que a forçante que causou o movimento já não existe mais
+        ({\bf Sem forçante!}).
+    \end{block}
+    \pause
+    \begin{block}{}
+        Além disso, como o período das mesmas é bem menor que o período
+        necessário para que o efeito de atenuação causado pelo atrito interno
+        do fluido seja considerável. ({\bf Sem atrito!})
+    \end{block}
+    \pause
+    \begin{block}{}
+        Ondas de gravidade tem um período muito curto quando comparado ao
+        período inercial, e portanto os efeitos de rotação da Terra podem ser
+        negligenciados. ({\bf Sem $f$!})
+    \end{block}
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Vai pro quadro preguiçoso!}
+\end{frame}
+
+\section{Definições}
+\begin{frame}
+    \frametitle{Definições}
+    \includegraphics[scale=0.45]{../figures/caracterizacao_ondas.png}
+\end{frame}
+
+\subsection{Elevação}
+\subsection{Altura de onda}
+\subsection{comprimento de onda}
+\subsection{Número de onda}
+\subsection{Período e frequência}
+\subsection{Frequência angular}
+\begin{frame}
+\frametitle{Descrição das Ondas}
+    \begin{block}{}
+        A maneira mais simples de encarar as ondas é pelo conceito da onda como
+        uma oscilação harmônica. Assim, podemos descrevê-las por
+    \end{block}
+    \begin{itemize}[<+-| alert@+>]
+        \item período T
+        \item frequência $\omega = 2 \pi / \text{T}$
+        \item comprimento de onda $\lambda$
+        \item velocidade $c = \lambda / \text{T}$
+        \item altura H = 2 A (A = amplitude)
+        \item inclinação $\delta = \text{H} / \lambda$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ondas longas vs ondas curtas}
+\small{
+\begin{block}{}
+$0 \underbrace{< \lambda < 2}_{\substack{\text{ondas de água profunda}\\\text{ou ondas curtas}}} \text{h} < \underbrace{\lambda}_{\text{ondas de transição}} < 20 \text{h} < \underbrace{\lambda}_{\substack{\text{ondas de água rasa}\\\text{ou ondas longas}}}$
+\end{block}
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ondas de água profundas (ondas curtas)}
+    \begin{center}
+        \includegraphics[scale=0.35]{../figures/deepwaterwaves.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ondas longas vs ondas curtas}
+    \begin{center}
+        \includegraphics[scale=0.45]{../figures/deep_to_shallow.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ondas de água rasa (ondas longas)}
+    \begin{center}
+        \includegraphics[scale=0.4]{../figures/shallow_wave.png}
+    \end{center}
+\end{frame}
+
+
+\section{Velocidade de fase}
+%TODO
+
+%TODO: Ir para o quadro.
+\section{Velocidade de grupo}
+\begin{frame}
+\frametitle{Superposição de ondas}
+    \begin{block}{}
+    A superposição de duas ondas com frequências bem próximas $\omega_1$ e
+    $\omega_2$ respectivamente, produz grupos de ondas ou séries.  As cristas
+    individuais propagam com uma velocidade de fase (idêntica a velocidade da
+    onda) $c$;  séries de ondas propagam com uma velocidade de grupo:
+    \end{block}
+    \pause
+    \begin{center}
+        $c_g = c - \lambda \frac{dc}{d\lambda}$ ou\\
+        $c_g = \frac{d\omega}{d\kappa}$
+    \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Chega, tá na hora de vocês trabalharem!}
+    \begin{block}{}
+    Dever 01: O que são ondas capilares e por quê estuda-las?
+    \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Aula de reposição(?)}
+    \begin{block}{}
+    Conversar sobre próxima semana...
+    \end{block}
+\end{frame}
+
+\end{document}
