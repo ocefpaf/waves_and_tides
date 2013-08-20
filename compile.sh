@@ -7,7 +7,7 @@
 # e-mail:   ocefpaf@gmail
 # web:      http://ocefpaf.github.io/
 # created:  09-Aug-2013
-# modified: Fri 16 Aug 2013 07:30:04 AM BRT
+# modified: Sun 18 Aug 2013 12:44:17 PM BRT
 #
 # obs: the only argument is the directory with a lecture.tex file
 # (without header and document class) and a homework.md file.
@@ -15,7 +15,18 @@
 
 
 DIR=$1  # Lecture directory.
-fname=$(date +"%Y_%m_%d")_OM # Output file names.
+
+if [ $# -eq 1 ] ; then
+    ALL=FALSE
+elif [ $2 == "all" ] ; then
+    ALL=TRUE
+else
+    echo "Unrecognized input parameters.  Enter directory and compile options (all or lecture)."
+    exit 1
+fi
+
+
+fname=$(date +"%Y_%m_%d")_OM_$(basename ${DIR}) # Output file names.
 
 # Temp latex files.
 slides=$(mktemp --dry-run)
@@ -35,7 +46,9 @@ cat common/handouts.tex common/header.tex ${DIR}/lecture.tex > $handouts
 
 pushd ${DIR}
     $LATEXMK $OPTS --jobname=${fname}_Slides $slides  # Slides.
-    $LATEXMK $OPTS --jobname=${fname}_Notas $handouts  # Handouts.
-    $PANDOC $OPTION $FROM $LATEX  # Homework.
-    rm *.snm *.nav *.fdb_latexmk *.fls *.log *.out *.toc *.aux  # Clean-up.
+    if [ $ALL == "TRUE" ] ; then
+        $LATEXMK $OPTS --jobname=${fname}_Notas $handouts  # Handouts.
+        $PANDOC $OPTION $FROM $LATEX  # Homework.
+    fi
+        rm *.snm *.nav *.fdb_latexmk *.fls *.log *.out *.toc *.aux  # Clean-up.
 popd
