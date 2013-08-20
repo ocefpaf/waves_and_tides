@@ -2,7 +2,7 @@
 authors:
 - Filipe Fernandes
 date: '15-Agosto-2013'
-title: Dever de casa 00
+title: Dever de casa 02
 ...
 
 1) Equação de onda
