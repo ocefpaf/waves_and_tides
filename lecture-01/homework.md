@@ -14,6 +14,7 @@ período, e entre número de onda e comprimento de onda:
 
 $y = A(z, t) \cos(\omega t - kz + \phi)$:
 
+*Resposta:*
 
 * $y \rightarrow $ Equação da forma da onda;
 * $t \rightarrow $ Coordenada Tempo [s];
