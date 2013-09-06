@@ -74,7 +74,7 @@ _ = plt.figtext(1.01, 0.05, u'Distância [m]', color='#99CC33')
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-![Solução](./time_space_wave.pdf)
+![Solução](./figures/time_space_wave.pdf)
 
 
 [nbviewer.](http://nbviewer.ipython.org/urls/raw.github.com/o
