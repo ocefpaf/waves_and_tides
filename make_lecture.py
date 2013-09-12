@@ -7,7 +7,7 @@
 # e-mail:   ocefpaf@gmail
 # web:      http://ocefpaf.github.io/
 # created:  20-Aug-2013
-# modified: Tue 20 Aug 2013 02:32:48 PM BRT
+# modified: Thu 12 Sep 2013 04:28:06 PM BRT
 #
 # obs:
 #
@@ -51,6 +51,9 @@ header = r"""% Packages.
 \usepackage{multimedia}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath}
+
+% Partial.
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} % partial derivatives
 
 % Template.
 \setbeamertemplate{blocks}[rounded][shadow=true]
