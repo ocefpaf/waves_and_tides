@@ -1,0 +1,264 @@
+% Style.
+\documentclass[letterpaper,portuguese,12pt,pdftex]{exam}
+
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage[left=2.5cm,top=3cm,right=2.5cm]{geometry}
+
+% Portuguese.
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{textcomp}
+
+% Font.
+\usepackage{lmodern}
+
+% Figures.
+\usepackage{epsf,epsfig}
+
+% Bibtex and extras.
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[bookmarks=false,colorlinks=true,urlcolor={green},linkcolor={green},pdfstartview={XYZ null null 1.22}]{hyperref}
+
+% Math.
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\everymath{\displaystyle}
+
+% Exam.
+\addpoints
+% \printanswers
+\noprintanswers
+\usepackage{color}
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\shadedsolutions
+\renewcommand{\solutiontitle}{\noindent\textbf{Solução:}\par\noindent}
+\pagestyle{headandfoot}
+\footer{}{Página \thepage\ de \numpages}{}
+\boxedpoints
+\pointsinrightmargin
+\pointpoints{ponto}{pontos}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+% \qformat{\textbf{Question\thequestion}\quad(\thepoints)\hfill}
+
+% User commands.
+\newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}
+
+% PDF metadata.
+\pdfinfo{% hyperref overrides this
+  /Title    (Prova 01 -- Ondas e Marés)
+  /Author   (Filipe Fernandes)
+  /Creator  (Filipe Fernandes)
+  /Producer (Filipe Fernandes)
+  /Subject  (prova)
+  /Keywords (prova, oceanografia)
+}
+
+% Front page.
+\title{Prova 01 -- Ondas e Marés}
+\author{Prof. Filipe Fernandes}
+\date{04-Oct-2013}
+
+\begin{document}
+\maketitle
+\doublespacing
+
+\vspace{1cm}
+\hbox to \textwidth{Nome e número de matrícula:\enspace\hrulefill}
+\vspace{1cm}
+
+\begin{minipage}{.8\textwidth}
+Esse exame incluí \numquestions\ questões. O número total de pontos é \numpoints.
+\end{minipage}
+
+% 25
+\begin{questions}
+\question
+Identifique a amplitude, número de onda, comprimento de onda, frequência de onda,
+e período de onda nas formas abaixo.  Dica: Lembrem-se que $x$ representa o
+nosso eixo de ``espaço'' e $t$ o eixo do ``tempo''.
+
+ \begin{parts}
+  \part[3]
+  $\eta = 10 \cos(4x + 2t)$
+
+  \begin{solution}
+    a = 10, k = 4, L = $\frac{2\pi}{k} = \frac{\pi}{2}$, $\omega$ = −2,
+    T = $\frac{2\pi}{\omega} = −\pi$
+  \end{solution}
+
+  \part[3]
+  $\eta = −0.5 \sin(\pi x − t)$
+
+  Ponto extra para quem re-escrever essa onda utilizando $\cos$ + uma fase
+  $\phi$.
+
+  \begin{solution}
+    a = −0.5, k = $\pi$, L = $\frac{2\pi}{k}$ = 2, $\omega$ = 1,
+    T = $\frac{2\pi}{\omega} = 2\pi$
+
+    Essa onda pode ser re-escrita na forma:
+    $\eta = −0.5 \cos(\pi x − t + \pi/2)$
+  \end{solution}
+ \end{parts}
+
+
+\question
+Data a relação de dispersão de ondas de gravidade,
+
+$$\omega^2 = gk\tanh(kh)$$
+
+e as seguintes informações,
+
+ondas longas (ou ondas de águas rasa):
+\begin{itemize}
+  \item $\tanh(kh) \sim kh; h << L$
+  \item $\frac{h}{L} < \frac{1}{20}$
+\end{itemize}
+
+ondas curtas (ou ondas de água profunda):
+\begin{itemize}
+  \item $\tanh(kh) \sim 1; h >> L$
+  \item $\frac{h}{L} > \frac{1}{2}$
+\end{itemize}
+
+Responda:
+
+\begin{parts}
+  \part[4] Faça a aproximação para águas rasa (ondas longas) e águas profundas
+  (ondas curtas) e crie uma tabela com as equações para $\omega$, L, $C$ e $Cg$
+  para cada um dos regimes de ondas.
+
+\begin{solution}
+\raggedright
+      Onda longa (água rasa)\\
+      Dispersão: $\omega^2 = gk^2h$\\
+      Vel. de Fase: $C = \dfrac{\lambda}{T} = \dfrac{\omega}{k} = \sqrt{gh}$\\
+      Vel. de Grupo: $Cg = \pd{}{K}\left(\omega = K\sqrt{gH}\right) \rightarrow C_g = \sqrt{gh}$\\
+
+      Ondas curtas (água profunda)\\
+      Dispersão: $\omega^2 = gk$\\
+      Vel. de Fase: $C = \dfrac{\lambda}{T} = \dfrac{\omega}{k} = \sqrt{g/k}$\\
+      Vel. de Grupo: $C_g = \pd{}{k}\left[\omega = g^{1/2}k^{1/2}\right] \rightarrow C_g = \dfrac{1}{2}g^{1/2}k^{-1/2} = \dfrac{C}{2}$\\
+  \end{solution}
+
+  \part[2]
+  Explique o fenômeno de dispersão e refração usando a relação entre $C$ e
+  $C_g$.
+
+  \begin{solution}
+  TODO
+  \end{solution}
+
+  \part[2]
+  Para chegar na relação de dispersão e na solução de águas profundas fizemos
+  várias aproximações.  Cite 3 e explique seu princípio, sua validade física,
+  onde ela é aceitável e quando (se algum momento) ela pode ser invalidada.
+
+  \begin{solution}
+    \begin{itemize}
+      \item Longe o sítio da forçante do vento.
+      \item Sem atrito.
+      \item Período da onda muito menor que o período inercial.
+      \item Assume-se um estado médio e perturbações sobre esse (as ondas).
+      \item A amplitude da onda é pequena quando comparada com a coluna d'água.
+    \end{itemize}
+  \end{solution}
+
+  \part[2]
+  Quando assumimos uma forma de onda para a solução da amplitude de pressão,
+
+  \begin{equation}
+    \mathbb{P}(z) = \cos(\theta),
+    \label{eq:P}
+  \end{equation}
+
+  para a equação de a equação de Laplace,
+
+  \begin{equation}
+    \nabla^2 \tilde{p} = 0,
+    \label{eq:Laplace}
+  \end{equation}
+
+  resultamos em uma Equação Diferencial de Segunda Ordem Homogênea para a
+  amplitude de pressão abaixo:
+
+  \begin{equation}
+    \frac{\partial^2\mathbb{P}}{\partial z^2} - \mathbf{K}^2\mathbb{P}=0
+    \label{eq:dif}
+  \end{equation}
+
+  Para resolvermos essa equação precisamos de duas condições de contorno no
+  mínimo.  Explique:
+  \begin{itemize}
+    \item Onde colocamos as condições de contorno?
+    \item Ambas são dinâmicas, ou estáticas?  Se for(em) dinâmica(s), como
+    fazemos para ``acompanhar'' a variável enquanto ela muda?
+  \end{itemize}
+
+  (Ponto extra, substitua a equação \ref{eq:P} em \ref{eq:Laplace} e chegue na
+  diferencial \ref{eq:dif} lembrando que $\mathbf{K} = \sqrt{k^2 + l^2}$.)
+
+
+  \begin{solution}
+  1) Superfície (dinâmica, continuidade de pressões) e fundo (estática, sem
+     movimento ``cruzando'' o fundo).
+  2) Série de Taylor.
+  \end{solution}
+\end{parts}
+
+  \question
+  Cálculos básicos de ondas.
+ \begin{parts}
+  \part[2]
+  Se 16 cristas de ondas passam sucessivamente por um ponto fixo num
+  intervalo de 1 minuto e 40 segundos, qual é a frequência angular dessas ondas?
+
+  \begin{solution}
+  $\omega = \dfrac{16}{60 + 40} = 0.16$ s$^{-1}$
+  \end{solution}
+
+  \part[2]
+  O período de uma onda é de 25 segundos.  Qual seria a velocidade dessa onda
+  em águas profundas?
+
+  \begin{solution}
+  TODO
+  \end{solution}
+
+  \part[2]
+  Qual seria a velocidade de uma onda com comprimento de ondas de 312 m em águas
+  profundas?  E em águas rasas?
+
+  \begin{solution}
+  TODO
+  \end{solution}
+
+\end{parts}
+
+\question[3]
+% \begin{parts}
+%   \part[3]
+  Sabemos que a geração de ondas de superficiais de gravidade está associada ao
+  vento.  Cite os {\bf 3 fatores} que precisamos saber sobre o {\bf vento} para
+  estimar a quantidade de energia que será transferida para as ondas geradas.
+
+  (Ponto extra: Há algum fator {\bf limitante} que não está associado ao vento?)
+
+  \begin{solution}
+  A velocidade do vento;
+  Pista do vento ou a distância em que o vento sopra;
+  Duração do vento;
+  Profundidade da água.
+  \end{solution}
+
+%  \end{parts}
+
+\end{questions}
+
+\end{document}
