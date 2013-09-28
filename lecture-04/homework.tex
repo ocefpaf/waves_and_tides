@@ -1,0 +1,273 @@
+% Style.
+\documentclass[letterpaper,portuguese,12pt,pdftex]{exam}
+
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage[left=2.5cm,top=3cm,right=2.5cm]{geometry}
+
+% Portuguese.
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{textcomp}
+
+% Font.
+\usepackage{lmodern}
+
+% Figures.
+\usepackage{epsf,epsfig}
+
+% Bibtex and extras.
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[bookmarks=false,colorlinks=true,urlcolor={green},linkcolor={green},pdfstartview={XYZ null null 1.22}]{hyperref}
+
+% Math.
+\usepackage{amssymb,amsmath}
+\usepackage{mathtools}
+\everymath{\displaystyle}
+
+% Exam.
+\addpoints
+% \printanswers
+\noprintanswers
+\usepackage{color}
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\shadedsolutions
+\renewcommand{\solutiontitle}{\noindent\textbf{Solução:}\par\noindent}
+\pagestyle{headandfoot}
+\footer{}{Página \thepage\ de \numpages}{}
+\boxedpoints
+\pointsinrightmargin
+\pointpoints{ponto}{pontos}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+% \qformat{\textbf{Question\thequestion}\quad(\thepoints)\hfill}
+
+% User commands.
+\newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}
+
+% PDF metadata.
+\pdfinfo{% hyperref overrides this
+  /Title    (Dever de casa 04 -- Ondas e Marés)
+  /Author   (Filipe Fernandes)
+  /Creator  (Filipe Fernandes)
+  /Producer (Filipe Fernandes)
+  /Subject  (HW)
+  /Keywords (HW, oceanografia)
+}
+
+% Front page.
+\title{Dever de casa 04 -- Ondas e Marés}
+\author{Prof. Filipe Fernandes}
+\date{20-Setembro-2013}
+
+\begin{document}
+\maketitle
+\doublespacing
+
+\vspace{1cm}
+\hbox to \textwidth{Nome e número de matrícula:\enspace\hrulefill}
+\vspace{1cm}
+
+\begin{minipage}{.8\textwidth}
+Essa lista incluí \numquestions\ questões. O número total de pontos é \numpoints.
+\end{minipage}
+
+% 10
+\begin{questions}
+\question
+Definições.
+
+ \begin{parts}
+  \part[1]
+  Defina e escreva as equações/relações para $\lambda$, $T$, $\omega$, $K$, $C$
+  e $C_g$.
+
+  \begin{solution}
+  \begin{itemize}
+    \item $\lambda \rightarrow$ Comprimento de onda.
+    \item $T \rightarrow$ Período da onda.
+    \item $\omega \rightarrow$ Frequência da onda.
+    \item $K \rightarrow$ Número de onda.
+    \item $C \rightarrow$ Velocidade de fase.
+    \item $C_g \rightarrow$ Velocidade de grupo.
+  \end{itemize}
+  \(
+  \omega = \dfrac{2\pi}{T},
+  \)
+  \(
+  K = \dfrac{2\pi}{\lambda},
+  \)
+  \(
+  C = \dfrac{\lambda}{T} = \dfrac{\omega}{K},
+  \)
+  \(
+  C_g = \dfrac{C}{2} \text{ (curtas) ,}
+  \)
+  \(
+  C_g = C \text{ (longas).}
+  \)
+  \end{solution}
+
+  \part[1]
+  Crie uma tabela de comparação entre ondas de gravidade internas, externas,
+  ondas capilares, ondas de águas rasas e profundas.  Em sua tabela mencione as
+  semanas e diferenças comentando as forçantes, trajetória das partículas e
+  velocidade de propagação
+  quando aplicável.
+
+  \begin{solution}
+  \raggedright
+  a.) Ondas de gravidade de superfície e ondas capilares.\\
+  Forçante gravidade | tensão superficial.\\
+  Ambas ocorrem na interface ar-mar.\\
+
+  b.) Ondas de água rasa e ondas de água profunda.\\
+  Velocidade de fase metade da de grupo | igual a de grupo.\\
+  Ambas são ondas de gravidade de superfície.\\
+
+  c.) Ondas interna e onda externa.\\
+  Interface de densidade | interface ar-mar\\
+  Ambas força restauradora é a gravidade.
+  \end{solution}
+ \end{parts}
+
+  \question
+  Sobre ondas longas (água rasa) e curtas (água profunda) responda.
+
+\begin{parts}
+  \part[1] Escreva a relação de dispersão de ondas de gravidade de superfície.
+  Fale sobre as aproximações feitas para se chegar nela.  Comente também
+  como a forma da $\tanh$, presente na equação, pode nos ajudar a simplificar
+  ainda mais a mesma para dois casos específicos.
+
+  \begin{solution}
+  \raggedright
+  \(
+    \omega^2 = gK\tanh(KH)
+  \)
+    \begin{itemize}
+      \item Longe o sítio da forçante do vento.
+      \item Sem atrito.
+      \item Período da onda muito menor que o período inercial.
+      \item Assume-se um estado médio e perturbações sobre esse (as ondas).
+      \item A amplitude da onda é pequena quando comparada com a coluna d'água.
+    \end{itemize}
+
+  Água rasa (ondas longas) $KH << 1 \therefore \tanh(KH) \sim KH$\\
+  Água profundas (ondas curtas) $KH >> 1 \therefore \tanh(KH) \sim 1$\\
+
+  \end{solution}
+
+  \part[1]
+  Faça a aproximação para água rasa e água profunda e crie uma tabela com as
+  equações para $\omega$, $T$, $K$, $\lambda$, $C$ e $Cg$ para cada um dos
+  regimes de ondas.
+
+  \begin{solution}
+  \raggedright
+      Água rasa (ondas longas):\\
+      Dispersão: $\omega^2 = gK^2H$\\
+      Velocidade de Fase: $C = \dfrac{\lambda}{T} = \dfrac{\omega}{K} = \sqrt{gH}$\\
+      Velocidade de Grupo: $Cg = \pd{}{K}\left(\omega = K\sqrt{gH}\right) = C_g = \sqrt{gH}$\\
+
+      Água fundas (ondas curtas):\\
+      Dispersão: $\omega^2 = gK$\\
+      Velocidade de Fase: $C = \dfrac{\lambda}{T} = \dfrac{\omega}{K} = \sqrt{g/K}$\\
+      Velocidade de Grupo: $C_g = \pd{}{K}\left[\omega = g^{1/2}K^{1/2}\right] = C_g = \dfrac{1}{2}g^{1/2}K^{-1/2} = \dfrac{C}{2}$\\
+  \end{solution}
+
+  \part[2]
+  Um terremoto na costa do Peru criou um série de ondas do tipo Tsunami com
+  $\lambda >> 4$ km.  Estime quando tempo (em horas) levará para a primeira
+  onda atingir o Japão.
+
+  \begin{solution}
+  $C = \sqrt{gH} = \sqrt{9.8 \times 4000} = 198$ m/s\\
+  $10^7 m$ até o Japão, $50.5\times10^3$ s $\sim 14$ hrs
+  \end{solution}
+
+  \part[2]
+  Um observador nota a chegada de um trem de ondas dispersivas de uma
+  tempestade localizada a uma certa distância.  No tempo $t_1$ as ondas têm
+  período de 10 s.  Num tempo $t_2 = t_1 + 3.6 \times 10^4$ s, as ondas têm um
+  período de 8 s.
+
+  \begin{itemize}
+    \item[a)] Quando a tempestade ocorreu?
+    \item[b)] Quão longe estava a tempestade?
+    \item[c)] Quais eram os comprimentos de onda ($\lambda$) e número de onda
+    ($k$) quando essas foram observadas em $t_1$?
+  \end{itemize}
+
+  \begin{solution}
+  Temos que notar que (1) essas são ondas dispersivas (curtas) e (2) o ``trem''
+  de ondas se propaga com a velocidade de grupo.
+  \begin{align*}
+    C &= \sqrt{\dfrac{g\lambda}{2\pi}}\\
+    \dfrac{\lambda^2}{T^2} &= \dfrac{g\lambda}{2\pi}\\
+    \lambda &= \dfrac{gT^2}{2\pi}\\
+    C_g &= \dfrac{1}{2}C\\
+    C_g &= \dfrac{1}{2}\dfrac{\lambda}{T}\\
+    C_g &= \dfrac{gT}{4\pi}
+  \end{align*}
+
+  Resolvendo o sistema:\\
+  Em $t_1$( \(T_1 = 10\) s) e \(D = C_gt_1\)\\
+  Em $t_2$( \(T_2 = 8\) s) e \(D = C_g(t_1 + 3.6 \times 10^4)\)\\
+  Resolvendo para $t_1$:\\
+  $10t_1 = 8(t_1 + 3.6 \times 10^4) \therefore t_1 = 1.44 \times 10^5 \sim 40$  hr\\
+  Resolvendo para $D$:\\
+  $D = \dfrac{9.8 \times 10}{4\pi}{1.44 \times 10^5} \sim 1122$  km
+
+%   $T_2 = 8$ s\\
+
+  $\lambda_1 = \dfrac{9.8 \times 10^2}{2\pi} = 155.97$ m\\
+  $k_1 = \dfrac{2\pi}{\lambda} = 0.04$ m$^{-1}$
+  \end{solution}
+
+\end{parts}
+
+\question
+ \begin{parts}
+  \part[1]
+  Descreva sobre como estudar ondas com observações. Sua resposta deve conter
+  informações sobre:
+  \begin{itemize}
+    \item Altura significativa de ondas.
+    \item Interação de ondas.
+    \item Pista do vento (``fetch'') e estado do mar.
+  \end{itemize}
+
+  \begin{solution}
+    Ondas de gravidade podem ser observadas usando réguas de me
+  \end{solution}
+
+  \part[1]
+  Todo esse tempo estão assumindo nossas ondas como sendo.
+  $$\eta = \eta_o \cos(kx - \omega t)$$.
+
+  Explique o argumento da função coseno ($kx - \omega t$)
+
+  A seguinte equação descreve a superfície livre de ondas de água rasa de
+  gravidade.
+
+  $$\dfrac{\partial^2 \eta}{\partial x^2} - \dfrac{1}{gH}\dfrac{\partial^2 \eta}
+  {\partial t^2}$$
+
+  Mostre que a forma de onda que escolhemos satisfaz essa equação.
+
+  \begin{solution}
+    \begin{align*}
+      \dfrac{\partial^2}{\partial x^2}\left[ \eta_o\cos(kx-\omega t) \right] &=  \dfrac{1}{gH}\dfrac{\partial^2}{\partial t^2}\left[ \eta_o\cos(kx-\omega t) \right]\\
+      -k\dfrac{\partial}{\partial x}\left[ \eta_o\sin(kx-\omega t) \right] &=  -\dfrac{\omega}{gH}\dfrac{\partial}{\partial t}\left[ \eta_o\sin(kx-\omega t) \right]\\
+      -k^2\eta_o\cos(kx-\omega t) &= -\dfrac{\omega^2}{gH} \eta_o\cos(kx-\omega t)\\
+      \dfrac{\omega^2}{gH} = k^2 &\therefore \omega^2 = gHk^2
+    \end{align*}
+  \end{solution}
+ \end{parts}
+
+\end{questions}
+\end{document}
