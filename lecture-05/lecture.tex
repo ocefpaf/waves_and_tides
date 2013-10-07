@@ -1,0 +1,393 @@
+
+% Title page.
+\title[Aula 05]{Ondas e Marés}
+\subtitle{Fenômenos associados à propagação de ondas.}
+\author[Filipe Fernandes]{Filipe P. A. Fernandes}
+\institute[unimonte]{Centro Universitário Monte Serrat}
+\date[Setembro 2013]{27 de Setembro 2013}
+
+\logo{\includegraphics[scale=0.15]{../common/university_logo.png}}
+
+\begin{document}
+
+% The title page frame.
+\begin{frame}[plain]
+  \titlepage
+  \begin{center}
+    \includegraphics[scale=0.5]{../common/by-nc-sa.pdf}
+  \end{center}
+\end{frame}
+
+\section*{Outline}
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Aula 05 -- Fenômenos associados à propagação de ondas.}
+\begin{frame}
+\frametitle{Conteúdo até agora}
+{\scriptsize
+  \begin{itemize}[<+-| alert@+>]
+    \item[1] Introdução: O que são ondas e como são geradas?
+    \item[1.1] Definições
+    \item[1.1.1] Elevação
+    \item[1.1.2] Altura de onda
+    \item[1.1.3] comprimento de onda
+    \item[1.1.4] Número de onda
+    \item[1.1.5] Período e frequência
+    \item[1.1.6] Frequência angular
+    \item[1.1.7] Velocidade de fase
+    \item[1.1.8] Velocidade de grupo
+    \item[2] Ondas na superfície do mar
+    \item[2.1] Tipos de ondas
+    \item[2.2] Medição de ondas de superfície
+    \item[3] Ondas de gravidade
+  \end{itemize}
+  }
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Conteúdo de hoje}
+{\footnotesize
+  \begin{itemize}[<+-| alert@+>]
+    \item[4] Fenômenos associados à propagação das ondas na superfície do mar
+    \item[4.1] Dispersão
+    \item[4.2] Interferência
+    \item[4.3] Velocidade de grupo de ondas de gravidade em águas profundas
+    \item[4.4] Reflexão das ondas
+    \item[4.5] Refração das ondas
+    \item[4.6] Difração das ondas
+    \item[4.7] Relação das ondas com o vento
+    \item[4.8] Crescimento das ondas geradas pelo vento
+    \item[4.9] Quebra de ondas
+  \end{itemize}
+  }
+\end{frame}
+
+
+\subsection{Revisão -- Ondas lineares}
+\begin{frame}
+\frametitle{Revisão -- Ondas lineares}
+  \begin{itemize}[<+-| alert@+>]
+    \item $\frac{u}{c} << 1$, isso significa que as pertubações são muito
+          fracas em relação ao fluxo médio (\bf{aproximação das pertubações});
+    \item O sistema é não-dissipativo.  As ondas não são amortecidas quando a
+          duração da onda é muito maior que o período ({\bf sem atrito});
+    \item O sistema não é forçado ({\bf sempre longe da geração das ondas}).
+    \item O período da onda é muito menor que a rotação da Terra ({\bf podemos desprezar o efeito de Coriolis}).
+  \end{itemize}
+
+\end{frame}
+
+
+\subsection{Dispersão}
+\begin{frame}
+\frametitle{Dispersão}
+    \begin{block}{}
+    O espectro de frequências das ondas no oceano se estendem desde movimentos
+    ondulatórios capilares (1 s), até ondas planetárias de baixa frequência
+    com períodos de alguns anos.
+    \end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Frequência}
+  \begin{center}
+    \includegraphics[scale=0.2]{../figures/espectros.png}
+  \end{center}
+
+  {\tiny Espectro de energia da variabilidade oceânica, mostrando os diferentes
+         tipos de ondas que ocorrem no oceano.}
+
+  {\tiny Fonte: LeBlond e Mysak (1978).}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Dispersão 01}
+\begin{center}
+  \includegraphics[scale=0.35]{../figures/dispersion.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Dispersão 02}
+\begin{center}
+  \includegraphics[scale=0.9]{../figures/dispersion_01.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Implicações da dispersão}
+  {\small
+  \begin{itemize}[<+-| alert@+>]
+    \item Tempestade: As ondas mais longas chegaram primeiro;
+    \item O período vai mudar período {\bf NUNCA} muda;
+    \item Em um grupo de ondas com $\approx \lambda$ a energia viajará a
+          $\frac{1}{2}$ da velocidade das ondas individuais;
+    \item Ondas que viajam de tempestades ``longes'' são chamadas de ``swell'';
+    \item Ondas geradas no loca são chamdas de ``wind-sea'';
+    \item Separar essas duas das medições e complicado.
+  \end{itemize}
+  }
+\end{frame}
+
+
+\subsection{Interferência}
+\begin{frame}
+\frametitle{Interferência}
+\begin{center}
+  \includegraphics[scale=0.35]{../figures/interference.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Demostração com duas ondas}
+  \begin{block}{}
+    Demonstrar ``two\_wave.py''
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ondas se aproximando da costas}
+\begin{center}
+  \includegraphics[scale=0.6]{../figures/coastal_approach.png}
+\end{center}
+\end{frame}
+
+
+\subsection{Refração das ondas}
+\begin{frame}
+\frametitle{Ondas em um ângulo oblíquo com a costa}
+  \begin{center}
+    \includegraphics[scale=0.8]{../figures/refraction_01.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{Lei de Snell}
+  \begin{center}
+    \includegraphics[scale=0.4]{../figures/refraction.png}
+  \end{center}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Refração}
+  \begin{center}
+    \includegraphics[scale=0.65]{../figures/refraction_02.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Refração foto}
+  \begin{center}
+    \includegraphics[scale=1.7]{../figures/refraction_photo.png}
+  \end{center}
+\end{frame}
+
+
+\subsection{Difração das ondas}
+\begin{frame}
+\frametitle{Difração 01}
+  {\scriptsize É a tendência das ondas de se ``dobrarem'' ao redor de
+               obstruções.}
+  \begin{center}
+    \includegraphics[scale=0.6]{../figures/difraction.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Difração 02}
+  \begin{center}
+    \includegraphics[scale=0.6]{../figures/difraction_01.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Difração 03}
+  \begin{center}
+    \includegraphics[scale=0.7]{../figures/difraction_02.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Difração 04}
+\begin{center}
+  \includegraphics[scale=1.4]{../figures/difraction_photo.png}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Difração 05}
+\begin{center}
+  \includegraphics[scale=1.6]{../figures/gibraltar.png}
+\end{center}
+\end{frame}
+
+
+\subsection{Relação das ondas com o vento}
+\begin{frame}
+\frametitle{Ondas geradas pelo vento}
+  \begin{block}{}
+    Quando o vento sopra sobre a superfície do oceano, ondas de superfície são
+    geradas por transferência de momento do vento, indo do ar para a água.
+    Uma onda real no oceano pode ser composta por diversas componentes de ondas
+    com diferentes períodos e alturas.
+
+    Dessa forma, a medida de ondas no oceano não é uma tarefa fácil.
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ondas geradas pelo vento}
+  Para entender como as ondas se desenvolvem, devemos considerar quatro
+  fatores:
+  \begin{itemize}[<+-| alert@+>]
+    \item[1.] A velocidade do vento;
+    \item[2.] Pista do vento ou a distância em que o vento sopra.  Em inglês,
+              {\it fetch};
+    \item[3.] Duração do vento;
+    \item[4.] Profundidade da água.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Ondas geradas pelo vento}
+  \begin{center}
+    \includegraphics[scale=0.25]{../figures/wind_speed_wave.png}
+  \end{center}
+  \tiny{Espectro de energia da onda para um campo plenamente desenvolvido\\
+        no mar sob a ação de diferentes magnitudes da velocidade do vento\\
+        De acordo com Pierson e Moskovitz (1964).}
+\end{frame}
+
+
+\subsection{Crescimento das ondas geradas pelo vento}
+\begin{frame}
+\frametitle{Processo de geração}
+  {\small O processo de geração de ondas pelo vento passa por pelo menos três}
+          estágios:
+  {\scriptsize
+  \begin{itemize}[<+-| alert@+>]
+    \item[1.] A turbulência no vento gera flutuações randômicas na pressão da
+              superfície do mar que por conseguinte geram pequenas ondas com
+              comprimentos de onda em torno de poucos cm;
+    \item[2.] Em seguida, o vento age sobre essas ondas pequenas e por
+              processos de interação fazem com que elas cresçam. Isso ocorre
+              porque a ação do vento sobre uma onda causa diferenças de pressão
+              ao longo do perfil da onda fazendo com que elas cresçam. Esse
+              processo é um processo instável pois quanto maior a onda, maior a diferença de pressão e mais rapidamente a onda cresce. Essa instabilidade faz com que a onda cresça exponencialmente.
+    \item[3.] Finalmente, as ondas começam a interagir entre elas. A interação
+              transfere a energia das ondas mais curtas para ondas com
+              frequências um pouco menores que as do pico do espectro.
+              Eventualmente, isso faz com que as ondas se propaguem até mais
+              rapidamente que o próprio vento que as gerou.
+  \end{itemize}
+  }
+\end{frame}
+
+
+\subsection{Altura significante de onda}
+\begin{frame}
+\frametitle{Altura significante de onda}
+  {\small
+  \begin{block}{}
+    Num oceano real, a altura de uma onda é determinada pela combinação de
+    várias ondas, com diferentes frequências e amplitudes que se movem
+    relativamente umas em relação às outras, podendo estar em fase ou não.
+
+    Teoricamente, se as alturas e as frequências de cada onda que contribui no
+    movimento forem conhecidas, então é possível prever as alturas e as
+    frequências das ondas reais com bastante precisão. Na prática, isso é
+    raramente possível.
+  \end{block}
+  }
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Altura significante de onda}
+  {\small
+  \begin{block}{}
+  $H_1/3$, é a altura média das ondas da terça parte com as maiores ondas que
+  ocorrem numa determinada região para um determinado período.  Podemos
+  encontrar um máximo na altura da onda nesses registros, $H_{max}$.
+
+  A previsão de $H_{max}$ para um dado período é uma informação muito
+  importante para o planejamento de estruturas como barreiras, cais e
+  plataformas de perfuração.
+  \end{block}
+  }
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Altura significante de onda}
+  \begin{center}
+    \includegraphics[scale=0.35]{../figures/altura_de_ondas.png}
+  \end{center}
+\end{frame}
+
+
+\subsection{Quebra de ondas}
+\begin{frame}
+\frametitle{Quebra de ondas}
+  \begin{block}{}
+    O que acontece quando nossa ondas não mais obecem a restrição de $\frac{H/L} << 1$?
+  \end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Quebra de ondas}
+  \begin{center}
+    \includegraphics[scale=0.6]{../figures/break_01.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Spilling}
+  \begin{center}
+    \includegraphics[scale=0.6]{../figures/break_02.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Plunging}
+  \begin{center}
+    \includegraphics[scale=0.6]{../figures/break_03.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Surging}
+  \begin{center}
+    \includegraphics[scale=0.6]{../figures/break_04.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Dever de casa}
+    \begin{block}{}
+      Relação de dispersão de ondas internas.
+    \end{block}
+\end{frame}
+
+\end{document}
