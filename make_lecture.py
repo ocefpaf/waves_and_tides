@@ -7,7 +7,7 @@
 # e-mail:   ocefpaf@gmail
 # web:      http://ocefpaf.github.io/
 # created:  20-Aug-2013
-# modified: Thu 12 Sep 2013 04:28:06 PM BRT
+# modified: Wed 23 Oct 2013 09:53:41 PM BRST
 #
 # obs:
 #
@@ -46,7 +46,9 @@ header = r"""% Packages.
 \usepackage{tikz}
 \usepackage{lmodern}
 \usepackage{fancybox}  % Box [shadowbox, fbox, doublebox, ovalbox, Ovalbox].
+\usepackage{cancel}
 \usepackage{textcomp}
+\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{multimedia}
 \usepackage[utf8]{inputenc}
