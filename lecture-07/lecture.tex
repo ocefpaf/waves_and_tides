@@ -1,0 +1,192 @@
+% Title page.
+\title[Aula 08]{Ondas e marés}
+\subtitle{Ondas influenciadas pela rotação da Terra.}
+\author[Filipe Fernandes]{Filipe P. A. Fernandes}
+\institute[unimonte]{Centro Universitário Monte Serrat}
+\date[Outubro 2013]{25 de Outubro 2013}
+
+\logo{\includegraphics[scale=0.15]{../common/university_logo.png}}
+
+\begin{document}
+
+% The title page frame.
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section*{Outline}
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Ondas influenciadas pela rotação da Terra}
+\subsection{Ondas de Poincaré}
+\begin{frame}
+\frametitle{Ondas de Poincaré}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+    \begin{block}{}
+      Ondas sem rotação:
+      \[\pd{u}{t} = -g\pd{\eta}{x}\]
+      \[\pd{\eta}{t} = -h\pd{u}{x}\]
+    \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \begin{block}{}
+      \[\frac{\partial^2\eta}{\partial x^2} - \frac{1}{gh}\frac{\partial^2\eta}{\partial{t^2}} = 0\]
+    \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+\frametitle{Ondas de Poincaré}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+    \begin{block}{}
+      Ondas com rotação em um fundo plano:
+      \[\pd{u}{t} = +fv -g\pd{\eta}{x}\]
+      \[\pd{v}{t} = -fu -g\pd{\eta}{y}\]
+      \[\pd{\eta}{t} = -h\left(\pd{u}{x} + \pd{v}{y}\right)\]
+    \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \begin{block}{}
+      Ondas com rotação em um fundo plano:
+      \[\nabla^2\hat{\eta} + \frac{(\omega^2 - f^2)}{gh} = 0\text{ onde,}\]
+      \[\eta = \hat{\eta}e^{-i\omega t} \text{ e,}\]
+      \[k^2 = \frac{\omega^2 - f^2}{gh}\]
+    \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\subsection{Ondas de Kelvin}
+\begin{frame}
+\frametitle{Ondas de Kelvin}
+{\scriptsize
+  Mesma equações que a onda de Poincaré, mas assumimos $u=0$.
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+    \begin{block}{}
+      Ondas com rotação em um fundo plano:
+      \[\cancelto{0}{\pd{u}{t}} = +fv -g\pd{\eta}{x}\]
+      \[\pd{v}{t} = \cancelto{0}{-fu} -g\pd{\eta}{y}\]
+      \[\pd{\eta}{t} = -h\left(\cancelto{0}{\pd{u}{x}} + \pd{v}{y}\right)\]
+    \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \begin{block}{}
+      Ondas com rotação em um fundo plano:
+      \[\frac{\partial^2\hat{\eta}}{\partial x^2} - \frac{1}{gh}\frac{\partial^2\hat{\eta}}{\partial{t^2}} = 0\]
+      \[fv = g\pd{\hat{\eta}}{x} \text{ onde,}\]
+      \[\eta = \eta_o\cos(ky - \omega t)e^{-\frac{fx}{c}}\]
+      \[\frac{f}{c} = \frac{f}{\sqrt{gh}} = \frac{1}{\text{Raio de deformação de Rossby}}\]
+    \end{block}
+    $R_d$ típico é da ordem de 2000 km no oceano aberto, 300 km para regiões
+    costeiras.
+    \end{column}
+  \end{columns}
+}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Representação de uma onda de Kelvin.}
+  \begin{center}
+    \includegraphics[scale=0.45]{../figures/rossby_radius.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Representação de uma onda de Kelvin.}
+  \begin{center}
+    \includegraphics[scale=0.54]{../figures/kelvin.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pontos Anfidrômicos.}
+  \begin{center}
+    \includegraphics[scale=0.3]{../figures/amphidromes.png}
+  \end{center}
+\end{frame}
+
+\subsection{Ondas de Rossby}
+\begin{frame}
+  \frametitle{Ondas de vorticidade -- (Rossby)}
+{\scriptsize
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+    \begin{block}{}
+      \[ \pd{u}{t} = +(f_o + \beta y)v - g\pd{\eta}{x} \]
+      \[ \pd{v}{t} = -(f_o + \beta y)u - g\pd{\eta}{y} \]
+      \[ \pd{\eta}{t} = -h\left(\pd{u}{x} + \pd{v}{y}\right) \]
+    \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+    \begin{block}{}
+      \[\pd{}{t}\nabla^2\eta - \frac{f_o^2}{gh}\eta + \beta\pd{\eta}{x} = 0\text{ onde,}\]
+      \[\eta = \hat{\eta}e^{i(kx + ly -\omega t)}\]
+      \[\omega = \frac{-\beta k}{k^2 + l^2 + \frac{f_o^2}{gh}}\]
+    \end{block}
+    \end{column}
+  \end{columns}
+}
+\vspace{0.5cm}
+\pause
+{\small
+Ondas de Rossby tem a vorticidade como força de restauração e sempre se
+propagam para oeste.
+
+\[\Pi = \frac{\zeta + f}{H}\]
+}
+\end{frame}
+
+\subsection{Teoria e mecanismos de geração de ondas de Rossby}
+\begin{frame}
+  \frametitle{Exemplos}
+    \begin{center}
+    \includegraphics[scale=0.35]{../figures/rossby_scheme.png}
+  \end{center}
+\end{frame}
+
+\subsection{Importância das ondas de Rossby}
+\begin{frame}
+  \frametitle{Exemplos}
+    \begin{center}
+    \includegraphics[scale=0.45]{../figures/atmospheric_rossby.png}
+  \end{center}
+\end{frame}
+
+\subsection{Observações das ondas de Rossby}
+\begin{frame}
+  \frametitle{Exemplos}
+    \begin{center}
+    \includegraphics[scale=0.45]{../figures/rossby_obs1.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Exemplos}
+    \begin{center}
+    \includegraphics[scale=0.35]{../figures/rossby_obs2.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Exemplos}
+    \begin{center}
+    \includegraphics[scale=0.34]{../figures/rossby_speed.png}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Dever de casa}
+    Checar o portal!
+\end{frame}
+\section{Marés}
+
+\end{document}
