@@ -1,0 +1,94 @@
+% Title page.
+\title[Aula 06]{Ondas e marés}
+\subtitle{Análise de Fourier}
+\author[Filipe Fernandes]{Filipe P. A. Fernandes}
+\institute[unimonte]{Centro Universitário Monte Serrat}
+\date[Agosto 2013]{18 de Outubro 2013}
+
+\logo{\includegraphics[scale=0.15]{../common/university_logo.png}}
+
+\begin{document}
+
+% The title page frame.
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+\section*{Outline}
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Fourier}
+\begin{frame}
+\frametitle{Joseph Fourier (1907)}
+  \begin{itemize}[<+-| alert@+>]
+    \item Medidas: Sinais periódicas + Ruído aleatório, ou
+    \item Medidas: Parte determinística + parte estocástica.
+    \item Objetivo:
+      \begin{enumerate}[<+-| alert@+>]
+        \item Separar a parte periódica do ruído,
+        \item Quantificar a variância associada a cada componente da parte
+              periódica.
+      \end{enumerate}
+    \item Requisitos:
+      \begin{enumerate}[<+-| alert@+>]
+        \item Série temporal contínua;
+        \item Amplitudes e fases variam de forma suave;
+        \item Sinais estacionários.
+      \end{enumerate}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Fourier}
+    \begin{block}{}
+      Premissa: $y(t) = \overline{y(t)} + \sum_i\left[ A_i\cos(\omega_it) + B_i\sin(\omega_it) \right]$
+    \end{block}
+    \pause
+    \begin{block}{}
+      Queremos determinar: $A_i, B_i, \omega_i = \frac{2\pi i}{T}$, $i=1,2,3...$
+    \end{block}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Transformada contínua}
+\footnotesize{
+  \begin{itemize}[<+-| alert@+>]
+    \item Partindo de $y(t) = \sum_i\left[ A_i\cos(\omega_it) + B_i\sin(\omega_it) \right]$
+    \item Multiplicando por $\cos(\omega_it)$ e integrando de 0 a $T$:\\
+    $$A_i = \frac{2}{T}\int^T_0y(t)\cos(\omega_it)dt, i=0,1,2...$$
+    \item Multiplicando por $\sin(\omega_it)$ e integrando de 0 a $T$:\\
+    $$B_i = \frac{2}{T}\int^T_0y(t)\sin(\omega_it)dt, i=1,2,3...$$
+    \item A transformada contínua é:
+    $$y(t) \frac{1}{2}A_o + \sum^{\infty}_i=1\left[A_i\cos(\omega_it) + B_i\sin(\omega_it)\right], i=1,2,3...$$
+    \end{itemize}
+    }
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Em termos de amplitude e fase}
+\footnotesize{
+  \begin{itemize}[<+-| alert@+>]
+    \item A soma de senos e cossenos dada por:
+    $$y(t) \frac{1}{2}A_o + \sum^{\infty}_i=1\left[A_i\cos(\omega_it) + B_i\sin(\omega_it)\right], i=1,2,3...$$
+    \item É equivalente a:\\
+    $$y(t)=\frac{1}{2}C_o + \sum^{\infty}_i=1\left[C_i\cos(\omega_it-\phi_i)\right], i=1,2,3...$$
+    \item Amplitude: $C_i = \sqrt{A^2_i + B^2_i}, i=0,1,2...$
+    \item Fase: $\phi_i = \arctan\left({\frac{B_i}{A_i}}\right), i=1,2,3...$
+    \end{itemize}
+    }
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Dever de casa.}
+    \begin{block}{}
+    Checar no sistema.
+    \end{block}
+\end{frame}
+
+\end{document}
