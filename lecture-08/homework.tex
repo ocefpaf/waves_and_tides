@@ -1,0 +1,167 @@
+\documentclass[11pt,portuguese,a4paper,pdftex]{article}
+
+\usepackage[brazil]{babel}
+\usepackage{amssymb,amsmath}
+\usepackage[utf8x]{inputenc}
+\usepackage{nicefrac}
+\usepackage{fancyhdr}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{helvet}
+
+\renewcommand{\baselinestretch}{1.5}
+\topmargin -6mm
+\hoffset -11mm
+\textwidth 160mm
+\textheight 240mm
+
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+\begin{document}
+
+{\Large
+\begin{center}
+  Ondas e Marés\\
+  \vspace{0.3 cm}
+  Prof. Filipe Fernandes\\
+  25 de Outubro de 2013\\
+\end{center}
+}
+
+\begin{center}
+  {\Large Aula Prática}
+\end{center}
+
+ \begin{center}
+{\bf \Large Protocolo para Análise Harmônica de Marés}\\
+  \end{center}
+
+\vspace{0.5cm}
+
+\hspace{-8mm} Pré-processamento dos dados:
+
+\begin{enumerate}
+  \item Controle de qualidade dos dados coletados, reconhecimento e remoção de
+        dados incorretos.
+
+  \item Remoção da média para (Análise Harmônica é feita sobre as anomalias da
+        elevação).
+
+  \item Análise Harmônica para identificar as principais componentes de maré,
+        suas amplitudes e fases.
+\end{enumerate}
+
+\hspace{-8mm} Análise dos dados:
+
+\begin{enumerate}
+  \item Calcular o número de forma e classificar a maré quanto ao seu tipo.
+  \begin{eqnarray}\label{eq:forma}
+    F = \frac{K_1 + O_1}{M_2 + S_2}
+  \end{eqnarray}
+
+  \begin{center}
+    \begin{tabular}{|c|l|}\hline
+      $0 < F < 0.25$ & maré semi-diurna \\
+      $0.25 < F < 1.5$ & mista, com maioria semi-diurna \\
+      $1.5 < F < 3$ & mista, com maioria diurna \\
+      $F > 3$ & maré diurna\\ \hline
+    \end{tabular}
+  \end{center}
+
+  \item Calcula as diferenças de fase entre algumas componentes e compará-las.
+
+  \item Estimar uma partição de energia entre elevação observada devido à maré e
+        a não devido a maré.  (Utilizaremos um filtro passa-baixa de 40 h.)
+
+%   \item Utilizar as equações (\ref{eq:eta})-(\ref{eq:uv}) para estimar valores
+%         de elevação da superfície do mar devida a maré ($\eta$) e das correntes
+%         de maré (componentes $u$ e $v$).
+%
+%         \begin{eqnarray}\label{eq:eta}
+%           \frac{\eta(x)}{\eta(0)} = 1 -
+%           \left(\frac{w^2 - f_o^2}{g\ \beta_1} + \frac{f_o\ l_r}{w}  \right).x\ ;
+%           \ \ \ \ \ \ l_r = \left(\frac{\Delta G}{\Delta y}   \right)_{x=0}\ ,
+%         \end{eqnarray}
+%
+%   onde:\\
+%   $\eta(0):$ nível do mar na costa;\\
+%   $\eta(x):$ nível do mar em um ponto qualquer ao largo da PC;\\
+%   $\beta_1:$ inclinação do fundo (tangente do ângulo de inclinação);\\
+%   $l_r:$ razão entre as diferenças de fase de duas estações costeiras;\\
+%   $G:$ fase em relação a Greenwich (obtida na análise harmônica);
+%   $y:$ distância ao longo da costa.
+%
+%   \begin{eqnarray}\label{eq:uv}
+%     u = \frac{w}{\beta_1} \eta(0)\ \sin(ly-wt)\ ;
+%     \ \ \ \ \ \ v = \frac{f_o}{\beta_1} \eta(0)\ \cos(ly-wt)
+% \end{eqnarray}
+
+
+%   \item Utilizar os dados filtrados para calcular correlações entre as elevações
+%         de Ubatuba e Cananéia, em diversos {\it lags} de tempo.  Verificar em
+%         que {\it lag} ocorre a correlação máxima.\\
+\end{enumerate}
+
+% \begin{center}
+%   {\bf \Large Investigando o papel do vento}\\
+% \end{center}
+%
+% Conforme visto em classe, o vento paralelo à costa é muito mais importante do
+% que o perpendicular no tocante a geração de correntes e elevações junto a costa
+% e na plataforma continental.  No cenário real, na maioria das vezes, o vento não
+% está orientado especificamente em uma destas direções.  Com isso, é necessário
+% decompormos o vetor do vento nas direções perpendicular e paralela à costa.
+%
+% Dentro do regime típico de ventos vigente na PC sudeste, analisaremos dois
+% cenários principais:
+%
+% {\bf (i) Bom tempo:} Regido pelo centro de alta pressão semi-permanente do
+% Atlântico Sul, que proporcionam em média ventos de ENE ao largo de Ubatuba, com
+% magnitude entre 4,6-1,5 m s$^{-1}$.
+%
+% {\bf (ii) Mau tempo:} Vento de S-SW geralmente intenso, logo em seguida à
+% passagens de sistemas frontais frios, com magnitude variando entre 7-8 m s$^{-1}$
+% 24 h após a passagem e entre 3-7 m s$^{-1}$ 32 h após a passagem, segundo
+% {\it Coelho (2008)}.
+%
+% Utilizem (\ref{eq:V}) para estimar o transporte por unidade de distância
+% associado a cada um dos cenários descritos acima, em função do tempo.  Plote os
+% resultados e observe o decaimento provocado pelo atrito de fundo.
+%
+% \begin{eqnarray}\label{eq:V}
+%   V = \frac{u_*H_o}{c_d} \left[
+%   \frac{1 - exp \left(-2u_*t \frac{\sqrt{c_d}}{H_o} \right)}
+%   {1 + exp \left(-2u_*t \frac{\sqrt{c_d}}{H_o} \right)} \right],
+% \end{eqnarray}
+%
+% \vspace{6mm}
+%
+% Lembrando que $u_*$ é a velocidade friccional, que é definida por
+%
+% \begin{eqnarray}\label{eq:fric}
+%   u_* = \sqrt{\frac{\tau_s}{\bar{\rho}}},\ \ e\ \ que
+% \end{eqnarray}
+%
+% \vspace{-6mm}
+%
+% \begin{eqnarray}\label{eq:taux}
+%   \tau_{sx} = \rho_{ar} c_{10} u_{ar} \sqrt{u^2_{ar} + v^2_{ar}}
+% \end{eqnarray}
+%
+% \vspace{-6mm}
+%
+% \begin{eqnarray}\label{eq:tauy}
+%   \tau_{sy} = \rho_{ar} c_{10} v_{ar} \sqrt{u^2_{ar} + v^2_{ar}}
+% \end{eqnarray}
+%
+% \vspace{6mm}
+%
+% Em seguida, calcule o $t_a$, que é o tempo de ajuste por atrito, através da Eq.
+% (\ref{eq:ta}).  Plote seu valor no gráfico desenhado através de (\ref{eq:V}).
+%
+% \begin{eqnarray}\label{eq:ta}
+%   t_a = \frac{H_o}{2u_* \sqrt{C_d}}
+% \end{eqnarray}
+%
+\end{document}
