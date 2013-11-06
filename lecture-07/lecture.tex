@@ -30,18 +30,24 @@
 
 \subsection{Ondas de Poincaré}
 \begin{frame}
-\frametitle{Ondas de Poincaré}
+\frametitle{Ondas longas sem rotação}
   \begin{columns}
     \begin{column}{0.5\textwidth}
     \begin{block}{}
       Ondas sem rotação:
-      \[\pd{u}{t} = -g\pd{\eta}{x}\]
-      \[\pd{\eta}{t} = -h\pd{u}{x}\]
+      \[
+        \pd{u}{t} = -g\pd{\eta}{x}
+      \]
+      \[
+        \pd{\eta}{t} = -h\pd{u}{x}
+      \]
     \end{block}
     \end{column}
     \begin{column}{0.5\textwidth}
     \begin{block}{}
-      \[\frac{\partial^2\eta}{\partial x^2} - \frac{1}{gh}\frac{\partial^2\eta}{\partial{t^2}} = 0\]
+      \[
+        \frac{\partial^2\eta}{\partial x^2} - \frac{1}{gh}\frac{\partial^2\eta}{\partial{t^2}} = 0
+      \]
     \end{block}
     \end{column}
   \end{columns}
@@ -53,20 +59,51 @@
     \begin{column}{0.5\textwidth}
     \begin{block}{}
       Ondas com rotação em um fundo plano:
-      \[\pd{u}{t} = +fv -g\pd{\eta}{x}\]
-      \[\pd{v}{t} = -fu -g\pd{\eta}{y}\]
-      \[\pd{\eta}{t} = -h\left(\pd{u}{x} + \pd{v}{y}\right)\]
+      \[
+        \pd{u}{t} - fv = -g\pd{\eta}{x}
+      \]
+      \[
+        \pd{v}{t} + fu= -g\pd{\eta}{y}
+      \]
+      \[
+        \pd{\eta}{t} = -h\left(\pd{u}{x} + \pd{v}{y}\right)
+      \]
     \end{block}
     \end{column}
     \begin{column}{0.5\textwidth}
     \begin{block}{}
       Ondas com rotação em um fundo plano:
-      \[\nabla^2\hat{\eta} + \frac{(\omega^2 - f^2)}{gh} = 0\text{ onde,}\]
-      \[\eta = \hat{\eta}e^{-i\omega t} \text{ e,}\]
-      \[k^2 = \frac{\omega^2 - f^2}{gh}\]
+      \[
+        \nabla^2\eta + \frac{(\omega^2 - f^2)}{gh} = 0\text{ onde,}
+      \]
+      \[
+        \eta = \hat{\eta}e^{-i\omega t} \text{ e,}
+      \]
+      \[
+        \omega^2 = f^2 + {gh}k^2
+       \]
     \end{block}
     \end{column}
   \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Resumo de ondas de Poincaré}
+\small{
+  \begin{itemize}[<+-| alert@+>]
+    \item Se progaga no oceano aberto em qualquer direção;
+    \item É uma onda dispersiva.
+%     \item For a plane wave crests and troughs have uniform height.
+%     \item Short waves act like non-rotating shallow water gravity waves
+    \item Os vetores do fluxo giram de forma anti-ciclônica
+    \item O balanço de forças na direção de propação da ondas incluí o
+          gradiente de pressão e aceleração do fluxo, mas também a força de
+          Coriolis devido as velocidades do fluxo ao longo das cristas;
+    \item O balanço de força na direção paralela as cristas e cavas é a
+          aceleração de Coriolis devido a direção do fluxo.
+  \end{itemize}
+}
 \end{frame}
 
 \subsection{Ondas de Kelvin}
@@ -78,18 +115,36 @@
     \begin{column}{0.5\textwidth}
     \begin{block}{}
       Ondas com rotação em um fundo plano:
-      \[\cancelto{0}{\pd{u}{t}} = +fv -g\pd{\eta}{x}\]
-      \[\pd{v}{t} = \cancelto{0}{-fu} -g\pd{\eta}{y}\]
-      \[\pd{\eta}{t} = -h\left(\cancelto{0}{\pd{u}{x}} + \pd{v}{y}\right)\]
+      \[
+          \cancelto{0}{\pd{u}{t}} = +fv -g\pd{\eta}{x}
+       \]
+      \[
+          \pd{v}{t} = \cancelto{0}{-fu} -g\pd{\eta}{y}
+       \]
+      \[
+          \pd{\eta}{t} = -h\left(\cancelto{0}{\pd{u}{x}} + \pd{v}{y}\right)
+       \]
     \end{block}
     \end{column}
     \begin{column}{0.5\textwidth}
     \begin{block}{}
       Ondas com rotação em um fundo plano:
-      \[\frac{\partial^2\hat{\eta}}{\partial x^2} - \frac{1}{gh}\frac{\partial^2\hat{\eta}}{\partial{t^2}} = 0\]
-      \[fv = g\pd{\hat{\eta}}{x} \text{ onde,}\]
-      \[\eta = \eta_o\cos(ky - \omega t)e^{-\frac{fx}{c}}\]
-      \[\frac{f}{c} = \frac{f}{\sqrt{gh}} = \frac{1}{\text{Raio de deformação de Rossby}}\]
+      \[
+          \frac{\partial^2\eta}{\partial y^2} = \frac{1}{gh}\frac{\partial^2\eta}{\partial{t^2}}
+       \]
+      \[
+          fv = g\pd{\eta}{x} \text{ onde,}
+       \]
+      \[
+          \eta = \eta_o\cos(ky - \omega t)e^{-\frac{fx}{c}}
+       \]
+      \[
+          \frac{f}{c} = \frac{f}{\sqrt{gh}} = \frac{1}{\text{Raio de deformação de Rossby}}
+       \]
+      \[
+          \omega = -l\sqrt{gh}
+      \]
+
     \end{block}
     $R_d$ típico é da ordem de 2000 km no oceano aberto, 300 km para regiões
     costeiras.
@@ -99,7 +154,7 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Representação de uma onda de Kelvin.}
+  \frametitle{Representação de uma onda de Kelvin}
   \begin{center}
     \includegraphics[scale=0.45]{../figures/rossby_radius.png}
   \end{center}
@@ -107,7 +162,7 @@
 
 
 \begin{frame}
-  \frametitle{Representação de uma onda de Kelvin.}
+  \frametitle{Representação de uma onda de Kelvin}
   \begin{center}
     \includegraphics[scale=0.65]{../figures/kelvin.png}
   \end{center}
@@ -120,35 +175,69 @@
   \end{center}
 \end{frame}
 
+
+\begin{frame}
+  \frametitle{Resumo de ondas de Kelvin}
+\small{
+  \begin{itemize}[<+-| alert@+>]
+  \item Propaga ao longo da costa de uma forma a manter a costa
+        a sua esquerda (direta) no Hemisfério Sul (Norte);
+  \item A velocidade de fase e grupo é a mesma das ondas longas
+        sem a influência da rotação da Terra (C = Cg = $\sqrt{gh}$);
+  \item As crista e cavas da onda são paralelas à costa;
+  \item As crista decaem exponencialmente para longe da costa na escala do Raio
+        de deformação de Rossby;
+  \item O balanço de forças perpendicular à costa é Geostrófico;
+  \item O balanço de forças ao longo da costa é de uma onda de gravidade típica:
+      Onda variações na pressão guiam a aceleração do fluxo.
+  \end{itemize}
+}
+\end{frame}
+
+
 \subsection{Ondas de Rossby}
 \begin{frame}
-  \frametitle{Ondas de vorticidade -- (Rossby)}
+  \frametitle{Ondas de Rossby (ou de vorticidade)}
 {\scriptsize
   \begin{columns}
     \begin{column}{0.5\textwidth}
     \begin{block}{}
-      \[ \pd{u}{t} = +(f_o + \beta y)v - g\pd{\eta}{x} \]
-      \[ \pd{v}{t} = -(f_o + \beta y)u - g\pd{\eta}{y} \]
-      \[ \pd{\eta}{t} = -h\left(\pd{u}{x} + \pd{v}{y}\right) \]
+      \[
+        \pd{u}{t} - (f_o + \beta y)v = - g\pd{\eta}{x}
+      \]
+      \[
+        \pd{v}{t} + (f_o + \beta y)u = - g\pd{\eta}{y}
+      \]
+      \[
+        \pd{\eta}{t} + h\left(\pd{u}{x} + \pd{v}{y}\right)= 0
+      \]
     \end{block}
     \end{column}
     \begin{column}{0.5\textwidth}
     \begin{block}{}
-      \[\pd{}{t}\nabla^2\eta - \frac{f_o^2}{gh}\eta + \beta\pd{\eta}{x} = 0\text{ onde,}\]
-      \[\eta = \hat{\eta}e^{i(kx + ly -\omega t)}\]
-      \[\omega = \frac{-\beta k}{k^2 + l^2 + \frac{f_o^2}{gh}}\]
+      \[
+        \pd{}{t}\nabla^2\eta - \frac{f_o^2}{gh}\eta + \beta\pd{\eta}{x} = 0\text{ onde,}
+      \]
+      \[
+        \eta = \hat{\eta}e^{i(kx + ly -\omega t)}
+      \]
+      \[
+        \omega = \frac{-\beta k}{k^2 + l^2 + \frac{1}{R^2}}
+      \]
+
+      $R^2 = \frac{gh}{f_o^2}$
     \end{block}
     \end{column}
   \end{columns}
 }
 \vspace{0.5cm}
 \pause
-{\small
-Ondas de Rossby tem a vorticidade como força de restauração e sempre se
-propagam para oeste.
+{\small Ondas de Rossby tem a vorticidade como força de restauração e sempre se
+        propagam para oeste.}
+\[
+  \Pi = \frac{\zeta + f}{H}
+\]
 
-\[\Pi = \frac{\zeta + f}{H}\]
-}
 \end{frame}
 
 \subsection{Teoria e mecanismos de geração de ondas de Rossby}
@@ -190,6 +279,22 @@ propagam para oeste.
   \end{center}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Propriedades das Ondas de Rossby}
+\small{
+  \begin{itemize}[<+-| alert@+>]
+  \item $k < 0$  significa que Ondas de Rossby têm velocidades de fase
+        para Oeste;
+  \item A velocidade de grupo pode ser para Oeste ou Leste;
+  \item As ondas longas tem velocidade de grupo para Oeste;
+  \item As ondas curtas tem velocidade de grupo para Leste;
+  \item Para certos valores de $R$ e $\beta$ tem um máximo valor de $\omega$.
+        Se você mover para Norte esse valor decresce, logo, ondas podem ficar
+        pressas no Equador.
+  \item Essas ondas são sub-inerciais $\omega < f$.
+  \end{itemize}
+}
+\end{frame}
 
 \begin{frame}
 \frametitle{Dever de casa}
