@@ -1,0 +1,372 @@
+% Style.
+\documentclass[letterpaper,portuguese,12pt,pdftex]{exam}
+
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage[left=2.5cm,top=3cm,right=2.5cm]{geometry}
+
+% Portuguese.
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{textcomp}
+
+% Font.
+\usepackage{lmodern}
+
+% Figures.
+\usepackage{epsf,epsfig}
+
+% Bibtex and extras.
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[bookmarks=false,colorlinks=true,urlcolor={green},linkcolor={green},pdfstartview={XYZ null null 1.22}]{hyperref}
+
+% Math.
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{cancel}
+\everymath{\displaystyle}
+
+% Exam.
+\addpoints
+\printanswers
+% \noprintanswers
+\usepackage{color}
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\shadedsolutions
+\renewcommand{\solutiontitle}{\noindent\textbf{Solução:}\par\noindent}
+\pagestyle{headandfoot}
+\footer{}{Página \thepage\ de \numpages}{}
+\boxedpoints
+\pointsinrightmargin
+\pointpoints{ponto}{pontos}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+% \qformat{\textbf{Question\thequestion}\quad(\thepoints)\hfill}
+
+% User commands.
+\newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}
+
+% PDF metadata.
+\pdfinfo{% hyperref overrides this
+  /Title    (Prova 02 -- Ondas e Marés)
+  /Author   (Filipe Fernandes)
+  /Creator  (Filipe Fernandes)
+  /Producer (Filipe Fernandes)
+  /Subject  (prova)
+  /Keywords (prova, oceanografia)
+}
+
+% Front page.
+\title{Prova 06 -- Ondas e Marés}
+\author{Prof. Filipe Fernandes}
+\date{06-Dez-2013}
+
+\begin{document}
+\maketitle
+\doublespacing
+
+\vspace{1cm}
+\hbox to \textwidth{Nome e número de matrícula:\enspace\hrulefill}
+\vspace{1cm}
+
+\begin{minipage}{.8\textwidth}
+Esse exame incluí \numquestions\ questões. O número total de pontos é \numpoints.
+\end{minipage}
+
+% 15
+\begin{questions}
+\question
+Sobre ondas internas e externas.
+
+\begin{parts}
+\part[1]
+Ondas externas são oscilações entre a interface ar-mar, já as ondas internas são
+oscilações na interface entre densidades.  Sabendo que, quanto maior a diferença
+de densidade mais energia será necessária para mudar o estado do sistema, onde
+as oscilações são mais facilmente estabelecidas? Em uma interface interna ou na
+superfície do mar?
+
+\begin{solution}
+As oscilações são mais facilmente estabelecidas em uma interface interna do
+que na superfície do mar.  A diferença de densidade entre duas camadas de água é
+menor do que entre água e ar.  Densidade do ar = 1,2 kg m$^{-3}$ e densidade da
+água do mar = 1025 kg m$^{-3}$.  Consequentemente menos energia é requerida para
+gerar ondas internas do que ondas de superfície de similar amplitude.
+\end{solution}
+
+
+\part[1]
+Sabemos que processos de mistura vertical são cruciais para a vida marinha,
+tornando nutrientes mais acessíveis a biota.  Dito isso, quais ondas são mais importantes no contexto de processos de mistura vertical: ondas de superfície ou
+ondas internas?
+
+\begin{solution}
+Ondas internas são mais importantes no contexto de processos de mistura
+vertical, especialmente quando quebram.
+\end{solution}
+\end{parts}
+
+\question
+A relação de dispersão de ondas de gravidade longas (águas rasas) é dada por:
+
+\[
+  \omega = k\sqrt{gh},
+\]
+
+Sabendo que a velocidade de fase dessas ondas é $C=\sqrt{gh}$ podemos
+re-escrevê-la na forma:
+
+\[
+  \omega = kC,
+\]
+
+
+\begin{parts}
+\part[1]
+Explique como o lado direito da equação se relaciona com o lado esquerdo, ou
+seja, como frequência angular de relaciona com número de onda (A essência de
+qualquer relação de dispersão!).  Faça a mesma consideração em termos de período
+$T$ e comprimento de ondas $L$.
+
+\begin{solution}
+\[
+  \dfrac{\omega}{k} = \sqrt{gh},
+\]
+Quanto maios a frequência (menor o período) mais rápidas serão as ondas.  Já
+quanto menos o número de onda (maior o comprimento), mais lentas serão as ondas.
+\end{solution}
+
+
+\part[1]
+Nas ondas longas acima nós assumimos que o número de Rossby temporal ($R_{oT}$)
+como sendo aproximadamente muito maior que 1:
+\[
+  R_{oT} = \frac{1}{fT} >> 1
+\]
+
+Rearranjando essa equação e substituindo o período $T$ pela frequência $\omega$
+(lembrando que $T = \dfrac{2\pi}{\omega}$) temos:
+
+\[
+  \dfrac{\omega}{2\pi} >> f, \text{ ou } \omega >> f
+\]
+
+Nossa velha conhecida que diz que as ondas de gravidade têm frequência angular
+(período) muito maior (muito menor) que a frequência (período) inercial.
+
+
+Agora imaginei uma onda muito longa com frequência muito baixa, como as ondas de
+Rossby, como seria a relação entre $\omega$ e $f$ para elas?  Podemos descartar
+$f$ como fizemos nas Ondas de gravidade de superfície?
+
+\begin{solution}
+Agora as ondas possuem frequência angular (período) muito menor (maior) que a
+frequência (período) inercial sendo:
+  $\omega << f$
+\end{solution}
+
+\end{parts}
+
+
+\question
+Em aula nos vimos ondas 3 tipos de ondas influenciadas pela rotação da Terra:
+ondas de Poincaré, Kelvin e Rossby.  Todas derivadas do nosso modelo de águas
+rasas.  Porém, cada uma assume diferente premissas para simplificar o problema e
+resolver a onda em questão.
+
+\begin{parts}
+\part[1]
+Como as ondas de Kelvin e Poincaré se diferenciam das ondas de Rossby?\\
+(Dica: lembre-se que $f = f_o + \beta y$)
+
+\begin{solution}
+Ondas de Poincaré e Kelvin são resolvidas no plano-$f$ ($f_o$) ou seja, o
+efeito da rotação é simplificado para primeira ordem como sendo uma expansão
+de Taylor ao redor da latitude.
+\[f \sim f_o = 2\Omega\sin\phi_o \]
+Isso ignora os efeitos da esfericidade da Terra (representada pelo
+plano-$\beta$), essencial para a existências das ondas de Rossby.
+\end{solution}
+
+\part[1]
+A relação de dispersão das ondas de Poincaré é,
+\[
+  \omega = f_o + k\sqrt{gh}
+\]
+
+e de ondas de Kelvin é,
+\[
+  \omega = -l\sqrt{gh}
+\]
+
+Discuta a diferença e semelhança entre essas suas em usando a equação, explique
+a afirmação:
+
+``A onda de Kelvin pode ser considerada um caso especial da onda de Poincaré que,
+viaja sempre com um contorno do seu lado esquerdo (direito) no hemisfério sul
+(norte).''
+(Dica: $k$ é o número de onda em $x$, $l$ é o número de onda em $y$.)
+
+\part[3]
+Usando a relação de dispersão de ondas de Poincaré discuta os extremos onde:
+
+\begin{align*}
+  \omega &>> f_o \text{ e,}\\
+  \omega &\sim f_o
+\end{align*}
+
+\begin{solution}
+$\omega >> f_o.$
+Temos de volta a relação de dispersão de ondas de água rasa.
+$\frac{\omega}{k} = \sqrt{gh}$
+
+$\omega \sim f_o \therefore 0 = ghk^2.$ Como sabemos que $g$ e $h$ não são zero,
+temos $k=0$, ou seja, não há ondas nesse limite.
+\end{solution}
+
+\part[2]
+A onda de Kelvin, como já vimos acima, precisa de um ``contorno'' para se
+propagar.  Em geral, essa ondas são a manifestação das marés na plataforma
+costeira.  Porém, temos um caso especial de ondas de Kelvin chamada de ondas
+de Kelvin Equatorial.  Essas ondas são responsáveis pelo fenômeno conhecido
+como {\it El-Niño}.
+
+Explique como esse tipo de onda pode existir.  Use
+$f = f_o + \beta y$ em sua explicação.\\
+(Dica: Qual é o valor de $f_o$ no equador?)
+
+\begin{solution}
+Como $f = f_o + \beta y$, apesar de $f_o = 0$, $f$ não é zero, pois ainda tem
+o efeito $\beta$.  Já o ``contorno'' necessário para sua existência é a forte
+variação de $f$ ao redor do Equador, pois sai de próximo a zero para um valor
+significativo ($\pm 5^{\circ}$ graus de latitude).
+\end{solution}
+
+\end{parts}
+
+\question
+Ondas de vorticidade (ou ondas Rossby) tem a relação de dispersão definida por:
+
+\[
+  \omega = \dfrac{-\beta k}{k^2 + l^2 + \dfrac{1}{R^2}}
+\]
+
+Sabendo que o comprimento de onda $L$ é dado por $\mathbf{k} = \dfrac{2\pi}{L}$,
+e $\mathbf{k} = \sqrt{k^2 + l^2}$. (Lembre-se que $\mathbf{k}$ é o vetor número.)
+
+\begin{parts}
+
+\part[1]
+Faça as considerações para Ondas de Rossby curtas ($L << R$, comprimento de
+onda menor que raio de deformação) e Ondas de Rossby longas ($L >> R$,
+comprimento de onda maior que o raio de deformação). (Lembre-se que $R$ é o
+raio de deformação de Rossby e é definido por $R = \dfrac{\sqrt{gh}}{f_o}$).
+
+Dica: com algumas manipulações algébricas podemos re-arranjar a relação de
+dispersão para ficar na forma de,
+
+  \[
+    \omega = -\beta k \left( \dfrac{L R^2}{R^2 + L} \right)
+  \]
+
+\vspace{2cm}
+
+\begin{solution}
+  Quando $L << R$ temos,
+  \begin{align*}
+    \omega &= -\beta k \left( \dfrac{L R^2}{R^2 + \cancel{L}} \right) \\
+    \omega &= -\beta k \left( \dfrac{L \cancel{R^2}}{\cancel{R^2}} \right) \\
+    \omega &\approx -\beta k L
+  \end{align*}
+
+  Quando $L >> R$ temos,
+  \begin{align*}
+    \omega &= -\beta k \left( \dfrac{L R^2}{\cancel{R^2} + L} \right) \\
+    \omega &= -\beta k \left( \dfrac{\cancel{L} R^2}{\cancel{L}} \right) \\
+    \omega &\approx -\beta k R^2
+  \end{align*}
+\end{solution}
+
+\part[1]
+A relação de dispersão de Ondas de Rossby Longas do item acima relaciona
+$\omega$, $k$, $\beta$ e $R^2$, enquanto a relação de dispersão das Ondas de
+Rossby Curtas relaciona $\omega$, $k$ e $L$.
+
+Assumindo que as Ondas de Rossby
+tem a dimensão em $x$ muito maior que a dimensão em $y$ (o que significa $l=0$),
+como podemos simplificar ainda mais a relação de dispersão de Ondas de Rossby
+Curtas?
+
+\vspace{2cm}
+
+\begin{solution}
+  \begin{align*}
+    \omega &\approx -\beta k L \\
+    \omega &\approx -\beta k \dfrac{2\pi}{k^2 + \cancel{l^2}} \\
+    \omega &\approx -\dfrac{\beta}{k} \\
+  \end{align*}
+\end{solution}
+
+
+\part[1]
+Usando a forma simplificada da relação de dispersão para Ondas Curtas encontrada
+acima calcule a velocidade de fase $\left( C = \dfrac{\omega}{k} \right)$ e a
+velocidade de grupo $\left( Cg = \dfrac{\partial\omega}{\partial k} \right)$.
+
+\begin{solution}
+  A velocidade de fase da ORC:
+  \begin{align*}
+    \omega &\approx -\dfrac{\beta}{k} \div k\\
+    C = \dfrac{\omega}{k} &\approx -\dfrac{\beta}{k^2}
+  \end{align*}
+
+  A velocidade de grupo da ORC:
+  \begin{align*}
+    \dfrac{\partial \omega}{\partial k} &\approx \dfrac{\partial (-{\beta}k^{-1})}{\partial k} \\
+    Cg = \dfrac{\partial \omega}{\partial k} &\approx -(-\beta){k^{-2}} \\
+    Cg &\approx = \dfrac{\beta}{k^2}
+  \end{align*}
+\end{solution}
+
+\part[1]
+Faça o mesmo para as Ondas de Rossby Longas.
+
+\begin{solution}
+  A velocidade de fase da ORL:
+  \begin{align*}
+    \omega &\approx -\beta k R^2 \div k\\
+    C = \dfrac{\omega}{k} &\approx -\beta R^2
+  \end{align*}
+
+  A velocidade de grupo ORL:
+  \begin{align*}
+    \dfrac{\partial \omega}{\partial k} &\approx \dfrac{\partial(-\beta k R^2)}{\partial k}\\
+    Cg = \dfrac{\partial \omega}{\partial k} &\approx -\beta R^2\\
+  \end{align*}
+\end{solution}
+
+\part[]
+Extra (5 pontos):
+Sabemos que as correntes oceânicas são intensificadas no contorno oeste e que as
+Ondas de Rossby tem um papel fundamental nesse fenômeno.  Explique o papel das
+Ondas de Rossby nesse efeito usando $C$ e $Cg$ calculados acima.  Porque o mesmo
+não ocorre na atmosfera?
+
+(Dica: O que acontece com a onda de Rossby ao encontrar uma barreira?)
+
+\begin{solution}
+As Ondas de Rossby Longas viajam com fase e grupo para Oeste ($Cg = -\beta R^2$),
+mas ao encontrar com o continente essa ondas Longas se tornam ondas curtas e
+propagam fase para Oeste ($C = -\dfrac{\beta}{k^2}$) e grupo para Leste
+($C = \dfrac{\beta}{k^2}$).   As ondas curtas são então dispersivas e se
+acumulam no contorno Oeste, logo, sua energia fica acumulada nos contornos dos continentes.  Já na atmosfera não há contornos, logo não á intensificação.
+\end{solution}
+
+\end{parts}
+
+\end{questions}
+\end{document}
