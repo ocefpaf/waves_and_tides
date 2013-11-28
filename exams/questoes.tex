@@ -1,0 +1,553 @@
+Espectro de ondas
+-----------------
+O espectro de ondas abaixo é típico de uma estação de obervação costeira.
+Explique em detalhes a provável razão da existência dos 2 picos proeminentes no
+sinal.
+
+Ondas de gravidade de superfície Longa vs. Curta
+------------------------------------------------
+Se a profundidade média do canal de Santos é 14 m, use os limites de
+$\dfrac{h}{\lambda}$ para calcular o comprimento de onda, período e velocidades
+de fase e grupo para:
+a. A onda mais curta ``rasa'' (ou ``longa'');
+b. A onda mais longa ``profunda'' (ou ``curta'');
+c. Calcule as mesmas informações para a plataforma com uma profundidade média de
+200 m.
+
+Ressonância de onda de 1/4
+--------------------------
+Considere o caso onde a forçante de oceano aberto na boca do canal é devido a
+maré M2 (principal lunar semi-diurna).  Calcule o comprimento de onda
+($\lambda = \dfrac{2\pi}{k}$) para uma onda estacionária em um canal nas
+seguintes profundidades:
+
+* ho = 1 m
+* ho = 10 m
+* ho = 100 m
+* ho = 4000 m
+
+Em cada caso calcule o comprimento da bacia que levaria e 1/4 de ressonância na
+onda.  Identifique uma feição oceânica real que corresponda a cada profundidade
+do canal e largura da bacia.
+
+Tsunamis em oceano profundo
+---------------------------
+Um terremoto na costa do Peru cria uma onda com comprimento $\lambda >> 4$ km.
+Estime o tempo que leva para essa onda atingir o Japão.
+
+
+Relação de dispersão de ondas de gravidade
+------------------------------------------
+Começando com a equação de ondas de gravidade para águas rasas (ou ondas longas),
+sem rotação nem bordas costeiras):
+
+\[
+  \dfrac{\partial^2 \eta}{\partial x^2}  - \dfrac{1}{gh}\dfrac{\partial^2 \eta}{\partial t^2} = 0
+\]
+
+a.) Mostre que essa equação pode ser satisfeita pela forma de onda:
+\[
+  \eta = \eta_o \cos(kx - \omega t)
+\]
+
+b.) De acordo com os seus cálculos na parte acima qual é o constrição desse tipo
+de ondas que encontramos usando esse sistema de equações?
+(Dica:  Você deve reconhecer pela relação de dispersão de ondas de água rasa).
+
+
+\question
+Identifique a {\bf amplitude}, o {\bf comprimento}, a {\bf frequência},
+o {\bf período} e o {\bf número de onda} nas formas abaixo.
+
+\begin{parts}
+  \part[3]
+  $ \eta = 10 \cos(4x + 2t) $
+
+  \begin{solution}
+    a = 10, k = 4, L = $\frac{2\pi}{k} = \frac{\pi}{2}$, $\omega$ = −2,
+    T = $\frac{2\pi}{\omega} = −\pi$
+  \end{solution}
+
+  \part[3]
+  $ \eta = −0.5 \sin(\pi x − t) $
+
+  (Ponto extra para quem re-escrever a segunda onda utilizando a função cosseno.)
+
+  \begin{solution}
+  a = −0.5, k = $\pi$, L = $\frac{2\pi}{k}$ = 2, $\omega$ = 1,
+  T = $\frac{2\pi}{\omega} = 2\pi$
+
+  {\bf Ponto extra:}
+  Essa onda pode ser re-escrita na forma,  $\eta = −0.5 \cos(\pi x − t + \pi/2)$
+  \end{solution}
+\end{parts}
+
+
+\question
+Dada a relação de dispersão de ondas de gravidade,
+
+\[
+  \omega^2 = gk\tanh(kh),
+\]
+
+
+e as seguintes informações sobre a tangente hiperbólica e a relação entre
+profundidade $h$ e comprimento de onda $L$:
+
+{\bf Ondas longas (ou ondas de águas rasa):}
+\begin{itemize}
+  \item $\tanh(kh) \sim kh; h << L$
+  \item $\frac{h}{L} < \frac{1}{20}$
+\end{itemize}
+
+{\bf Ondas curtas (ou ondas de água profunda):}
+\begin{itemize}
+  \item $\tanh(kh) \sim 1; h >> L$
+  \item $\frac{h}{L} > \frac{1}{2}$
+\end{itemize}
+
+Responda:
+
+\begin{parts}
+  \part[4] Faça a aproximação para águas rasa (ondas longas) e águas profundas
+  (ondas curtas) na {\bf relação de dispersão} e crie uma tabela com as equações
+  para $C$ e $Cg$ em cada um dos regimes de ondas.
+
+  \begin{solution}
+    \raggedright
+    {\bf Onda longa (água rasa):}\\
+    Dispersão: $\omega = k\sqrt{gh}$\\
+    Vel. de Fase: $C = \dfrac{\lambda}{T} = \dfrac{\omega}{k} = \sqrt{gh}$\\
+    Vel. de Grupo: $Cg = \pd{}{k}\left(\omega = k\sqrt{gH}\right)
+    \rightarrow C_g = \sqrt{gh}$\\
+
+    {\bf Ondas curtas (água profunda):}\\
+    Dispersão: $\omega = \sqrt{gk}$\\
+    Vel. de Fase: $C = \dfrac{\lambda}{T} = \dfrac{\omega}{k} = \sqrt{g/k}$\\
+    Vel. de Grupo: $C_g = \pd{}{k}\left[\omega = g^{1/2}k^{1/2}\right]
+    \rightarrow C_g = \dfrac{1}{2}g^{1/2}k^{-1/2} = \dfrac{C}{2}$\\
+  \end{solution}
+
+  \part[2]
+  Explique o fenômeno de {\bf dispersão} e {\bf refração} de ondas usando a
+  {\bf velocidade de fase} ($C$), a {\bf velocidade de grupo} ($C_g$) e a
+  {\bf profundidade} (h).
+
+  \begin{solution}
+    {\bf Dispersão:} Ocorre devido a velocidade de fase ($C$) de ondas curtas
+    ser o dobro da velocidade de grupo ($C_g$), assim algumas ondas ``escapam''
+    do grupo levando a seleção das ondas.
+
+    {\bf Refração:} A refração ocorre sempre que uma parte da onda longa estiver
+    em profundidades diferentes ($h$), assim partes diferentes da mesma onda
+    terão velocidades de fase (e de grupo $C=C_g=\sqrt{gh}$) diferente forçando
+    a mesma a girar.
+  \end{solution}
+
+  \part[2]
+  Para chegar na relação de dispersão e na solução de águas profundas fizemos
+  várias {\bf aproximações}.  Cite {\bf 3} aproximações e explique sua validade
+  {\bf física}, onde/porque ela é {\bf aceitável} e quando (se algum momento)
+  ela pode ser {\bf invalidada}.
+
+  \begin{solution}
+    \begin{itemize}
+      \item Longe o sítio da forçante do vento
+      \item Longe da zona de arrebentação e quebra;
+      \item Dimensões horizontais infinitas;
+      \item Sem atrito;
+      \item Período da onda muito menor que o período inercial;
+      \item Assume-se um estado médio e perturbações sobre esse (as ondas);
+      \item A amplitude da onda é pequena quando comparada com a coluna d'água.
+    \end{itemize}
+  \end{solution}
+
+  \part[2]
+  Quando assumimos uma forma de onda para a solução da
+  {\bf amplitude de pressão} $\mathbb{P}$,
+
+  \begin{equation}
+    \mathbb{P}(z) = \cos(\theta),
+    \label{eq:P}
+  \end{equation}
+
+  na equação de Laplace,
+
+  \begin{equation}
+    \nabla^2 \tilde{p} = 0,
+    \label{eq:Laplace}
+  \end{equation}
+
+  resultamos na Equação Diferencial de Segunda Ordem Homogênea abaixo:
+
+  \begin{equation}
+    \frac{\partial^2\mathbb{P}}{\partial z^2} - \mathbf{K}^2\mathbb{P}=0
+    \label{eq:dif}
+  \end{equation}
+
+  Para resolvermos essa equação precisamos de duas condições de contorno.
+  Explique:
+
+  \begin{itemize}
+    \item Por que {\bf não} utilizamos condições de contorno em todas as
+          dimensões $x$, $y$, $z$? Onde colocamos as condições de contorno?
+          {\bf Explique a sua resposta!}
+    \item Ambas condições de contorno são {\bf dinâmicas}, {\bf ou estáticas}?
+          Se for(em) dinâmica(s), como fazemos para ``{\bf acompanhar}'' a
+          variável enquanto ela muda?
+  \end{itemize}
+
+  (Ponto extra: Substitua a equação \ref{eq:P} em \ref{eq:Laplace} e chegue na
+  diferencial \ref{eq:dif} lembrando que $\mathbf{K} = \sqrt{k^2 + l^2}$.)
+
+  \begin{solution}
+    1) Utilizamos condições de contorno apenas na {\bf dimensões vertical}
+    ($z$), deixando as dimensões horizontais ($x$, $y$) como ``infinitas''.
+    Isso porque as ondas se manifestam como {\bf alterações verticais na
+    pressão.}
+
+    2) {\bf Não}.  Na superfície usamos a condição {\bf dinâmica} com
+    continuidade de pressões.  Já fundo usamos condição {\bf estática} sem
+    movimento ``cruzando'' o fundo).
+
+    3) Na condições de contorno dinâmica usamos uma expansão em {\bf Série de
+    Taylor} para centrar a condição de contorno em $z=0$.
+  \end{solution}
+\end{parts}
+
+\question
+Cálculos básicos de ondas.
+
+\begin{parts}
+  \part[2]
+  Se {\bf 16 cristas} de ondas passam {\bf sucessivamente} por um ponto fixo num
+  intervalo de {\bf 1 minuto e 40 segundos}, qual é a {\bf frequência angular}
+  dessas ondas?
+
+  \begin{solution}
+    $T = \dfrac{60 + 40}{16} = 6.25$ s
+
+    $\omega = \dfrac{2\pi}{6.25} \sim 1$ s$^{-1}$
+  \end{solution}
+
+  \part[2]
+  O {\bf período} de uma onda é de {\bf 25 segundos}.  Qual seria a
+  {\bf velocidade} dessa onda em {\bf águas profundas}?
+
+  \begin{solution}
+  \begin{align*}
+    \omega &= \sqrt{gk} \therefore k = \omega^2/g, \\
+    C &= \sqrt{g/k} \therefore C = \sqrt{g^2/\omega^2} = \dfrac{g}{\omega} \\
+    \omega &= \dfrac{2\pi}{25} = 0.2513 \text{ s}^{-1} \\
+    C &= \dfrac{9.8}{0.2513} = 38.99 \text{ m s}^{-1} \\
+  \end{align*}
+  \end{solution}
+
+  \part[2]
+  Qual seria a {\bf velocidade} de uma onda com {\bf comprimento} de ondas
+  de 312 m em {\bf águas profundas}?  E em {\bf águas rasas}?
+
+  \begin{solution}
+    $C = \sqrt{g/k} = \sqrt{9.8 / 0.02013} = 22.06$ m s$^{-1}$
+
+    Já para águas rasas (ondas longas) temos como calcular o limite superior
+    das velocidades.
+
+    $\dfrac{h}{312} < \dfrac{1}{20} \therefore h <  15.6$ m
+
+    $C < \sqrt{9.8 \times 15.6}$
+
+    $C < 12.36$ m s$^{-1}$
+  \end{solution}
+\end{parts}
+
+\question[3]
+Sabemos que a geração de ondas de superficiais de gravidade está associada ao
+vento.  Cite os {\bf 3 fatores} que precisamos saber sobre o {\bf vento} para
+estimar a quantidade de energia que será transferida para as ondas geradas.
+
+(Ponto extra: Há algum fator {\bf limitante} que não está associado ao vento?)
+
+\begin{solution}
+  \begin{itemize}
+    \item A velocidade do vento;
+    \item Pista do vento (a distância em que o vento sopra);
+    \item Duração do vento;
+  \end{itemize}
+  {\bf Ponto extra:} Profundidade da coluna d'água é um fator limitante
+  (ressacas costeiras).
+\end{solution}
+
+\end{questions}
+
+
+Ondas internas vs. Ondas Externas
+---------------------------------
+Q: Ondas externas são oscilações entre a interface ar-mar, já as ondas internas são
+oscilações na interface entre densidades.  Sabendo que quanto maior a diferença
+de densidade mais energia é necessário para mudar o estado do sistema, onde as
+oscilações são mais facilmente estabelecidas? Em uma interface interna ou na
+superfície do mar?
+
+A: As oscilações são mais facilmente estabelecidas em uma interface interna do
+que na superfície do mar.  A diferença de densidade entre duas camadas de água é
+menor do que entre água e ar.  Densidade do ar = 1,2 kg m$^{-3}$ e densidade da
+água do mar = 1025 kg m$^{-3}$.  Consequentemente menos energia ́e requerida para
+gerar ondas internas do que ondas de superfície de similar amplitude.
+
+
+Q: Quais ondas, de amplitude similar, ``viajam'' mais lentamente: ondas de
+superfície ou ondas internas?
+
+A: Ondas internas ``viajam'' mais lentamente que ondas de superfície de similar amplitude.
+
+Q: Quais ondas são mais importantes no contexto de processos de mistura vertical:
+ondas de superfície ou ondas internas?
+
+A: Ondas internas s ao mais importantes no contexto de processos de mistura
+vertical, especialmente quando quebram.
+
+
+\question
+O diagrama \ref{fig:shallow_water} representa a geometria do modelo de águas
+rasas (equações \ref{eq:x-dir}, \ref{eq:y-dir} e \ref{eq:continuity}).
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=1]{../../figures/aguas_rasas.pdf}
+  \label{fig:shallow_water}
+\end{figure}
+
+
+\begin{align}
+  \pd{u}{t} + u\pd{u}{x} + v\pd{u}{y} &= +fv -g\pd{\eta}{x} \label{eq:x-dir} \\
+  \pd{v}{t} + u\pd{v}{x} + v\pd{v}{y}&= -fu -g\pd{\eta}{y} \label{eq:y-dir} \\
+  \pd{\eta}{t} + \pd{}{x}(Hu) + \pd{}{y}(Hv) &= 0 \label{eq:continuity}
+\end{align}
+
+ \begin{parts}
+  \part[2]
+  Explique com suas palavras $\eta$, $h$, $H$ e $b$.
+
+  \begin{solution}
+    $\eta \rightarrow$ Elevação da superfície livre.  Varia no espaço-tempo.\\
+    $h \rightarrow$ Altura média da coluna d'água.  Não varia no espaço-tempo.\\
+    $H \rightarrow$ Altura da coluna d'água.  Varia no espaço-tempo (Com $\eta$  e $b$).\\
+    $b \rightarrow$ Perfil batimétrico.  Varia apenas no espaço.
+  \end{solution}
+
+  \part[3]
+  Em aula assumimos que o número de Rossby ($R_o$) e muito menor que 1.
+  \[ R_o = \frac{U}{fL} << 1 \]
+
+  Sabendo que $R_o$ é a escala da {\bf velocidade} sobre a escala {\bf horizontal
+  de comprimento} divididos pelo {\bf parâmetro de Coriolis} quais expressões das
+  equações \ref{eq:x-dir} e \ref{eq:y-dir} podemos eliminar?  A equação fica
+  completamente linear?
+
+  \begin{solution}
+  \( R_o = \frac{U}{fL} << 1 \) significa que podemos cortar todos os termos
+  advectivos.  Pois a escala da velocidade $U (u,v,uu,uv,vv)$ sobre a escala de
+  tamanho $L (x,y)$ é muito menor que a frequência de Coriolis $f$
+  \( \frac{U}{L} << f\).
+
+  \begin{align*}
+  \pd{u}{t} + \cancel{u\pd{u}{x}} + \cancel{v\pd{u}{y}} &= +fv -g\pd{\eta}{x} \\
+  \pd{v}{t} + \cancel{u\pd{v}{x}} + \cancel{v\pd{v}{y}} &= -fu -g\pd{\eta}{y}
+  \end{align*}
+  \end{solution}
+
+  \part[3]
+  Assumindo $R_o << 1$ nos permitiu eliminar os termos não lineares das equações
+  do movimento nas direções $x$ e $y$ (\ref{eq:x-dir} e \ref{eq:y-dir}).  Porém,
+  a equação da continuidade (\ref{eq:continuity}) ainda é não-linear.
+
+  Identifique o termo não linear e explique como aproximação abaixo nos
+  permite linearizar o problema.
+
+  (Dica: A primeira aproximação é chamada de ``ondas de pequena amplitude''.  Já
+  a segunda nos diz algo sobre a batimetria!)
+
+  \begin{align*}
+  \eta &<< H\\
+  b &<< h
+  \end{align*}
+
+  \begin{solution}
+   A aproximação de ondas de pequena amplitude ($\eta << H$) diz que a elevação
+   do nível do mar é muito menor que a coluna d'água.  Isso nos permite dizer
+   que $H$ não varia no tempo com $\eta$.
+
+   A aproximação feita com a batimetria ($b<<h$) nos diz que a variação
+   batimétrica é muito menor que á média da coluna d'água.  Isso nos permite
+   ignorar as variações da topografia de fundo, logo $h \sim H$.  Agora podemos
+   simplificar a equação da continuidade para a forma linear assumindo um $h$
+   constante:
+   \[ \pd{\eta}{t} = -h\left( \pd{u}{x} + \pd{v}{y}\right)\]
+  \end{solution}
+
+  \part[2] Nós também assumimos o número de Rossby temporal ($R_{oT}$) como
+  sendo aproximadamente 1:
+  \[ R_{oT} = \frac{1}{fT} \sim 1 \]
+
+  O que essa aproximação significa?  Como era o Rossby temporal das ondas curtas
+  e longas não influenciadas pela rotação da Terra?
+
+  \begin{solution}
+   Quando o número de Rossby temporal é aproximadamente ``1'' a rotação da
+   Terra se torna importante na escala em estudo pois a frequência do movimento
+   $\frac{1}{T}$ é aproximadamente igual à frequência de Coriolis $f$.
+   \[ \frac{1}{T} \sim f \]
+
+   Nas ondas longas e curtas não influenciadas pela rotação da Terra nos temos
+   que a frequência do movimento é muito maior que a frequência de Coriolis.
+   \( \frac{1}{T} >> f \), ou \( R_{oT} >> 1 \)
+  \end{solution}
+ \end{parts}
+
+\question
+ Em aula nos vimos ondas 3 tipos de ondas influenciadas pela rotação da Terra:
+ ondas de Poincaré, Kelvin e Rossby.  Todas derivadas do nosso
+ modelo de águas rasas.  Porém, cada uma assume diferente premissas para
+ simplificar o problema e resolver a onda em questão.
+
+\begin{parts}
+ \part[2]
+ Como as ondas de Kelvin e Poincaré se diferenciam das ondas de Rossby?\\
+ (Dica: $f = f_o + \beta y$)
+
+ \begin{solution}
+  Ondas de Poincaré e Kelvin são resolvidas no plano-$f$ ($f_o$) ou seja, o
+  efeito da rotação é simplificado para primeira ordem como sendo uma expansão
+  de Taylor ao redor da latitude.
+  \[f \sim f_o = 2\Omega\sin\phi_o \]
+  Isso ignora os efeitos da esfericidade da Terra (representada pelo
+  plano-$\beta$), essencial para a existências das ondas de Rossby.
+ \end{solution}
+
+  \part[1]
+  A onda de Kelvin é um caso especial de onda de Poincaré que viaja sempre com
+  um contorno do seu lado esquerdo (direito) no hemisfério sul (norte).  Dito
+  isso, simplifique as equações do nosso modelo de águas rasas (\ref{eq:x-dir},
+  \ref{eq:y-dir} e \ref{eq:continuity}) para uma ondas de Kelvin.
+
+\vspace{2cm}
+\begin{solution}
+  \begin{align*}
+  \cancelto{0}{\pd{u}{t}} &= +fv -g\pd{\eta}{x}\\
+  \pd{v}{t} &= \cancelto{0}{-fu} -g\pd{\eta}{y}\\
+  \pd{\eta}{t} &= -h\left(\cancelto{0}{\pd{u}{x}} + \pd{v}{y}\right)
+  \end{align*}
+\end{solution}
+
+  \part[3]
+  A relação de dispersão das ondas de Poincaré é:
+  \[\omega^2 = f_o^2 + ghk^2\]
+
+  Discuta os extremos onde:\\
+  $\omega >> f_o$ e $\omega \sim f_o$\\
+  (Dica, prove que $k=0$ quando $\omega \sim f_o$)
+
+\begin{solution}
+  $\omega >> f_o \rightarrow$ Temos de volta a relação de dispersão de ondas de água
+  rasa.\\
+  \[\frac{\omega}{k} = \sqrt{gh} \]
+  $\omega \sim f_o \rightarrow 0 = ghk^2$, como sabemos que $g$ e $h$ não são zero,
+  temos $k=0$
+\end{solution}
+
+  \part[2]
+  A solução das velocidades $u$ e $v$ e $\eta$ de ondas de Poincaré é:
+  \begin{align*}
+    u &= u_o\cos(kx - \omega t)\\
+    v &= -\frac{f_o}{\omega}u_o\sin(kx - \omega t)\\
+    \eta &= \frac{khu_o}{\omega}\cos(kx - \omega t)
+  \end{align*}
+
+Podemos ver que a componente zonal ($x$) oscila como uma onda de águas rasa,
+enquanto a componente meridional ($y$) oscila ortogonalmente à $x$ e
+é ``escalada'' pelo termo $\frac{f_o}{\omega}$.  Também sabemos que no extremo
+onde $\omega = f_o$, $k=0$. Como ficam as oscilações descritas acima?
+
+(Dica: Essas são as oscilações inerciais, ou seja, oscilações com a frequências
+de Coriolis $f$.)
+
+\begin{solution}
+Sem elevação $\eta = 0$, $u$ e $v$ oscilam como ``oscilações inerciais''.
+\begin{align*}
+  u &= u_o\cos(\cancelto{0}{{kx}} - \omega t)\\
+  v &= -u_o\sin(\cancelto{0}{{kx}} - \omega t)\\
+  \eta &= \cancelto{0}{\frac{khu_o}{\omega}\cos(kx - \omega t)}
+\end{align*}
+\end{solution}
+
+  \part[2]
+  A onda de Kelvin, como já vimos acima, precisa de um ``contorno'' para se
+  propagar.  Em geral, essa ondas são a manifestação das marés na plataforma
+  costeira.  Porém, temos um caso especial de ondas de Kelvin chamada de ondas
+  de Kelvin Equatorial.  Essas ondas são responsáveis pelo fenômeno conhecido
+  como {\it el-niño}.
+
+  Explique como esse tipo de onda pode existir.  Use
+  $f = f_o + \beta y$ em sua explicação.\\
+  (Dica: Como é a forma de $f_o$ no equador?)
+
+  \begin{solution}
+   Como $f = f_o + \beta y$, apesar de $f_o = 0$, $f$ não é zero, pois ainda tem
+   o efeito $\beta$.  Já o ``contorno'' necessário para sua existência é a forte
+   variação de $f$ ao redor do Equador, pois sai de próximo a zero para um valor
+   significativo ($\pm 5^{\circ}$ graus de latitude).
+  \end{solution}
+
+\end{parts}
+
+\question
+Ondas de vorticidade (ou ondas Rossby).
+
+Para descrever as ondas de Rossby em aula nós utilizamos a forma completa de $f$.
+
+\begin{align*}
+  \pd{u}{t} &= (f_o + \beta y)v - g\pd{\eta}{x}\\
+  \pd{v}{t} &= -(f_o + \beta y)u - g\pd{\eta}{y}\\
+  \pd{\eta}{t} &= -h\left(\pd{u}{x} + \pd{v}{y}\right)
+\end{align*}
+
+\begin{parts}
+\part[3]
+Explique o que a aproximação do plano $\beta$ representa.
+
+\begin{solution}
+ O plano $\beta$ é a aproximação para representar a esfericidade da Terra em
+ coordenadas cartesianas.
+ \[ \beta = \frac{2\Omega\cos(\phi_o)}{R}\]
+\end{solution}
+
+\part[1]
+A relação de dispersão de ondas de Rossby é dada por:
+\[\omega = \frac{-\beta k}{k^2 + l^2 + \frac{f_o^2}{gh}}\]
+
+Prove que essas ondas se propagam energia apenas para Oeste.
+
+(Dicas: Energia se propaga com a velocidade de fase $C$.)
+
+\begin{solution}
+ \[
+    C \equiv \frac{\omega}{k} = \frac{-\beta}{k^2 + l^2 + \frac{f_o^2}{gh}}
+ \]
+ $C$ é sempre negativo, ou seja se propaga na direção $-x$, Oeste no nosso
+ sistema de coordenadas.
+\end{solution}
+
+
+\part[1]
+Sabemos que as correntes oceânicas são intensificadas no contorno oeste.  Qual é
+o papel das ondas de Rossby nesse efeito?  Sabemos que as ondas de Rossby
+também ocorrendo na atmosfera, porque não temos a intensificação na atmosfera?
+
+\begin{solution}
+ As ondas transportam energia.  Como as ondas de Rossby viajam apenas para Oeste,
+ a sua energia fica acumulada nos contornos dos continentes.  Já na atmosfera
+ não há contornos, logo não á intensificação.
+\end{solution}
+
+\end{parts}
