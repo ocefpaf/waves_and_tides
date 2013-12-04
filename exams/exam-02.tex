@@ -31,8 +31,8 @@
 
 % Exam.
 \addpoints
-\printanswers
-% \noprintanswers
+% \printanswers
+\noprintanswers
 \usepackage{color}
 \definecolor{SolutionColor}{rgb}{0.8,0.9,1}
 \shadedsolutions
@@ -61,7 +61,7 @@
 }
 
 % Front page.
-\title{Prova 06 -- Ondas e Marés}
+\title{Prova 02 -- Ondas e Marés}
 \author{Prof. Filipe Fernandes}
 \date{06-Dez-2013}
 
@@ -69,14 +69,30 @@
 \maketitle
 \doublespacing
 
-\vspace{1cm}
+\vspace{2cm}
 \hbox to \textwidth{Nome e número de matrícula:\enspace\hrulefill}
-\vspace{1cm}
+\vspace{2cm}
 
 \begin{minipage}{.8\textwidth}
 Esse exame incluí \numquestions\ questões. O número total de pontos é \numpoints.
+\vspace{1cm}
+
+Essa prova segue o Acordo Ortográfico da Língua Portuguesa de 1990 (vigor no
+início 2009).  Por isso erros de ortografia e gramática serão descontados da sua
+nota.
+
+A prova deve ser feita individualmente e sem consulta.  O aluno deverá usar
+CANETA (preta ou azul) para responder as questões – qualquer questão respondida
+à lápis não será considerada na hora da correção.  Coloque seu nome em TODAS as
+folhas.
+
+\vspace{1cm}
+
+Leia atentamente todas as questões: a interpretação faz parte da questão.
+
 \end{minipage}
 
+\clearpage
 % 15
 \begin{questions}
 \question
@@ -128,7 +144,7 @@ re-escrevê-la na forma:
 \begin{parts}
 \part[1]
 Explique como o lado direito da equação se relaciona com o lado esquerdo, ou
-seja, como frequência angular de relaciona com número de onda (A essência de
+seja, como frequência angular de relaciona com número de onda. (A essência de
 qualquer relação de dispersão!).  Faça a mesma consideração em termos de período
 $T$ e comprimento de ondas $L$.
 
@@ -136,8 +152,8 @@ $T$ e comprimento de ondas $L$.
 \[
   \dfrac{\omega}{k} = \sqrt{gh},
 \]
-Quanto maios a frequência (menor o período) mais rápidas serão as ondas.  Já
-quanto menos o número de onda (maior o comprimento), mais lentas serão as ondas.
+Quanto maior a frequência (menor o período) mais rápidas serão as OL.  Já
+quanto menor o número de onda (maior o comprimento), mais lentas serão as OL.
 \end{solution}
 
 
@@ -155,12 +171,12 @@ Rearranjando essa equação e substituindo o período $T$ pela frequência $\ome
   \dfrac{\omega}{2\pi} >> f, \text{ ou } \omega >> f
 \]
 
-Nossa velha conhecida que diz que as ondas de gravidade têm frequência angular
+Nossa velha conhecida, dizendo que as ondas de gravidade têm frequência angular
 (período) muito maior (muito menor) que a frequência (período) inercial.
 
 
-Agora imaginei uma onda muito longa com frequência muito baixa, como as ondas de
-Rossby, como seria a relação entre $\omega$ e $f$ para elas?  Podemos descartar
+Agora imaginem uma onda muito longa com frequência muito baixa (Ex.: as ondas de
+Rossby), como seria a relação entre $\omega$ e $f$ para elas?  Podemos descartar
 $f$ como fizemos nas Ondas de gravidade de superfície?
 
 \begin{solution}
@@ -203,7 +219,7 @@ e de ondas de Kelvin é,
   \omega = -l\sqrt{gh}
 \]
 
-Discuta a diferença e semelhança entre essas suas em usando a equação, explique
+Discuta a diferença e semelhança entre essas suas em usando a equação e explique
 a afirmação:
 
 ``A onda de Kelvin pode ser considerada um caso especial da onda de Poincaré que,
@@ -273,9 +289,8 @@ dispersão para ficar na forma de,
     \omega = -\beta k \left( \dfrac{L R^2}{R^2 + L} \right)
   \]
 
-\vspace{2cm}
 
-\begin{solution}
+  \begin{solution}
   Quando $L << R$ temos,
   \begin{align*}
     \omega &= -\beta k \left( \dfrac{L R^2}{R^2 + \cancel{L}} \right) \\
@@ -296,12 +311,9 @@ A relação de dispersão de Ondas de Rossby Longas do item acima relaciona
 $\omega$, $k$, $\beta$ e $R^2$, enquanto a relação de dispersão das Ondas de
 Rossby Curtas relaciona $\omega$, $k$ e $L$.
 
-Assumindo que as Ondas de Rossby
-tem a dimensão em $x$ muito maior que a dimensão em $y$ (o que significa $l=0$),
-como podemos simplificar ainda mais a relação de dispersão de Ondas de Rossby
-Curtas?
-
-\vspace{2cm}
+Assumindo que as Ondas de Rossby tem a dimensão em $x$ muito maior que a
+dimensão em $y$ (o que significa $l\equiv0$), como podemos simplificar ainda
+mais a relação de dispersão de Ondas de Rossby Curtas?
 
 \begin{solution}
   \begin{align*}
