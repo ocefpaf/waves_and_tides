@@ -31,8 +31,7 @@
 
 % Exam.
 \addpoints
-% \printanswers
-\noprintanswers
+\printanswers % \noprintanswers
 \usepackage{color}
 \definecolor{SolutionColor}{rgb}{0.8,0.9,1}
 \shadedsolutions
@@ -77,18 +76,20 @@
 Esse exame incluí \numquestions\ questões. O número total de pontos é \numpoints.
 \vspace{1cm}
 
-Essa prova segue o Acordo Ortográfico da Língua Portuguesa de 1990 (vigor no
-início 2009).  Por isso erros de ortografia e gramática serão descontados da sua
-nota.
+Essa prova segue o Acordo Ortográfico da Língua Portuguesa de 1990 (em vigor no
+início de 2009).  Por isso erros de ortografia e gramática serão descontados da
+sua nota final.
 
 A prova deve ser feita individualmente e sem consulta.  O aluno deverá usar
 CANETA (preta ou azul) para responder as questões – qualquer questão respondida
 à lápis não será considerada na hora da correção.  Coloque seu nome em TODAS as
-folhas.
+folhas e numere as mesma colocando o número total de folhas (Ex.: 1/4, 2/4 e
+etc).
 
 \vspace{1cm}
 
-Leia atentamente todas as questões: a interpretação faz parte da questão.
+Leia atentamente todas as questões: a interpretação faz parte da prova e dúvidas
+serão esclarecidas apenas após o término da mesma.
 
 \end{minipage}
 
@@ -104,7 +105,7 @@ Ondas externas são oscilações entre a interface ar-mar, já as ondas internas
 oscilações na interface entre densidades.  Sabendo que, quanto maior a diferença
 de densidade mais energia será necessária para mudar o estado do sistema, onde
 as oscilações são mais facilmente estabelecidas? Em uma interface interna ou na
-superfície do mar?
+superfície do mar? Justifique a sua resposta.
 
 \begin{solution}
 As oscilações são mais facilmente estabelecidas em uma interface interna do
@@ -118,11 +119,12 @@ gerar ondas internas do que ondas de superfície de similar amplitude.
 \part[1]
 Sabemos que processos de mistura vertical são cruciais para a vida marinha,
 tornando nutrientes mais acessíveis a biota.  Dito isso, quais ondas são mais importantes no contexto de processos de mistura vertical: ondas de superfície ou
-ondas internas?
+ondas internas? Justifique a sua resposta.
 
 \begin{solution}
 Ondas internas são mais importantes no contexto de processos de mistura
-vertical, especialmente quando quebram.
+vertical, especialmente quando quebram e levam nutrientes da região abaixo da
+picnoclina para a base da camada de mistura.
 \end{solution}
 \end{parts}
 
@@ -200,7 +202,7 @@ Como as ondas de Kelvin e Poincaré se diferenciam das ondas de Rossby?\\
 (Dica: lembre-se que $f = f_o + \beta y$)
 
 \begin{solution}
-Ondas de Poincaré e Kelvin são resolvidas no plano-$f$ ($f_o$) ou seja, o
+Ondas de Poincaré e Kelvin são resolvidas no plano-$f$ ($f \equiv f_o$) ou seja, o
 efeito da rotação é simplificado para primeira ordem como sendo uma expansão
 de Taylor ao redor da latitude.
 \[f \sim f_o = 2\Omega\sin\phi_o \]
@@ -219,13 +221,21 @@ e de ondas de Kelvin é,
   \omega = -l\sqrt{gh}
 \]
 
-Discuta a diferença e semelhança entre essas suas em usando a equação e explique
+Discuta a diferença e semelhança entre essas duas em usando a equação e explique
 a afirmação:
 
 ``A onda de Kelvin pode ser considerada um caso especial da onda de Poincaré que,
 viaja sempre com um contorno do seu lado esquerdo (direito) no hemisfério sul
 (norte).''
 (Dica: $k$ é o número de onda em $x$, $l$ é o número de onda em $y$.)
+
+\begin{solution}
+  A onda de Kelvin é uma onda ``sem a influência da rotação da Terra'' em
+  ``$y$'', mas com a influência da Rotação da Terra em seu balanço Geostrófico
+  em ``$x$''.  Já a Poincaré pode ser vista como uma Onda de Kelvin ``Sem essa
+  restrição assimétrica na horizontal'', sendo isotrópica e com a influência da
+  rotação em ambos ``$x$'' e ``$y$'' igualmente.
+\end{solution}
 
 \part[3]
 Usando a relação de dispersão de ondas de Poincaré discuta os extremos onde:
@@ -286,22 +296,22 @@ Dica: com algumas manipulações algébricas podemos re-arranjar a relação de
 dispersão para ficar na forma de,
 
   \[
-    \omega = -\beta k \left( \dfrac{L R^2}{R^2 + L} \right)
+    \omega = -\beta k \left( \dfrac{L^2 R^2}{R^2 + L^2} \right)
   \]
 
 
   \begin{solution}
-  Quando $L << R$ temos,
+  Onda curta (quando $L << R$),
   \begin{align*}
-    \omega &= -\beta k \left( \dfrac{L R^2}{R^2 + \cancel{L}} \right) \\
-    \omega &= -\beta k \left( \dfrac{L \cancel{R^2}}{\cancel{R^2}} \right) \\
-    \omega &\approx -\beta k L
+    \omega &= -\beta k \left( \dfrac{L^2 R^2}{R^2 + \cancelto{<< R^2}{L^2}} \right) \\
+    \omega &= -\beta k \left( \dfrac{L^2 \cancel{R^2}}{\cancel{R^2}} \right) \\
+    \omega &\approx -\beta k L^2
   \end{align*}
 
-  Quando $L >> R$ temos,
+  Onda longa (quando $L >> R$),
   \begin{align*}
-    \omega &= -\beta k \left( \dfrac{L R^2}{\cancel{R^2} + L} \right) \\
-    \omega &= -\beta k \left( \dfrac{\cancel{L} R^2}{\cancel{L}} \right) \\
+    \omega &= -\beta k \left( \dfrac{L^2 R^2}{\cancelto{<< L^2}{R^2} + L^2} \right) \\
+    \omega &= -\beta k \left( \dfrac{\cancel{L^2} R^2}{\cancel{L^2}} \right) \\
     \omega &\approx -\beta k R^2
   \end{align*}
 \end{solution}
@@ -317,8 +327,8 @@ mais a relação de dispersão de Ondas de Rossby Curtas?
 
 \begin{solution}
   \begin{align*}
-    \omega &\approx -\beta k L \\
-    \omega &\approx -\beta k \dfrac{2\pi}{k^2 + \cancel{l^2}} \\
+    \omega &\approx -\beta k L^2 \\
+    \omega &\approx -\beta \cancel{k} \dfrac{2\pi}{k\cancel{^2} + \cancelto{0}{l^2}} \\
     \omega &\approx -\dfrac{\beta}{k} \\
   \end{align*}
 \end{solution}
@@ -372,10 +382,13 @@ não ocorre na atmosfera?
 
 \begin{solution}
 As Ondas de Rossby Longas viajam com fase e grupo para Oeste ($Cg = -\beta R^2$),
-mas ao encontrar com o continente essa ondas Longas se tornam ondas curtas e
-propagam fase para Oeste ($C = -\dfrac{\beta}{k^2}$) e grupo para Leste
-($C = \dfrac{\beta}{k^2}$).   As ondas curtas são então dispersivas e se
-acumulam no contorno Oeste, logo, sua energia fica acumulada nos contornos dos continentes.  Já na atmosfera não há contornos, logo não á intensificação.
+mas ao encontrar se aproximarem do continente essa ondas Longas se tornam ondas
+curtas (razão de aspecto em ``$x$'' é muito menor que em ``$y$'' próximo à
+costa) e propagam fase para Oeste $\left( C = -\dfrac{\beta}{k^2} \right)$ e
+grupo para Leste $\left( C = \dfrac{\beta}{k^2} \right)$.   As ondas curtas são
+então dispersivas e se acumulam no contorno Oeste, logo, sua energia fica
+acumulada nos contornos dos continentes.  Já na atmosfera não há contornos, logo
+não á intensificação.
 \end{solution}
 
 \end{parts}
