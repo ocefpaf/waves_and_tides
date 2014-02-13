@@ -31,8 +31,7 @@
 
 % Exam.
 \addpoints
-\printanswers
-% \noprintanswers
+% \printanswers
 \usepackage{color}
 \definecolor{SolutionColor}{rgb}{0.8,0.9,1}
 \shadedsolutions
@@ -81,38 +80,42 @@ Esse exame incluí \numquestions\ questões. O número total de pontos é \numpo
 
 \question[8]
 Partindo das {\bf três componentes da equação do movimento} nas direções
-$x, y, z$ responda:
+$x$, $y$ e $z$,
 
 \begin{align*}
 x: \pd{u}{t} &+ u\pd{u}{x} &+ v\pd{u}{y} &+ w\pd{u}{z} &= &+ fv &- \dfrac{1}{\rho}\pd{p}{x}         &+ \dfrac{1}{\rho}\left(\pd{\tau^{xx}}{x} + \pd{\tau^{xy}}{y} + \pd{\tau^{xz}}{z}\right) \\
 y: \pd{v}{t} &+ u\pd{v}{x} &+ v\pd{v}{y} &+ w\pd{v}{z} &= &- fv &- \dfrac{1}{\rho}\pd{p}{y}         &+ \dfrac{1}{\rho}\left(\pd{\tau^{xy}}{x} + \pd{\tau^{yy}}{y} + \pd{\tau^{yz}}{z}\right) \\
-z: \pd{w}{t} &+ u\pd{w}{x} &+ v\pd{w}{y} &+ w\pd{w}{z} &= &+  0 &- \dfrac{1}{\rho}\pd{p}{z} -\rho g &+ \dfrac{1}{\rho}\left(\pd{\tau^{xz}}{x} + \pd{\tau^{yz}}{y} + \pd{\tau^{zz}}{z}\right)
+z: \pd{w}{t} &+ u\pd{w}{x} &+ v\pd{w}{y} &+ w\pd{w}{z} &= &+  0 &- \dfrac{1}{\rho}\pd{p}{z} -\rho g &+ \dfrac{1}{\rho}\left(\pd{\tau^{xz}}{x} + \pd{\tau^{yz}}{y} + \pd{\tau^{zz}}{z}\right),
 \end{align*}
 
+responda:
 \begin{itemize}
-  \item O sistema acima é fechado com solução possível caso assumirmos
-        densidade constante e atrito desprezível?
   \item Explique {\bf cada termo} das equações;
-  \item Mostre o desenvolvimento de como chegar na equação de {\bf Laplace}
-        ($\nabla^2 \tilde{p}= 0$).  {\bf Comente e explique} pelo menos 6
-        {\bf aproximações} a medida que vai aplicando as mesmas.
+  \item O sistema se encontra fechado e com solução possível caso
+        consideremos a densidade constante e o atrito desprezível?
+  \item Comente sobre as aproximações usadas para chegar na equação de
+        {\bf Laplace} para as pressões ($\nabla^2 \tilde{p}= 0$).
+        {\bf Comente e explique} pelo menos 5.
 \end{itemize}
 
 
 \begin{solution}
   \begin{itemize}
-    \item Não, mesmo assim temos 3 equações e 4 incógnitas $(u, v, w, p)$,
-          precisamos da equação da continuidade
-          ($\pd{u}{x} + \pd{v}{y} + \pd{w}{z} = 0$) para fechar o sistema.
+    \item Não, mesmo assim teremos 3 equações e 4 incógnitas ($u$, $v$, $w$ e
+    $p$), precisamos da equação da continuidade
+    $\left( \pd{u}{x} + \pd{v}{y} + \pd{w}{z} = 0 \right)$ para fechar o sistema.
     \item ``locais, advectivos, Coriolis, FGP, FA e g''
     \item ``Apostila''
   \end{itemize}
 \end{solution}
 
 \question[4]
-Partindo da {\bf relação de dispersão} $\omega^2 = gK\tanh(KH)$ faça as
-aproximações para águas rasa (ondas longas) e águas profundas (ondas
-curtas). (Mostre o seu desenvolvimento!)
+Partindo da {\bf relação de dispersão},
+\[
+  \omega^2 = gK\tanh(KH),
+\]
+faça as aproximações para {\bf águas rasa} (ondas longas) e {\bf águas profundas}
+(ondas curtas). (Mostre o seu desenvolvimento!)
 
 \begin{solution}
 \raggedright
@@ -140,7 +143,7 @@ quase constante.
 \begin{parts}
   \part[2\half]
   Com a informação acima calcule o período de onda relativo ao barco ($T'$).
-  Escreva uma relação para o comprimento de onda relativo ($L'$). E calcule um
+  Escreva uma relação para o comprimento de onda relativo ($L'$). Calcule um
   valor para esse comprimento de onda ``percebido''.
   (Dica: $L'$ é o quão longe o navio viaja de uma crista a outra)
 
@@ -342,21 +345,23 @@ S2 & 1,2 \\
 
 \question[3]
 Você foi contrato novamente pela empresa ACME\circledR{} para avaliar o
-potencial energético da praia acima.  Eles querem saber se um aparelho que gera
-energia a partir de maré é ou não mais eficiente que um que gere energia devido
-às ondas de gravidade.  Quais são as variáveis devemos medir para avaliar
-uma estimativa energética desse tipo?  Por quanto tempo?  Estatisticamente
-existe alternativa ao invés de medições infindáveis?
+potencial energético da praia acima.  Eles querem saber se, o potencial
+energético da maré é mais eficiente que o potencial das ondas de gravidade.
 
-(Dica: A equação abaixo mostra como calcular a densidade de energia (J m$^{-2}$) das ondas
-de gravidade externas.)
+\begin{itemize}
+  \item[a)] Quais são as variáveis devemos medir para responder essa pergunta?
+  \item[b)] Qual seria o maior potencial energético?  Ondas ou marés? Explique.
+\end{itemize}
+
+(Dica: A equação abaixo mostra como calcular a densidade de energia [J m$^{-2}$]
+das ondas de gravidade externas.)
 
 \[
   E = \dfrac{\rho g}{8} H^2, \text{ onde } \dfrac{\rho g}{8} \approx 1,25 \text{ kg m}^{-2}\text{s}^{-2}
 \]
 
 \begin{solution}
-  Devemos medira altura de ondas por longos períodos (que compreendam toda a
+  Devemos medir a altura de ondas por longos períodos (que compreendam toda a
   variabilidade local das mesmas) para estimar com alguma segurança.  A
   propriedade estatística $H_{1/3}$ ajuda a reduzir o número de observações e
   ainda assim adquirir uma estimativa robusta.
@@ -365,13 +370,14 @@ de gravidade externas.)
   eficientes que a maré, podemos utilizar uma estimativa baseado apenas na
   constituinte mais significativa (M2).
 
-  $E = 1,25 \times 2,4^2 = 7.2$, duas vezes por dia seria 14.4 J m$^{-2}$.
+  $E = 1,25 \times 2,4^2 = 7.2$ J m$^{-2}$, duas vezes por dia seria
+  14.4 J m$^{-2}$ por dia.
 
   Mesmo uma onda pequena (30 cm), com um período típico de 10 s forneceria mais
   energia que a maré acima.
 
-  $E = 1,25 \times 0.3^2 = 0.112$ J m$^{-2}$ 4320 (24*60*30 / 10) vezes por dia
-  seria 31103 J m$^{-2}$
+  $E = 1,25 \times 0.3^2 = 0.112$ J m$^{-2}$, 4320 vezes por dia
+  ($24 \times60 \times 30 / 20$) seria 486 J m$^{-2}$ por dia.
 \end{solution}
 
 \end{questions}
