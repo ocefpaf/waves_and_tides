@@ -1,0 +1,252 @@
+% Style.
+\documentclass[letterpaper,portuguese,12pt,pdftex]{exam}
+
+\usepackage{setspace}
+% \usepackage{lineno}
+\usepackage[left=2cm,top=2cm,right=2.5cm, bottom=2cm]{geometry}
+% \usepackage[left=2.5cm,top=3cm,right=2.5cm]{geometry}
+
+% Portuguese.
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{textcomp}
+
+% Font.
+\usepackage{lmodern}
+
+% Figures.
+\usepackage{epsf,epsfig}
+
+% Bibtex and extras.
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[bookmarks=false,colorlinks=true,urlcolor={green},linkcolor={green},pdfstartview={XYZ null null 1.22}]{hyperref}
+
+% Math.
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{cancel}
+\everymath{\displaystyle}
+
+% Exam.
+\addpoints
+\printanswers % \noprintanswers
+\usepackage{color}
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\shadedsolutions
+\renewcommand{\solutiontitle}{\noindent\textbf{Solução:}\par\noindent}
+\pagestyle{headandfoot}
+\footer{}{Página \thepage\ de \numpages}{}
+\boxedpoints
+\pointsinrightmargin
+\pointpoints{ponto}{pontos}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+% \qformat{\textbf{Question\thequestion}\quad(\thepoints)\hfill}
+
+% User commands.
+\newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}
+
+% PDF metadata.
+\pdfinfo{% hyperref overrides this
+  /Title    (Prova Alternativa -- Ondas e Marés)
+  /Author   (Filipe Fernandes)
+  /Creator  (Filipe Fernandes)
+  /Producer (Filipe Fernandes)
+  /Subject  (prova)
+  /Keywords (prova, oceanografia)
+}
+
+% Front page.
+\title{Prova Alternativa -- Ondas e Marés}
+\author{Prof. Filipe Fernandes}
+\date{20-Dez-2013}
+
+\begin{document}
+\maketitle
+\doublespacing
+
+\vspace{2cm}
+\hbox to \textwidth{Nome e número de matrícula:\enspace\hrulefill}
+\vspace{2cm}
+
+\begin{minipage}{.8\textwidth}
+Esse exame incluí \numquestions\ questões. O número total de pontos é \numpoints.
+\vspace{1cm}
+
+Essa prova segue o Acordo Ortográfico da Língua Portuguesa de 1990 (em vigor no
+início de 2009).  Por isso erros de ortografia e gramática serão descontados da
+sua nota final.
+
+\vspace{1cm}
+
+A prova deve ser feita individualmente e sem consulta.  O aluno deverá usar
+CANETA (preta ou azul) para responder as questões – qualquer questão respondida
+à lápis não será considerada na hora da correção.  Coloque seu nome em TODAS as
+folhas e numere as mesma colocando o número total de folhas (Ex.: 1/4, 2/4 e
+etc).
+
+\vspace{1cm}
+
+Leia atentamente todas as questões: a interpretação faz parte da prova e dúvidas
+serão esclarecidas apenas após o término da mesma.
+
+\end{minipage}
+
+\clearpage
+% 10
+
+
+\begin{questions}
+\question[2]
+  Sabendo que equação de onda é um senoide do tipo $\eta = \cos(kx -\omega t)$.
+  Defina e escreva a formulação matemática para {\bf número de onda} $k$ e
+  {\bf frequência angular} $\omega$ mostrando a sua relação com {\bf período}
+  $T$ e {\bf comprimento} de onda $L$.  Comente sobre as suas unidades e seu
+  significado.
+
+  \begin{solution}
+    \begin{align*}
+      \omega &= \dfrac{2\pi}{T} \text{ (s}^{-1}) \text{: inverso do período (s).}\\
+      k &= \dfrac{2\pi}{\lambda {\text{ (ou L)}}} \text{ (m}^{-1}) \text{: inverso do comprimento (m).}
+    \end{align*}
+  \end{solution}
+
+\question
+Identifique a {\bf amplitude}, o {\bf comprimento}, a {\bf frequência}, o
+{\bf período} e o {\bf número de onda} nas formas abaixo.
+
+\begin{parts}
+  \part[1]
+    \[
+      \eta = 10 \cos(4x - 2t)
+    \]
+
+    \begin{solution}
+      A = 10, k = 4, L = $\frac{\pi}{2}$, $\omega$ = 2,
+      T = $\pi$
+    \end{solution}
+
+    \part[1]
+    \[
+      \eta = 0.5 \cos(\pi x - t)
+    \]
+
+    \begin{solution}
+      A = 0.5, k = $\pi$, L = 2, $\omega$ = 1,
+      T = $2\pi$
+    \end{solution}
+\end{parts}
+
+\question[2]
+Sabemos que processos de {\bf mistura vertical} são cruciais para a vida
+marinha, tornando nutrientes mais acessíveis a biota.  Discorra sobre o papel
+das ondas internas na mistura vertical.  (Dica: Lembre-se que o oceano pode ser
+divido em 3 extratos: camada de mistura, picnoclina e camada profunda.  Nesse
+contexto onde estão plankton, as ondas internas e os nutrientes?)
+
+\begin{solution}
+  As ondas internas estão geralmente em zonas de alto gradiente de densidade
+  (interface interna) como a picnoclina.  Quando há ondas internas nessa região,
+  seu movimento vertical pode disponibilizar nutrientes da camada profunda logo
+  abaixo para a camada de mistura acima.  Isso ocorre principalmente quando há
+  quebra da onda interna, promovendo uma mistura entres essas interfaces.
+  Disponibilizando assim nutrientes que antes estavam inacessíveis ao plankton da camada de mistura.
+\end{solution}
+
+
+\question[2]
+Você foi contrato pela empresa ACME\circledR{} para executar uma análise de
+marés na costa da praia de {\it Lost}.  Sabendo que o número de forma da maré é uma
+razão entre as principais constituintes {\bf diurnas} e {\bf semi-diurnas}.
+Calcule o {\bf Número de Forma} (F) para essa praia dados as amplitudes abaixo
+(em metros) e comente sobre a predominância diurna ou semi-diurna no local.
+
+\begin{center}
+\begin{tabular}{ll}
+Constituinte & Amplitude (m)\\
+\hline
+K1 & 2,4\\
+O1 & 1,2\\
+M2 & 0,7\\
+S2 & 0,2 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{solution}
+  \begin{align*}
+    \text{F} &= \dfrac{\text{K1 + O1}}{\text{M2 + S2}} \\
+    \quad \\
+    \text{F} &= \dfrac{2,4 + 1,2}{0,7 + 0,2} = 4
+  \end{align*}
+
+  Maré predominantemente diurna.
+\end{solution}
+
+
+\question[1]
+O sistema de equações abaixo representa o modelo de águas
+rasas (equações \ref{eq:x-dir}, \ref{eq:y-dir} e \ref{eq:continuity}), de onde
+derivamos as relações de dispersão das ondas de Poincaré, Kelvin e Rossby.
+
+\begin{align}
+  \pd{u}{t} + u\pd{u}{x} + v\pd{u}{y} &= +fv -g\pd{\eta}{x} \label{eq:x-dir} \\
+  \pd{v}{t} + u\pd{v}{x} + v\pd{v}{y}&= -fu -g\pd{\eta}{y} \label{eq:y-dir} \\
+  \pd{\eta}{t} &= -h\left({\pd{u}{x}} + \pd{v}{y}\right) \label{eq:continuity}
+\end{align}
+
+Sabendo que a onda de Kelvin é um caso especial de onda de Poincaré que viaja
+sempre com um contorno do seu lado esquerdo (direito) no hemisfério sul (norte).
+Dito isso, simplifique as equações do nosso modelo de águas rasas
+(\ref{eq:x-dir}, \ref{eq:y-dir} e \ref{eq:continuity}) para uma ondas de Kelvin.
+(Você tem apenas que cortar alguns termos de cada equação e justificar o porquê
+do corte!)
+
+\begin{solution}
+  \begin{align*}
+  \cancelto{0}{\pd{u}{t}} &= +fv -g\pd{\eta}{x}\\
+  \pd{v}{t} &= \cancelto{0}{-fu} -g\pd{\eta}{y}\\
+  \pd{\eta}{t} &= -h\left(\cancelto{0}{\pd{u}{x}} + \pd{v}{y}\right)
+  \end{align*}
+
+Eliminamos os termos advectivos porque nossa ondas são lineares e adicionalmente,
+fazemos a velocidade em $x$ ($u$) ser próxima de zero para garantir o equilíbrio
+dessa onda no contorno.
+\end{solution}
+
+\question[1]
+Ondas de vorticidade (ou ondas Rossby) tem a relação de dispersão definida
+(já simplificada) por:
+
+  \[
+    \omega = -\beta k \left( \dfrac{L^2 R^2}{R^2 + L^2} \right)
+  \]
+
+
+Faça as considerações para {\bf Ondas de Rossby Curtas} ($L << R$, comprimento
+de onda menor que raio de deformação) e {\bf Ondas de Rossby Longas} ($L >> R$,
+comprimento de onda maior que o raio de deformação).
+
+  \begin{solution}
+  Onda curta (quando $L << R$),
+  \begin{align*}
+    \omega &= -\beta k \left( \dfrac{L^2 R^2}{R^2 + \cancel{L^2}} \right) \\
+    \omega &= -\beta k \left( \dfrac{L^2 \cancel{R^2}}{\cancel{R^2}} \right) \\
+    \omega &\approx -\beta k L^2
+  \end{align*}
+
+  Onda longa (quando $L >> R$),
+  \begin{align*}
+    \omega &= -\beta k \left( \dfrac{L^2 R^2}{\cancel{R^2} + L^2} \right) \\
+    \omega &= -\beta k \left( \dfrac{\cancel{L^2} R^2}{\cancel{L^2}} \right) \\
+    \omega &\approx -\beta k R^2
+  \end{align*}
+\end{solution}
+
+\end{questions}
+\end{document}
