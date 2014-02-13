@@ -1,0 +1,348 @@
+% Style.
+\documentclass[letterpaper,portuguese,12pt,pdftex]{exam}
+
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage[left=2.5cm,top=3cm,right=2.5cm]{geometry}
+
+% Portuguese.
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{textcomp}
+
+% Font.
+\usepackage{lmodern}
+
+% Figures.
+\usepackage{epsf,epsfig}
+
+% Bibtex and extras.
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[bookmarks=false,colorlinks=true,urlcolor={green},linkcolor={green},pdfstartview={XYZ null null 1.22}]{hyperref}
+
+% Math.
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{cancel}
+\everymath{\displaystyle}
+
+% Exam.
+\addpoints
+\printanswers
+% \noprintanswers
+\usepackage{color}
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\shadedsolutions
+\renewcommand{\solutiontitle}{\noindent\textbf{Solução:}\par\noindent}
+\pagestyle{headandfoot}
+\footer{}{Página \thepage\ de \numpages}{}
+\boxedpoints
+\pointsinrightmargin
+\pointpoints{ponto}{pontos}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+% \qformat{\textbf{Question\thequestion}\quad(\thepoints)\hfill}
+
+% User commands.
+\newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}
+
+% PDF metadata.
+\pdfinfo{% hyperref overrides this
+  /Title    (Prova 03 -- Ondas e Marés)
+  /Author   (Filipe Fernandes)
+  /Creator  (Filipe Fernandes)
+  /Producer (Filipe Fernandes)
+  /Subject  (prova)
+  /Keywords (prova, oceanografia)
+}
+
+% Front page.
+\title{Prova Alternativa -- Ondas e Marés}
+\author{Prof. Filipe Fernandes}
+\date{17-Dez-2012}
+
+\begin{document}
+\maketitle
+\doublespacing
+
+\vspace{1cm}
+\hbox to \textwidth{Nome e número de matrícula:\enspace\hrulefill}
+\vspace{1cm}
+
+\begin{minipage}{.8\textwidth}
+Esse exame incluí \numquestions\ questões. O número total de pontos é \numpoints.
+\end{minipage}
+
+\begin{questions}
+
+\question[2]
+  Defina e escreva a formulação matemática para {\bf número de onda} $K$,
+  {\bf frequência} $\omega$ e {\bf velocidade de fase} $C$.  Essas fórmulas
+  serão uma função de {\bf comprimento de onda} $\lambda$ e/ou {\bf período da
+  onda} $T$.
+
+  \begin{solution}
+    \begin{align*}
+      \omega &= \dfrac{2\pi}{T} \\
+      K &= \dfrac{2\pi}{\lambda} \\
+      C &= \dfrac{\lambda}{T} = \dfrac{\omega}{K}
+    \end{align*}
+  \end{solution}
+
+\question
+Sobre ondas longas (água rasa) e curtas (água profunda) responda.  Partindo da
+{\bf relação de dispersão}
+\[
+  \omega^2 = gK\tanh(KH)
+\]
+
+\begin{parts}
+  \part[2]
+  Faça as aproximações para águas rasa (ondas longas) e águas profundas (ondas
+  curtas).
+
+\begin{solution}
+\raggedright
+      Água rasa (ondas longas) $KH << 1 \therefore \tanh(KH) \sim KH$\\
+      \[
+        \omega^2 = gK^2H
+      \]
+
+      Água profundas (ondas curtas) $KH >> 1 \therefore \tanh(KH) \sim 1$\\
+      \[
+        \omega^2 = gK
+      \]
+  \end{solution}
+
+  \part[2]
+  Qual a velocidade de uma onda de 20 m de comprimento que se propaga em
+  águas profundas?
+
+  \begin{solution}
+    \[
+      C = \sqrt{\dfrac{g\lambda}{2\pi}} = \sqrt{\dfrac{9.8 \times 20}{2\pi}} = 5.58 \text{ m s}^{-1}
+    \]
+  \end{solution}
+
+\end{parts}
+
+\question
+ \begin{parts}
+  \part[1]
+  Dois observadores em bordas perpendiculares de uma piscina observam ondas que
+  se propagam de forma retilínea e oblíqua às bordas da piscina.  Um observador
+  mede que as cristas das ondas se propaga a 3 m s$^{-1}$, enquanto o outro
+  mede 4 m s$^{-1}$.  Qual é a magnitude da velocidade de fase?  Essas são
+  ondas longas ou curtas?
+
+  \begin{solution}
+  $C = (4^2 + 3^2)^{1/2} = 5$ m/s\\
+  Não temos informação sobre $\lambda$ nem a profundidade da piscina para
+  responder se essas são ondas longas ou curtas.
+  \end{solution}
+
+  \part[1]
+  Se 30 cristas de onda passam, sucessivamente, em um ponto fixo durante um
+  intervalo de tempo de 2 minutos e 8 segundos, qual é a frequência das ondas.
+
+  \begin{solution}
+    $\omega = \dfrac{30}{(2 \times 60)+8} = 0.234$ s$^{-1}$
+  \end{solution}
+\end{parts}
+
+\question [3]
+  Partindo da seguinte equação do modelo de águas rasas (sem rotação, nem
+  limites com a costa).
+
+  $$\dfrac{\partial^2 \eta}{\partial x^2} - \dfrac{1}{gH}\dfrac{\partial^2 \eta}
+  {\partial t^2}$$
+
+  Mostre que essa equação é satisfeita para ondas longas com a forma geral da
+  superfície livre:
+
+  $$\eta = \eta_o \cos(kx - \omega t).$$
+
+  \begin{solution}
+    \begin{align*}
+      \dfrac{\partial^2}{\partial x^2}\left[ \eta_o\cos(kx-\omega t) \right] &=  \dfrac{1}{gH}\dfrac{\partial^2}{\partial t^2}\left[ \eta_o\cos(kx-\omega t) \right]\\
+      -k\dfrac{\partial}{\partial x}\left[ \eta_o\sin(kx-\omega t) \right] &=  -\dfrac{\omega}{gH}\dfrac{\partial}{\partial t}\left[ \eta_o\sin(kx-\omega t) \right]\\
+      -k^2\eta_o\cos(kx-\omega t) &= -\dfrac{\omega^2}{gH} \eta_o\cos(kx-\omega t)\\
+      \dfrac{\omega^2}{gH} = k^2 &\therefore \omega^2 = gHk^2
+    \end{align*}
+  \end{solution}
+
+\question
+O sistema de equações abaixo representa o modelo de águas
+rasas (equações \ref{eq:x-dir}, \ref{eq:y-dir} e \ref{eq:continuity}).
+
+\begin{align}
+  \pd{u}{t} + u\pd{u}{x} + v\pd{u}{y} &= +fv -g\pd{\eta}{x} \label{eq:x-dir} \\
+  \pd{v}{t} + u\pd{v}{x} + v\pd{v}{y}&= -fu -g\pd{\eta}{y} \label{eq:y-dir} \\
+  \pd{\eta}{t} + \pd{}{x}(Hu) + \pd{}{y}(Hv) &= 0 \label{eq:continuity}
+\end{align}
+
+ \begin{parts}
+  \part[3]
+  Em aula assumimos que o número de Rossby ($R_o$) e muito menor que 1.
+  \[ R_o = \frac{U}{fL} << 1 \]
+
+  Sabendo que $R_o$ é a escala da {\bf velocidade} sobre a escala {\bf horizontal
+  de comprimento} divididos pelo {\bf parâmetro de Coriolis} quais expressões das
+  equações \ref{eq:x-dir} e \ref{eq:y-dir} podemos eliminar?  O sistema de
+  equações fica completamente linear?
+
+  \begin{solution}
+  \( R_o = \frac{U}{fL} << 1 \) significa que podemos cortar todos os termos
+  advectivos.  Pois a escala da velocidade $U (u,v,uu,uv,vv)$ sobre a escala de
+  tamanho $L (x,y)$ é muito menor que a frequência de Coriolis $f$
+  \( \frac{U}{L} << f\).
+
+  \begin{align*}
+    \pd{u}{t} + \cancel{u\pd{u}{x}} + \cancel{v\pd{u}{y}} &= +fv -g\pd{\eta}{x} \\
+    \pd{v}{t} + \cancel{u\pd{v}{x}} + \cancel{v\pd{v}{y}} &= -fu -g\pd{\eta}{y}
+  \end{align*}
+  \end{solution}
+
+  \part[3]
+  Assumindo $R_o << 1$ nos permitiu eliminar os termos não lineares das equações
+  do movimento nas direções $x$ e $y$ (\ref{eq:x-dir} e \ref{eq:y-dir}).  Porém,
+  a equação da continuidade (\ref{eq:continuity}) ainda é não-linear.
+
+  Identifique o termo não linear e explique como aproximação abaixo nos
+  permite linearizar o problema.
+
+  \begin{align*}
+    \eta &<< H\\
+    b &<< h
+  \end{align*}
+
+  \begin{solution}
+   A aproximação de ondas de pequena amplitude ($\eta << H$) diz que a elevação
+   do nível do mar é muito menor que a coluna d'água.  Isso nos permite dizer
+   que $H$ não varia no tempo com $\eta$.
+
+   A aproximação feita com a batimetria ($b<<h$) nos diz que a variação
+   batimétrica é muito menor que á média da coluna d'água.  Isso nos permite
+   ignorar as variações da topografia de fundo, logo $h \sim H$.  Agora podemos
+   simplificar a equação da continuidade para a forma linear assumindo um $h$
+   constante:
+   \[ \pd{\eta}{t} = -h\left( \pd{u}{x} + \pd{v}{y}\right)\]
+  \end{solution}
+
+  \part[2]
+  Nós também assumimos o número de Rossby temporal ($R_{oT}$) como
+  sendo aproximadamente 1:
+  \[ R_{oT} = \frac{1}{fT} \sim 1 \]
+
+  O que essa aproximação significa?  Como era o Rossby temporal das ondas curtas
+  e longas {\bf não} influenciadas pela rotação da Terra?
+
+  \begin{solution}
+   Quando o número de Rossby temporal é aproximadamente ``1'' a rotação da
+   Terra se torna importante na escala em estudo pois a frequência do movimento
+   $\frac{1}{T}$ é aproximadamente igual à frequência de Coriolis $f$.
+   \[ \frac{1}{T} \sim f \]
+
+   Nas ondas longas e curtas não influenciadas pela rotação da Terra nos temos
+   que a frequência do movimento é muito maior que a frequência de Coriolis.
+   \( \frac{1}{T} >> f \), ou \( R_{oT} >> 1 \)
+  \end{solution}
+ \end{parts}
+
+\question
+ Em aula nos vimos ondas 3 tipos de ondas influenciadas pela rotação da Terra:
+ ondas de Poincaré, Kelvin e Rossby.  Todas derivadas do nosso
+ modelo de águas rasas.  Porém, cada uma assume diferente premissas para
+ simplificar o problema e resolver a onda em questão.
+
+\begin{parts}
+ \part[1]
+ Como as ondas de Kelvin e Poincaré se diferenciam das ondas de Rossby?\\
+ (Dica: $f = f_o + \beta y$)
+
+ \begin{solution}
+  Ondas de Poincaré e Kelvin são resolvidas no plano-$f$ ($f_o$) ou seja, o
+  efeito da rotação é simplificado para primeira ordem como sendo uma expansão
+  de Taylor ao redor da latitude.
+  \[f \sim f_o = 2\Omega\sin\phi_o \]
+  Isso ignora os efeitos da esfericidade da Terra (representada pelo
+  plano-$\beta$), essencial para a existências das ondas de Rossby.
+ \end{solution}
+
+  \part[1]
+  A onda de Kelvin é um caso especial de onda de Poincaré que viaja sempre com
+  um contorno do seu lado esquerdo (direito) no hemisfério sul (norte).  Dito
+  isso, simplifique as equações do nosso modelo de águas rasas (\ref{eq:x-dir},
+  \ref{eq:y-dir} e \ref{eq:continuity}) para uma ondas de Kelvin.
+
+\vspace{2cm}
+\begin{solution}
+  \begin{align*}
+  \cancelto{0}{\pd{u}{t}} &= +fv -g\pd{\eta}{x}\\
+  \pd{v}{t} &= \cancelto{0}{-fu} -g\pd{\eta}{y}\\
+  \pd{\eta}{t} &= -h\left(\cancelto{0}{\pd{u}{x}} + \pd{v}{y}\right)
+  \end{align*}
+\end{solution}
+
+  \part[1]
+  A relação de dispersão das ondas de Poincaré é:
+  \[
+    \omega^2 = f_o^2 + ghk^2
+  \]
+
+  Discuta o extremo onde:
+
+  \[
+    \omega >> f_o
+  \]
+
+\begin{solution}
+\raggedright
+  $\omega >> f_o \rightarrow$ Temos de volta a relação de dispersão de ondas de
+  água rasa (ondas longas).\\
+\end{solution}
+\end{parts}
+
+\question
+Ondas de vorticidade (ou ondas Rossby).
+
+Para descrever as ondas de Rossby em aula nós utilizamos a forma completa de $f$.
+
+\begin{align*}
+  \pd{u}{t} &= (f_o + \beta y)v - g\pd{\eta}{x}\\
+  \pd{v}{t} &= -(f_o + \beta y)u - g\pd{\eta}{y}\\
+  \pd{\eta}{t} &= -h\left(\pd{u}{x} + \pd{v}{y}\right)
+\end{align*}
+
+\begin{parts}
+\part[2]
+Explique o que a aproximação do plano $\beta$ representa.
+
+\begin{solution}
+ O plano $\beta$ é a aproximação para representar a esfericidade da Terra em
+ coordenadas cartesianas.
+ \[ \beta = \frac{2\Omega\cos(\phi_o)}{R}\]
+\end{solution}
+
+\part[1]
+A relação de dispersão de ondas de Rossby é dada por:
+\[\omega = \frac{-\beta k}{k^2 + l^2 + \frac{f_o^2}{gh}}\]
+
+Prove que essas ondas se propagam energia apenas para Oeste.
+
+\begin{solution}
+ \[
+    C \equiv \frac{\omega}{k} = \frac{-\beta}{k^2 + l^2 + \frac{f_o^2}{gh}}
+ \]
+ $C$ é sempre negativo, ou seja se propaga na direção $-x$, Oeste no nosso
+ sistema de coordenadas.
+\end{solution}
+
+\end{parts}
+
+\end{questions}
+\end{document}

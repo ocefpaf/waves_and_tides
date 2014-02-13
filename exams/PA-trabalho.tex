@@ -1,0 +1,235 @@
+% Style.
+\documentclass[letterpaper,portuguese,12pt,pdftex]{exam}
+
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage[left=2.5cm,top=3cm,right=2.5cm]{geometry}
+
+% Portuguese.
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{textcomp}
+
+% Font.
+\usepackage{lmodern}
+
+% Figures.
+\usepackage{epsf,epsfig}
+
+% Bibtex and extras.
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[bookmarks=false,colorlinks=true,urlcolor={green},linkcolor={green},pdfstartview={XYZ null null 1.22}]{hyperref}
+
+% Math.
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{cancel}
+\everymath{\displaystyle}
+
+% Exam.
+\addpoints
+\printanswers % \noprintanswers
+\usepackage{color}
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\shadedsolutions
+\renewcommand{\solutiontitle}{\noindent\textbf{Solução:}\par\noindent}
+\pagestyle{headandfoot}
+\footer{}{Página \thepage\ de \numpages}{}
+\boxedpoints
+\pointsinrightmargin
+\pointpoints{ponto}{pontos}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+% \qformat{\textbf{Question\thequestion}\quad(\thepoints)\hfill}
+
+% User commands.
+\newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}
+
+% PDF metadata.
+\pdfinfo{% hyperref overrides this
+  /Title    (Prova Alternativa (Trabalho) -- Ondas e Marés)
+  /Author   (Filipe Fernandes)
+  /Creator  (Filipe Fernandes)
+  /Producer (Filipe Fernandes)
+  /Subject  (prova)
+  /Keywords (prova, oceanografia)
+}
+
+% Front page.
+\title{Prova Alternativa (Trabalho) -- Ondas e Marés}
+\author{Prof. Filipe Fernandes}
+\date{20-Dez-2013}
+
+\begin{document}
+\maketitle
+\doublespacing
+
+\begin{minipage}{.8\textwidth} % 25 pontos.
+Esse Trabalho complementa a Prova Alternativa em \numpoints\ pontos.  Deve ser feito
+individualmente.  Consultas ao material de aula ou referências sugeridas é
+permitida.
+\vspace{1cm}
+\end{minipage}
+
+
+\begin{questions}
+\question[2\half]
+Escreva as {\bf três componentes da equação do movimento} nas direções
+$x, y, z$ e a {\bf equação da continuidade}.
+
+\begin{itemize}
+  \item Explique {\bf cada termo} das equações;
+  \item Mostre o desenvolvimento de como chegar na equação de {\bf Laplace}
+        abaixo.  Comente as {\bf aproximações} a medida que vai aplicando as
+        mesmas.
+\[
+  \nabla^2 \tilde{p}= 0
+\]
+\end{itemize}
+
+\begin{solution}
+\begin{align*}
+x: \pd{u}{t} + u\pd{u}{x} + v\pd{u}{y} + w\pd{u}{z} &= fv - \dfrac{1}{\rho}\pd{p}{x} + \dfrac{1}{\rho}\left(\pd{\tau^{xx}}{x} + \pd{\tau^{xy}}{y} + \pd{\tau^{xz}}{z}\right) \\
+y: \pd{v}{t} + u\pd{v}{x} + v\pd{v}{y} + w\pd{v}{z} &= -fv - \dfrac{1}{\rho}\pd{p}{y} + \dfrac{1}{\rho}\left(\pd{\tau^{xy}}{x} + \pd{\tau^{yy}}{y} + \pd{\tau^{yz}}{z}\right)  \\
+z: \pd{w}{t} + u\pd{w}{x} + v\pd{w}{y} + w\pd{w}{z} &= - \dfrac{1}{\rho}\pd{p}{z} -\rho g + \dfrac{1}{\rho}\left(\pd{\tau^{xz}}{x} + \pd{\tau^{yz}}{y} + \pd{\tau^{zz}}{z}\right)  \\
+\pd{u}{x} + \pd{v}{y} + \pd{w}{z} &= 0
+\end{align*}
+
+Notas: Explicar termos locais, advectivos, Coriolis
+\end{solution}
+
+
+\question[2\half]
+Leia o bloco sobre {\bf Condições de Contorno} (CC) na equação de Laplace da
+Wikipédia:
+
+\url{http://en.wikipedia.org/wiki/Laplace's_equation#Boundary_conditions}
+
+Faça uma {\bf tradução livre} do que entende sobre os exemplos da aplicação da
+CC juntamente com um {\bf paralelo} (máximo de 1 parágrafos) com as Condições de
+Contorno usadas em {\bf aula}.
+
+(Dica: leia mais sobre Condições de Contorno na Wikipédia para poder redigir a
+sua resposta!)
+
+\question[2]
+Sabemos que a solução da equação de Laplace, com as nossas condições de contorno,
+resulta na seguinte relação de dispersão,
+
+\[
+  \omega^2 = gk\tanh(kh)
+\]
+
+Também conhecida como relação de dispersão de ondas de gravidade de superfície.
+
+{\bf Simplifique} a relação de dispersão usando as propriedades que você sabe
+sobre a {\bf tangente hiperbólica} ($\tanh$).  Crie uma tabela com as
+{\bf relações simplificadas} e as {\bf velocidades de fase} e {\bf grupo}.
+
+Comente os {\bf dois fenômenos} de ondas de que podemos explicar com essas
+formas simplificadas.
+
+\question[1]
+Abaixo vocês encontram o {\bf Modelo de Águas Rasas} (MAR) simplificado para um
+fundo plano:
+
+\begin{align}
+  x\rightarrow \pd{u}{t} + u\pd{u}{x} + v\pd{u}{y} &= +fv -g\pd{\eta}{x} \label{eq:x-dir} \\
+  y\rightarrow \pd{v}{t} + u\pd{v}{x} + v\pd{v}{y}&= -fu -g\pd{\eta}{y} \label{eq:y-dir} \\
+  \text{Continuidade}\rightarrow\pd{\eta}{t} &= -h\left({\pd{u}{x}} + \pd{v}{y}\right) \label{eq:continuity}
+\end{align}
+
+Porque não temos as equações para a dimensão vertical $z$?
+
+(Dica: pense na razão de aspecto de ondas muito longas!)
+
+\question[1]
+Corte os termos {\bf advectivos} e de {\bf Coriolis} do nosso sistema de equações
+{\bf MAR} e combine as equações para chegar na forma:
+
+\[
+\dfrac{\partial^2\eta}{\partial x^2} - \dfrac{1}{gh}\dfrac{\partial^2\eta}{\partial{t^2}} = 0
+\]
+
+\question[1]
+Mostre que a forma de onda $\eta = \eta_o \cos(kx - \omega t)$ é uma solução
+para a equação acima e {\bf comente} que tipo de solução você encontrou.  Faça
+uma relação entre $\omega$ e $f$ para onde essas ondas são válidas.
+
+\question[1]
+Retornando ao {\bf MAR}, corte {\bf apenas} os termos advectivos, {\bf mantendo}
+os termos de Coriolis.  Faça uma {\bf nova} relação entre $\omega$ e $f$ para
+onde essa aproximação é válida.
+
+\question[4]
+Comente sobre a diferença entre $f$ e $f_o$ e onde usamos um ou outro ou ambos
+para resolver as ondas influenciadas pela rotação da Terra abaixo:
+\begin{itemize}
+  \item Ondas de Poincaré
+  \item Ondas de Kelvin Costeiras
+  \item Ondas de Kelvin Equatoriais
+  \item Ondas de Rossby
+\end{itemize}
+
+Combine as equações do {\bf MAR} para chegar nas equações de {\bf Kelvin},
+{\bf Poincaré} e {\bf Rossby} (respectivamente) abaixo:
+
+(Dica: cheque os slides de aula para as aproximações de cada solução!)
+
+\begin{align*}
+  \dfrac{\partial^2\eta}{\partial y^2} - \dfrac{1}{gh}\dfrac{\partial^2\eta}{\partial{t^2}} &= 0 \\
+  \dfrac{\partial^2\eta}{\partial x^2} - \dfrac{1}{gh}\dfrac{\partial^2\eta}{\partial t^2} &= f_o^2\eta \\
+  \dfrac{\partial{}}{\partial t} \nabla^2 \eta - \dfrac{f_o^2}{gh} \eta + \beta \dfrac{\partial{\eta}}{\partial x} &= 0
+\end{align*}
+
+\question[5]
+Discorra (escreva de 2 a 3 parágrafos) sobre os {\bf temas}:
+\begin{itemize}
+  \item[a)] A natureza da ondas de Kelvin, de ser uma onda em uma direção e um
+        balanço geostrófico em outra, resulta nos pontos anfidrômicos nos
+        oceanos.
+  \item[b)] Ondas de Rossby e o clima estão intimamente relacionados.
+  \item[c)] Ondas de Rossby no oceano têm um papel fundamental na formação das
+        correntes de contorno Oeste.
+  \item[d)] Fale sobre: Maré de equilíbrio e a manifestação da maré na
+            plataforma costeira.
+  \item[e)] Como utilizamos a teoria de Fourier para analisar marés no oceano?
+\end{itemize}
+
+\question[4]
+Uma forma de oscilações que não comentamos nesse curso são os {\bf Movimentos
+Inerciais} no oceano.  (Isso porque tal tema é abordados em Oceanografia Física
+Descritiva e/ou Dinâmica dos Oceanos.)
+
+Comente {\bf o que são} os movimentos inerciais, {\bf como eles acontecem}
+no oceano e explique a animação vista nesse site:
+
+\url{http://www.incois.gov.in/Tutor/IntroOc/por/notes/figures/fig6a1.html}
+
+Adicionalmente, vá ao site:
+
+\url{http://oceanmotion.org/html/resources/coriolis.htm}
+
+Crie 3 figuras clicando em altas ($\pm$ 70\textdegree{}), baixas
+($\pm$ 5\textdegree{}) e médias latitudes ($\pm$ 45\textdegree{}).
+
+{\bf Comente} sobre os {\bf tamanhos} dos círculos inerciais em cada uma delas.
+
+{\bf Calcule} as frequências inerciais para as latitudes de Santos-SP, Salvador-BA e
+Rio Grande-RS.  Inverta as frequências para períodos lembrando que
+$Ti = \dfrac{2\pi}{f}$.  Comente sobre a proximidade e/ou distância desses
+períodos para com os períodos das marés M$_2$, O$_1$.
+
+\question[1]
+Comente {\bf detalhadamente} (uma redação de 1 página), sobre as
+{\bf dificuldades} que teve no curso (tópicos de matemática, didática do
+professor, língua estrangeira, obtenção de bibliografia e material etc).
+Elabore um plano {\bf realístico} de {\bf superação} dos problemas que estão
+ao seu alcance e faça sugestões aos que não estão diretamente ao seu alcance.
+
+\end{questions}
+\end{document}

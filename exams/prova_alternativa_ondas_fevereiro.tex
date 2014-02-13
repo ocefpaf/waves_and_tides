@@ -1,0 +1,378 @@
+% Style.
+\documentclass[letterpaper,portuguese,12pt,pdftex]{exam}
+
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage[left=2.5cm,top=3cm,right=2.5cm]{geometry}
+
+% Portuguese.
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{textcomp}
+
+% Font.
+\usepackage{lmodern}
+
+% Figures.
+\usepackage{epsf,epsfig}
+
+% Bibtex and extras.
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[bookmarks=false,colorlinks=true,urlcolor={green},linkcolor={green},pdfstartview={XYZ null null 1.22}]{hyperref}
+
+% Math.
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{cancel}
+\everymath{\displaystyle}
+
+% Exam.
+\addpoints
+\printanswers
+% \noprintanswers
+\usepackage{color}
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\shadedsolutions
+\renewcommand{\solutiontitle}{\noindent\textbf{Solução:}\par\noindent}
+\pagestyle{headandfoot}
+\footer{}{Página \thepage\ de \numpages}{}
+\boxedpoints
+\pointsinrightmargin
+\pointpoints{ponto}{pontos}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+% \qformat{\textbf{Question\thequestion}\quad(\thepoints)\hfill}
+
+% User commands.
+\newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}
+
+% PDF metadata.
+\pdfinfo{% hyperref overrides this
+  /Title    (Prova Alternativa -- Ondas e Marés)
+  /Author   (Filipe Fernandes)
+  /Creator  (Filipe Fernandes)
+  /Producer (Filipe Fernandes)
+  /Subject  (prova)
+  /Keywords (prova, oceanografia)
+}
+
+% Front page.
+\title{Prova Alternativa -- Ondas e Marés}
+\author{Prof. Filipe Fernandes}
+\date{23-Fev-2014}
+
+\begin{document}
+\maketitle
+\doublespacing
+
+\vspace{1cm}
+\hbox to \textwidth{Nome e número de matrícula:\enspace\hrulefill}
+\vspace{1cm}
+
+\begin{minipage}{.8\textwidth}
+Esse exame incluí \numquestions\ questões. O número total de pontos é \numpoints.
+\end{minipage}
+
+\begin{questions}
+
+\question[8]
+Partindo das {\bf três componentes da equação do movimento} nas direções
+$x, y, z$ responda:
+
+\begin{align*}
+x: \pd{u}{t} &+ u\pd{u}{x} &+ v\pd{u}{y} &+ w\pd{u}{z} &= &+ fv &- \dfrac{1}{\rho}\pd{p}{x}         &+ \dfrac{1}{\rho}\left(\pd{\tau^{xx}}{x} + \pd{\tau^{xy}}{y} + \pd{\tau^{xz}}{z}\right) \\
+y: \pd{v}{t} &+ u\pd{v}{x} &+ v\pd{v}{y} &+ w\pd{v}{z} &= &- fv &- \dfrac{1}{\rho}\pd{p}{y}         &+ \dfrac{1}{\rho}\left(\pd{\tau^{xy}}{x} + \pd{\tau^{yy}}{y} + \pd{\tau^{yz}}{z}\right) \\
+z: \pd{w}{t} &+ u\pd{w}{x} &+ v\pd{w}{y} &+ w\pd{w}{z} &= &+  0 &- \dfrac{1}{\rho}\pd{p}{z} -\rho g &+ \dfrac{1}{\rho}\left(\pd{\tau^{xz}}{x} + \pd{\tau^{yz}}{y} + \pd{\tau^{zz}}{z}\right)
+\end{align*}
+
+\begin{itemize}
+  \item O sistema acima é fechado com solução possível caso assumirmos
+        densidade constante e atrito desprezível?
+  \item Explique {\bf cada termo} das equações;
+  \item Mostre o desenvolvimento de como chegar na equação de {\bf Laplace}
+        ($\nabla^2 \tilde{p}= 0$).  {\bf Comente e explique} pelo menos 6
+        {\bf aproximações} a medida que vai aplicando as mesmas.
+\end{itemize}
+
+
+\begin{solution}
+  \begin{itemize}
+    \item Não, mesmo assim temos 3 equações e 4 incógnitas $(u, v, w, p)$,
+          precisamos da equação da continuidade
+          ($\pd{u}{x} + \pd{v}{y} + \pd{w}{z} = 0$) para fechar o sistema.
+    \item ``locais, advectivos, Coriolis, FGP, FA e g''
+    \item ``Apostila''
+  \end{itemize}
+\end{solution}
+
+\question[4]
+Partindo da {\bf relação de dispersão} $\omega^2 = gK\tanh(KH)$ faça as
+aproximações para águas rasa (ondas longas) e águas profundas (ondas
+curtas). (Mostre o seu desenvolvimento!)
+
+\begin{solution}
+\raggedright
+      Água rasa (ondas longas) $KH << 1 \therefore \tanh(KH) \sim KH$\\
+      \[
+        \omega^2 = gK^2H
+      \]
+
+      Água profundas (ondas curtas) $KH >> 1 \therefore \tanh(KH) \sim 1$\\
+      \[
+        \omega^2 = gK
+      \]
+  \end{solution}
+
+\question
+Você está viajando em um barco na direção paralela à propagação do que parece
+ser ondas lineares no oceano.  Enquanto você observa as cristas passarem pelo
+navio você nota 7 cristas (ou seja, 6 ondas) passarem num intervalo de 3
+minutos.
+
+Ao checar com a casa de máquinas você descobre que o navio está se movendo
+numa velocidade de 5 nós (2.57 m s$^{-1}$), e a eco-sonda marca 10 m de profundidade
+quase constante.
+
+\begin{parts}
+  \part[2\half]
+  Com a informação acima calcule o período de onda relativo ao barco ($T'$).
+  Escreva uma relação para o comprimento de onda relativo ($L'$). E calcule um
+  valor para esse comprimento de onda ``percebido''.
+  (Dica: $L'$ é o quão longe o navio viaja de uma crista a outra)
+
+  \begin{solution}
+    \begin{align*}
+      T' &= \dfrac{3 \times 60\text{ s}}{6} \\
+      T' &= 30 \text{ s} \\
+      L' &= UT'  \\
+      L' &= 2.57 \text{ m s}^{-1} \times 30 \text{ s} \\
+      L' &= 77 \text{ m}
+    \end{align*}
+  \end{solution}
+
+  \part[2\half]
+  Crie uma expressão para o período real da onda (sobre um ponto de referência
+  da Terra e não do barco).  Essa expressão deve ser em função de $T', L'$ e $L$
+  (que ainda não sabemos).
+
+  (Dica: Considere a fração de um comprimento de onda completo que se move
+  durante o período percebido.)
+
+  \begin{solution}
+
+    \begin{center}
+      \includegraphics[scale=0.8]{../exercicios/figures/boat_wave.png}
+    \end{center}
+
+    \begin{align*}
+      \Delta T &= T_2 - T_1 \\
+      \Delta X &= L - L' \\
+      \dfrac{\Delta X}{\Delta T} &= \frac{L}{T} = \frac{L - L'}{T'} \\
+      T &= T'\left(\frac{L}{L - L'}\right)
+    \end{align*}
+  \end{solution}
+
+  \part[1\half]
+  Usando a sua resposta acima, juntamente com a relação de dispersão, resolva
+  o período de onda $T$.  Simplifique assumindo ondas  longas.  Quantas
+  soluções válidas existem?
+
+  (Dica: Considere a fração de um comprimento de onda completo que se move
+  durante o período percebido.)
+
+  \begin{solution}
+    \begin{align*}
+      \omega^2 &= k^2hg \\
+      \left( \dfrac{2\pi}{T} \right)^2 &= \left( \dfrac{2\pi}{L} \right)^2 gh \\
+      L &= T\sqrt{gh}
+    \end{align*}
+
+    Combinando com o resultado acima:
+
+    \begin{align*}
+      T &= T'\pm \frac{L'}{\sqrt{gh}} \\
+      T &= 30\text{ s} \pm \frac{77\text{ m}}{\sqrt{9.8 \text{ m s}^{-2} 10\text{ m}}} \\
+      T &= 30 \text{ s} \pm 7.77\text{ s} \\
+      T &= 37.8 \text{ s ou } 22.2\text{ s}
+    \end{align*}
+
+    Com as informações fornecidas não há como inferir a direção de propagação
+    dessas ondas.
+  \end{solution}
+
+
+  \part[1\half]
+  Ache o comprimento de ondas associada a cada $T$.
+
+  \begin{solution}
+    \begin{align*}
+      L &= T\sqrt{gh} \\
+      L_1 &= 37.8\text{ s } \times 9.9\text{ m s}^{-1} = 374\text{ m} \\
+      L_2 &= 22.2\text{ s } \times 9.9\text{ m s}^{-1} = 220\text{ m}
+    \end{align*}
+  \end{solution}
+
+  \part[2]
+  Avalia a sua solução sobre a consideração de ondas longas que fizemos.  A
+  solução é válida?
+
+  \begin{solution}
+    Ambas são validas $\dfrac{h}{L} < 0.05$.
+    \begin{align*}
+      \frac{h}{L_1} = 0.027 \\
+      \frac{h}{L_2} = 0.045
+    \end{align*}
+  \end{solution}
+
+  \end{parts}
+
+\question[2]
+Sabemos que processos de {\bf mistura vertical} são cruciais para a vida
+marinha, tornando nutrientes mais acessíveis a biota.  Discorra sobre o papel
+das ondas internas na mistura vertical.  (Dica: Lembre-se que o oceano pode ser
+divido em 3 extratos: camada de mistura, picnoclina e camada profunda.  Nesse
+contexto onde estão plankton, as ondas internas e os nutrientes?)
+
+\begin{solution}
+  As ondas internas estão geralmente em zonas de alto gradiente de densidade
+  (interface interna) como a picnoclina.  Quando há ondas internas nessa região,
+  seu movimento vertical pode disponibilizar nutrientes da camada profunda logo
+  abaixo para a camada de mistura acima.  Isso ocorre principalmente quando há
+  quebra da onda interna, promovendo uma mistura entres essas interfaces.
+  Disponibilizando assim nutrientes que antes estavam inacessíveis ao plankton da camada de mistura.
+\end{solution}
+
+\question
+ Em aula nos vimos ondas 3 tipos de ondas influenciadas pela rotação da Terra:
+ ondas de Poincaré, Kelvin e Rossby.  Todas derivadas do nosso
+ modelo de águas rasas.  Porém, cada uma assume diferente premissas para
+ simplificar o problema e resolver a onda em questão.
+
+\begin{parts}
+ \part[1]
+ Como as ondas de Kelvin e Poincaré se diferenciam das ondas de Rossby?
+
+ \begin{solution}
+  Ondas de Poincaré e Kelvin são resolvidas no plano-$f$ ($f_o$) ou seja, o
+  efeito da rotação é simplificado para primeira ordem como sendo uma expansão
+  de Taylor ao redor da latitude.
+  \[f \sim f_o = 2\Omega\sin\phi_o \]
+  Isso ignora os efeitos da esfericidade da Terra (representada pelo
+  plano-$\beta$), essencial para a existências das ondas de Rossby.
+ \end{solution}
+
+  \part[1]
+  A onda de Kelvin é um caso especial de onda de Poincaré que viaja sempre com
+  um contorno do seu lado esquerdo (direito) no hemisfério sul (norte).  Dito
+  isso, explique o  que deve ser feito para aproximarmos as equações de um
+  modelo de águas rasas para uma ondas de Kelvin.
+
+\begin{solution}
+  \begin{align*}
+    \cancelto{0}{\pd{u}{t}} &= +fv -g\pd{\eta}{x}\\
+    \pd{v}{t} &= \cancelto{0}{-fu} -g\pd{\eta}{y}\\
+    \pd{\eta}{t} &= -h\left(\cancelto{0}{\pd{u}{x}} + \pd{v}{y}\right)
+  \end{align*}
+\end{solution}
+
+  \part[1]
+  A relação de dispersão das ondas de Poincaré é:
+  \[
+    \omega^2 = f_o^2 + ghk^2
+  \]
+
+  Discuta o extremo onde:
+
+  \[
+    \omega >> f_o
+  \]
+
+\begin{solution}
+\raggedright
+  $\omega >> f_o \rightarrow$ Temos de volta a relação de dispersão de ondas de
+  água rasa (ondas longas).\\
+\end{solution}
+\end{parts}
+
+\question[2]
+Explique as afirmativas:
+\begin{itemize}
+  \item[a)] A natureza da ondas de Kelvin, de ser uma onda em uma direção e um
+        balanço geostrófico em outra, resulta nos pontos anfidrômicos de maré
+        nos oceanos.
+  \item[b)] A teoria da maré de equilíbrio não é suficiente para explicar a
+            manifestação da maré na plataforma costeira.
+\end{itemize}
+
+\question[3]
+Você foi contrato pela empresa ACME\circledR{} para executar uma análise de
+marés na costa da praia de {\it Lost}.  Sabendo que o número de forma da maré é uma
+razão entre as principais constituintes {\bf diurnas} sobre a
+{\bf semi-diurnas}. Calcule o {\bf Número de Forma} (F) para essa praia dados as
+amplitudes abaixo (em metros) e comente sobre a predominância diurna ou
+semi-diurna no local.  Discorra sobre como isso pode lhe ajudar a caracterizar
+a dinâmica do local.
+
+\begin{center}
+\begin{tabular}{ll}
+Constituinte & Amplitude (m)\\
+\hline
+K1 & 0,7 \\
+O1 & 0,2 \\
+M2 & 2,4 \\
+S2 & 1,2 \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{solution}
+  \begin{align*}
+    \text{F} &= \dfrac{\text{K1 + O1}}{\text{M2 + S2}} \\
+    \quad \\
+    \text{F} &= \dfrac{0,7 + 0,2}{2,4 + 1,2} = 0.25
+  \end{align*}
+
+  Maré predominantemente semi-diurna.
+\end{solution}
+
+\question[3]
+Você foi contrato novamente pela empresa ACME\circledR{} para avaliar o
+potencial energético da praia acima.  Eles querem saber se um aparelho que gera
+energia a partir de maré é ou não mais eficiente que um que gere energia devido
+às ondas de gravidade.  Quais são as variáveis devemos medir para avaliar
+uma estimativa energética desse tipo?  Por quanto tempo?  Estatisticamente
+existe alternativa ao invés de medições infindáveis?
+
+(Dica: A equação abaixo mostra como calcular a densidade de energia (J m$^{-2}$) das ondas
+de gravidade externas.)
+
+\[
+  E = \dfrac{\rho g}{8} H^2, \text{ onde } \dfrac{\rho g}{8} \approx 1,25 \text{ kg m}^{-2}\text{s}^{-2}
+\]
+
+\begin{solution}
+  Devemos medira altura de ondas por longos períodos (que compreendam toda a
+  variabilidade local das mesmas) para estimar com alguma segurança.  A
+  propriedade estatística $H_{1/3}$ ajuda a reduzir o número de observações e
+  ainda assim adquirir uma estimativa robusta.
+
+  Para sabermos se as ondas de gravidade geradas pelo vento serão ou não mais
+  eficientes que a maré, podemos utilizar uma estimativa baseado apenas na
+  constituinte mais significativa (M2).
+
+  $E = 1,25 \times 2,4^2 = 7.2$, duas vezes por dia seria 14.4 J m$^{-2}$.
+
+  Mesmo uma onda pequena (30 cm), com um período típico de 10 s forneceria mais
+  energia que a maré acima.
+
+  $E = 1,25 \times 0.3^2 = 0.112$ J m$^{-2}$ 4320 (24*60*30 / 10) vezes por dia
+  seria 31103 J m$^{-2}$
+\end{solution}
+
+\end{questions}
+\end{document}
