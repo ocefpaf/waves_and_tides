@@ -1,0 +1,180 @@
+% Style.
+\documentclass[letterpaper,portuguese,12pt,pdftex]{exam}
+
+\usepackage{setspace}
+\usepackage{lineno}
+\usepackage[left=2.5cm,top=1.5cm,right=2.5cm]{geometry}
+
+% Portuguese.
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage{textcomp}
+
+% Font.
+\usepackage{lmodern}
+
+% Figures.
+\usepackage{epsf,epsfig}
+
+% Bibtex and extras.
+\usepackage{natbib}
+\usepackage{url}
+\usepackage[bookmarks=false,colorlinks=true,urlcolor={green},linkcolor={green},pdfstartview={XYZ null null 1.22}]{hyperref}
+
+% Math.
+\usepackage{amssymb,amsmath}
+\usepackage{mathtools}
+\everymath{\displaystyle}
+
+% Exam.
+\addpoints
+% \printanswers
+\noprintanswers
+\usepackage{color}
+\definecolor{SolutionColor}{rgb}{0.8,0.9,1}
+\shadedsolutions
+\renewcommand{\solutiontitle}{\noindent\textbf{Solução:}\par\noindent}
+\pagestyle{headandfoot}
+\footer{}{Página \thepage\ de \numpages}{}
+\boxedpoints
+\pointsinrightmargin
+\pointpoints{ponto}{pontos}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+% \qformat{\textbf{Question\thequestion}\quad(\thepoints)\hfill}
+
+% User commands.
+\newcommand{\pd}[2]{\dfrac{\partial #1}{\partial #2}}
+
+% PDF metadata.
+\pdfinfo{% hyperref overrides this
+  /Title    (Exercício Extra -- Ondas e Marés)
+  /Author   (Filipe Fernandes)
+  /Creator  (Filipe Fernandes)
+  /Producer (Filipe Fernandes)
+  /Subject  (HW)
+  /Keywords (HW, oceanografia)
+}
+
+% Front page.
+\title{Exercício Extra -- Ondas e Marés}
+\author{Prof. Filipe Fernandes}
+\date{19-Novembro-2013}
+
+\begin{document}
+\maketitle
+\doublespacing
+
+\begin{minipage}{.8\textwidth}
+Essa lista vale \numpoints{} pontos extra na nota final.
+\end{minipage}
+
+\begin{questions}
+\question
+Você está viajando em um barco na direção paralela à propagação do que parece
+ser ondas lineares no oceano.  Enquanto você observa as cristas passarem pelo
+navio você nota 7 cristas (ou seja, 6 ondas) passarem num intervalo de 3
+minutos.
+
+Ao checar com a casa de máquinas você descobre que o navio está se movendo
+numa velocidade de 5 nós (2.57 m s$^{-1}$), e a eco-sonda marca 10 m de profundidade
+quase constante.
+
+\begin{parts}
+  \part[1]
+  Com a informação acima calcule o período de onda relativo ao barco ($T'$).
+  Escreva uma relação para o comprimento de onda relativo ($L'$). E calcule um
+  valor para esse comprimento de onda ``percebido''.
+  (Dica: $L'$ é o quão longe o navio viaja de uma crista a outra)
+
+  \begin{solution}
+    \begin{align*}
+      T' &= \dfrac{3 \times 60\text{ s}}{6} \\
+      T' &= 30 \text{ s} \\
+      L' &= UT'  \\
+      L' &= 2.57 \text{ m s}^{-1} \times 30 \text{ s} \\
+      L' &= 77 \text{ m}
+    \end{align*}
+  \end{solution}
+
+  \part[1]
+  Crie uma expressão para o período real da onda (sobre um ponto de referência
+  da Terra e não do barco).  Essa expressão deve ser em função de $T', L'$ e $L$
+  (que ainda não sabemos).
+
+  (Dica: Considere a fração de um comprimento de onda completo que se move
+  durante o período percebido.)
+
+  \begin{solution}
+
+    \begin{center}
+      \includegraphics[scale=0.8]{./boat_wave.png}
+    \end{center}
+
+    \begin{align*}
+      \Delta T &= T_2 - T_1 \\
+      \Delta X &= L - L' \\
+      \dfrac{\Delta X}{\Delta T} &= \frac{L}{T} = \frac{L - L'}{T'} \\
+      T &= T'\left(\frac{L}{L - L'}\right)
+    \end{align*}
+  \end{solution}
+
+  \part[1]
+  Usando a sua resposta acima, juntamente com a relação de dispersão, resolva
+  o período de onda $T$.  Simplifique assumindo ondas  longas.  Quantas
+  soluções válidas existem?
+
+  (Dica: Considere a fração de um comprimento de onda completo que se move
+  durante o período percebido.)
+
+  \begin{solution}
+    \begin{align*}
+      \omega^2 &= k^2hg \\
+      \left( \dfrac{2\pi}{T} \right)^2 &= \left( \dfrac{2\pi}{L} \right)^2 gh \\
+      L &= T\sqrt{gh}
+    \end{align*}
+
+    Combinando com o resultado acima:
+
+    \begin{align*}
+      T &= T'\pm \frac{L'}{\sqrt{gh}} \\
+      T &= 30\text{ s} \pm \frac{77\text{ m}}{\sqrt{9.8 \text{ m s}^{-2} 10\text{ m}}} \\
+      T &= 30 \text{ s} \pm 7.77\text{ s} \\
+      T &= 37.8 \text{ s ou } 22.2\text{ s}
+    \end{align*}
+
+    Com as informações fornecidas não há como inferir a direção de propagação
+    dessas ondas.
+
+  \end{solution}
+
+
+  \part[1]
+  Ache o comprimento de ondas associada a cada $T$.
+
+  \begin{solution}
+    \begin{align*}
+      L &= T\sqrt{gh} \\
+      L_1 &= 37.8\text{ s } \times 9.9\text{ m s}^{-1} = 374\text{ m} \\
+      L_2 &= 22.2\text{ s } \times 9.9\text{ m s}^{-1} = 220\text{ m}
+    \end{align*}
+  \end{solution}
+
+  \part[1]
+  Avalia a sua solução sobre a consideração de ondas longas que fizemos.  A
+  solução é válida?
+
+  \begin{solution}
+    Ambas são validas $\dfrac{h}{L} < 0.05$.
+    \begin{align*}
+      \frac{h}{L_1} = 0.027 \\
+      \frac{h}{L_2} = 0.045
+    \end{align*}
+  \end{solution}
+
+  \end{parts}
+
+\end{questions}
+\end{document}
