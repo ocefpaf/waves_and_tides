@@ -3,7 +3,7 @@
 
 \usepackage{setspace}
 \usepackage{lineno}
-\usepackage[left=2.5cm,top=3cm,right=2.5cm]{geometry}
+\usepackage[left=2.5cm,top=2.5cm,right=2.5cm]{geometry}
 
 % Portuguese.
 \usepackage[brazil]{babel}
@@ -31,7 +31,7 @@
 
 % Exam.
 \addpoints
-% \printanswers
+\printanswers
 \usepackage{color}
 \definecolor{SolutionColor}{rgb}{0.8,0.9,1}
 \shadedsolutions
@@ -68,13 +68,34 @@
 \maketitle
 \doublespacing
 
-\vspace{1cm}
+\vspace{2cm}
 \hbox to \textwidth{Nome e número de matrícula:\enspace\hrulefill}
-\vspace{1cm}
+\vspace{2cm}
 
 \begin{minipage}{.8\textwidth}
-Esse exame incluí \numquestions\ questões. O número total de pontos é \numpoints.
+Esse documento incluí \numquestions\ questões. O número total de pontos é \numpoints.
+\vspace{1cm}
+
+A prova segue o Acordo Ortográfico da Língua Portuguesa de 1990 (em vigor no
+início de 2009).  Erros de ortografia e gramática serão descontados da sua nota
+final.
+
+\vspace{1cm}
+
+A prova deve ser feita individualmente e sem consulta.  O aluno deverá usar
+{\bf caneta} (preta ou azul) para responder as questões -- qualquer questão
+respondida à lápis não será considerada na hora da correção!  Coloque seu nome
+em {\bf todas} as folhas e numere as mesmas informando número total de folhas
+utilizadas (Ex.: 1/4, 2/4, 3/4, 4/4.)
+
+\vspace{1cm}
+
+Leia atentamente todas as questões: a interpretação faz parte da prova e dúvidas
+serão esclarecidas apenas após o término da mesma.
+
 \end{minipage}
+
+\clearpage
 
 \begin{questions}
 
@@ -93,19 +114,27 @@ responda:
   \item Explique {\bf cada termo} das equações;
   \item O sistema se encontra fechado e com solução possível caso
         consideremos a densidade constante e o atrito desprezível?
-  \item Comente sobre as aproximações usadas para chegar na equação de
-        {\bf Laplace} para as pressões ($\nabla^2 \tilde{p}= 0$).
+  \item {\bf Comente e explique} pelo menos 5 aproximações usadas para chegar
+        na equação de {\bf Laplace} para as pressões ($\nabla^2 \tilde{p}= 0$).
         {\bf Comente e explique} pelo menos 5.
 \end{itemize}
 
 
 \begin{solution}
   \begin{itemize}
-    \item Não, mesmo assim teremos 3 equações e 4 incógnitas ($u$, $v$, $w$ e
-    $p$), precisamos da equação da continuidade
-    $\left( \pd{u}{x} + \pd{v}{y} + \pd{w}{z} = 0 \right)$ para fechar o sistema.
-    \item ``locais, advectivos, Coriolis, FGP, FA e g''
-    \item ``Apostila''
+    \item Termos de acelerações (local + advectiva) do lado esquerdo e forças
+          (F. de Coriolis, F. Gradiente de Pressão, gravidade (apenas em z), e
+          Atrito/Stress do vento) do lado direito.
+    \item Não, mesmo cortando os termos de atrito e removendo a densidade como
+          variável do problema, ainda assim teremos 3 equações e 4 incógnitas
+          ($u$, $v$, $w$ e $p$).  Por isso precisamos da equação da continuidade
+          $\left( \pd{u}{x} + \pd{v}{y} + \pd{w}{z} = 0 \right)$ para fechar o
+          sistema.
+    \item 1.) Ondas de pequena amplitude; 2.) Ondas lineares (ou longe do sítio
+          de formação e longe da costa); 3.) Ondas sem a influência da rotação da
+          Terra; 4.) Oceano homogêneo (sem estratificação); 5.) Ondas sem
+          limites (ou bordas) na horizontal; (Há várias outras e/ou variações
+          dessas que podem ser aceitas.)
   \end{itemize}
 \end{solution}
 
@@ -114,8 +143,8 @@ Partindo da {\bf relação de dispersão},
 \[
   \omega^2 = gK\tanh(KH),
 \]
-faça as aproximações para {\bf águas rasa} (ondas longas) e {\bf águas profundas}
-(ondas curtas). (Mostre o seu desenvolvimento!)
+faça as aproximações para {\bf águas rasas} (ondas longas) e {\bf águas
+profundas} (ondas curtas). (Mostre o seu desenvolvimento!)
 
 \begin{solution}
 \raggedright
@@ -209,7 +238,7 @@ quase constante.
 
 
   \part[1\half]
-  Ache o comprimento de ondas associada a cada $T$.
+  Calcule os comprimentos de ondas associados a cada $T$.
 
   \begin{solution}
     \begin{align*}
@@ -242,18 +271,19 @@ contexto onde estão plankton, as ondas internas e os nutrientes?)
 
 \begin{solution}
   As ondas internas estão geralmente em zonas de alto gradiente de densidade
-  (interface interna) como a picnoclina.  Quando há ondas internas nessa região,
-  seu movimento vertical pode disponibilizar nutrientes da camada profunda logo
-  abaixo para a camada de mistura acima.  Isso ocorre principalmente quando há
-  quebra da onda interna, promovendo uma mistura entres essas interfaces.
-  Disponibilizando assim nutrientes que antes estavam inacessíveis ao plankton da camada de mistura.
+  (interface interna) como a picnoclina.  Quando há ocorrência de ondas internas
+  nessa região seu movimento vertical pode disponibilizar nutrientes da camada
+  profunda logo abaixo para a camada de mistura acima.  Esse processo é mais
+  eficiente  quando há quebra da onda interna, promovendo uma mistura entres
+  essas interfaces.  Disponibilizando assim nutrientes que antes estavam
+  inacessíveis ao plankton da camada de mistura.
 \end{solution}
 
 \question
- Em aula nos vimos ondas 3 tipos de ondas influenciadas pela rotação da Terra:
- ondas de Poincaré, Kelvin e Rossby.  Todas derivadas do nosso
- modelo de águas rasas.  Porém, cada uma assume diferente premissas para
- simplificar o problema e resolver a onda em questão.
+ Em aula nós vimos 3 tipos de ondas influenciadas pela rotação da Terra:
+ ondas de Poincaré, Kelvin e Rossby;  todas derivadas do nosso
+ modelo de águas rasas.  Porém, cada uma delas assume diferentes premissas
+ para simplificar o problema e resolver a onda em questão.
 
 \begin{parts}
  \part[1]
@@ -272,7 +302,7 @@ contexto onde estão plankton, as ondas internas e os nutrientes?)
   A onda de Kelvin é um caso especial de onda de Poincaré que viaja sempre com
   um contorno do seu lado esquerdo (direito) no hemisfério sul (norte).  Dito
   isso, explique o  que deve ser feito para aproximarmos as equações de um
-  modelo de águas rasas para uma ondas de Kelvin.
+  modelo de águas rasas para ondas de Kelvin.
 
 \begin{solution}
   \begin{align*}
@@ -304,18 +334,34 @@ contexto onde estão plankton, as ondas internas e os nutrientes?)
 \question[2]
 Explique as afirmativas:
 \begin{itemize}
-  \item[a)] A natureza da ondas de Kelvin, de ser uma onda em uma direção e um
+  \item[a)] A natureza das ondas de Kelvin, de ser uma onda em uma direção e um
         balanço geostrófico em outra, resulta nos pontos anfidrômicos de maré
         nos oceanos.
   \item[b)] A teoria da maré de equilíbrio não é suficiente para explicar a
             manifestação da maré na plataforma costeira.
 \end{itemize}
 
+\begin{solution}
+  \begin{itemize}
+    \item[a)] Em poucas palavras essa onda seria uma O. de gravidade indo para
+    Norte (Sul) no hemisfério Sul (Norte) na costa Oeste, mas há um decaimento
+    exponencial de sua amplitude da costa para o oceano aberto (onde há o
+    balanço geostrófico).  O mesmo ocorre na costa Leste mas com a propagação no
+    sentido oposto, fechando assim o ponto anfidrômico no centro desse giro
+    formado por essas ondas. (Ver slide de aula.)
+    \item[b)] A teoria da maré de equilíbrio leva em consideração uma Terra
+    coberta por um oceano homogêneo sem batimetria e com resposta imediata à
+    forçante de maré.  Sabemos que a forma dos continentes e a batimetria traz
+    efeitos que ou amplificam ou reduzem substancialmente a maré prevista pelo
+    limitado modelo de equilíbrio.
+  \end{itemize}
+\end{solution}
+
 \question[3]
 Você foi contrato pela empresa ACME\circledR{} para executar uma análise de
 marés na costa da praia de {\it Lost}.  Sabendo que o número de forma da maré é uma
 razão entre as principais constituintes {\bf diurnas} sobre a
-{\bf semi-diurnas}. Calcule o {\bf Número de Forma} (F) para essa praia dados as
+{\bf semi-diurnas}, calcule o {\bf Número de Forma} (F) para essa praia dados as
 amplitudes abaixo (em metros) e comente sobre a predominância diurna ou
 semi-diurna no local.  Discorra sobre como isso pode lhe ajudar a caracterizar
 a dinâmica do local.
@@ -345,12 +391,13 @@ S2 & 1,2 \\
 
 \question[3]
 Você foi contrato novamente pela empresa ACME\circledR{} para avaliar o
-potencial energético da praia acima.  Eles querem saber se, o potencial
+potencial energético da praia acima.  Eles querem saber se o potencial
 energético da maré é mais eficiente que o potencial das ondas de gravidade.
 
 \begin{itemize}
-  \item[a)] Quais são as variáveis devemos medir para responder essa pergunta?
-  \item[b)] Qual seria o maior potencial energético?  Ondas ou marés? Explique.
+  \item[a)] Quais são as variáveis que devemos medir para responder essa pergunta?
+  \item[b)] Qual seria o maior potencial energético a ser explorado?
+            Ondas ou marés? Explique.
 \end{itemize}
 
 (Dica: A equação abaixo mostra como calcular a densidade de energia [J m$^{-2}$]
@@ -378,6 +425,7 @@ das ondas de gravidade externas.)
 
   $E = 1,25 \times 0.3^2 = 0.112$ J m$^{-2}$, 4320 vezes por dia
   ($24 \times60 \times 30 / 20$) seria 486 J m$^{-2}$ por dia.
+  (Ver slides da primeira aula!)
 \end{solution}
 
 \end{questions}
