@@ -7,18 +7,18 @@
 # e-mail:   ocefpaf@gmail
 # web:      http://ocefpaf.github.io/
 # created:  20-Aug-2013
-# modified: Wed 23 Oct 2013 09:53:41 PM BRST
+# modified: Fri 25 Apr 2014 10:04:41 PM BRT
 #
-# obs:
+# obs: Uses latexmk, pdflatex adn pandoc.
 #
 
 import os
-import subprocess
 from datetime import date
 from tempfile import mktemp
-from cStringIO import StringIO
+from subprocess import check_call, PIPE, Popen
 
 from docopt import docopt
+
 
 __doc__ = """
 Make lecture slides, handout and homework.
@@ -42,7 +42,7 @@ Options:
   ---help     Show this screen.
 """
 
-header = r"""% Packages.
+header = r"""
 \usepackage{tikz}
 \usepackage{lmodern}
 \usepackage{fancybox}  % Box [shadowbox, fbox, doublebox, ovalbox, Ovalbox].
@@ -53,43 +53,36 @@ header = r"""% Packages.
 \usepackage{multimedia}
 \usepackage[utf8]{inputenc}
 \usepackage{amssymb,amsmath}
+\usepackage{longtable,booktabs}
 
-% Partial.
 \newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}} % partial derivatives
-
-% Template.
+\renewcommand\mathfamilydefault{\rmdefault}
 \setbeamertemplate{blocks}[rounded][shadow=true]
 
-% See http://goo.gl/p0Phn for other colors.
 \usecolortheme[named=OliveGreen]{structure}
 
-% See deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html for other themes.
 \usetheme{Madrid}
 
-% Specify other colors and options as required.
-\useoutertheme{infolines}  % Add info lines at the bottom.
+\useoutertheme{infolines}
 \setbeamertemplate{items}[square]
 \setbeamercolor{alerted text}{fg=Maroon}
 \setbeamertemplate{navigation symbols}{}  % Remove lower navigation panel.
 
-% Progress bar.
 \usetikzlibrary{calc}
-\definecolor{pbgray}{HTML}{575757}  % Background color for the progress bar.
+\definecolor{pbgray}{HTML}{575757}
 
 \makeatletter
-\def\progressbar@progressbar{}  % Progress bar.
-\newcount\progressbar@tmpcounta  % Auxiliary counter.
-\newcount\progressbar@tmpcountb  % Auxiliary counter.
-\newdimen\progressbar@pbht  % Progressbar height.
-\newdimen\progressbar@pbwd  % Progressbar width.
-\newdimen\progressbar@tmpdim  % Auxiliary dimension.
+\def\progressbar@progressbar{}
+\newcount\progressbar@tmpcounta
+\newcount\progressbar@tmpcountb
+\newdimen\progressbar@pbht
+\newdimen\progressbar@pbwd
+\newdimen\progressbar@tmpdim
 
 \progressbar@pbwd=\linewidth
 \progressbar@pbht=1pt
 
-% Progress bar.
-\def\progressbar@progressbar{%
-
+\def\progressbar@progressbar{
     \progressbar@tmpcounta=\insertframenumber
     \progressbar@tmpcountb=\inserttotalframenumber
     \progressbar@tmpdim=\progressbar@pbwd
@@ -101,11 +94,13 @@ header = r"""% Packages.
       (0pt, 0pt) -- ++ (\progressbar@pbwd,0pt);
     \draw[draw=none]  (\progressbar@pbwd,0pt) -- ++ (2pt,0pt);
 
-    \draw[fill=pbgray!30,draw=pbgray] %
-       ( $ (\progressbar@tmpdim, \progressbar@pbht) + (0,1.5pt) $ ) -- ++(60:3pt) -- ++(180:3pt) ;
+    \draw[fill=pbgray!30,draw=pbgray]
+       ( $ (\progressbar@tmpdim, \progressbar@pbht) + (0,1.5pt) $ )
+       -- ++(60:3pt) -- ++(180:3pt) ;
 
     \node[draw=pbgray!30,text width=3.5em,align=center,inner sep=1pt,
-      text=pbgray!70,anchor=east] at (0,0) {\insertframenumber/\inserttotalframenumber};
+      text=pbgray!70,anchor=east] at (0,0)
+      {\insertframenumber/\inserttotalframenumber};
   \end{tikzpicture}
 }
 
@@ -117,8 +112,8 @@ header = r"""% Packages.
 }
 \makeatother"""
 
-dclass = dict(slides=r"\documentclass[14pt,xcolor=dvipsnames]{beamer}",
-              handout=r"""\documentclass[handout,14pt,xcolor=dvipsnames]{beamer}
+dcls = dict(slides=r"\documentclass[14pt,xcolor=dvipsnames]{beamer}",
+            handout=r"""\documentclass[handout,14pt,xcolor=dvipsnames]{beamer}
 \usepackage{handoutWithNotes}
 \pgfpagesuselayout{4 on 1 with notes}[a4paper,border shrink=5mm]""")
 
@@ -129,20 +124,29 @@ def compile_tex(lecture, d_type):
 
     latex_file = mktemp()
     with open(latex_file, 'w') as tex:
-        tex.writelines('%s\n%s\n%s\n' % (dclass.get(d_type), header, lecture))
+        tex.writelines('%s\n%s\n%s\n' % (dcls.get(d_type), header, lecture))
 
-    output = '%s_%s' % (fname, d_type)
-    cmd = ('/usr/bin/latexmk', '-pdf',
-            '-latexoption=-interaction=batchmode',
-            '--jobname=%s' % output, latex_file)
     os.chdir(DIRECTORY)
-    subprocess.check_call(cmd)
-
-    # Clean-up.
-    extensions = ('snm', 'nav', 'fls', 'log', 'out', 'toc', 'aux',
-                  'fdb_latexmk')
-    map(os.unlink, ['%s/%s.%s' % (DIRECTORY, output, ext) for
-                    ext in extensions])
+    output = '%s_OD_%s' % (fname, d_type)
+    cmd = ('/usr/bin/latexmk',
+           '-pdf',
+           '-latexoption=-interaction=batchmode',
+           '--jobname=%s' % output, latex_file)
+    process = Popen(cmd, stdout=PIPE, stderr=PIPE)
+    stdout, stderr = process.communicate()
+    if process.returncode > 0:
+        print(stderr.decode('utf-8'))
+        print("Check the '%s/%s.%s' for erros." % (DIRECTORY, output, 'log'))
+    else:  # Clean-up!
+        try:
+            extensions = ('snm', 'nav', 'fls', 'log', 'out', 'toc', 'aux',
+                          'fdb_latexmk')
+            for ext in extensions:
+                filename = '%s/%s.%s' % (DIRECTORY, output, ext)
+                os.unlink(filename)
+        except FileNotFoundError:
+            pass
+    os.chdir('..')
     return None
 
 
@@ -151,14 +155,14 @@ def compile_md(homework='homework.md'):
             '--highlight-style=pygments']
     FROM = ['--from', 'markdown', homework]
     TO = ['--to', 'latex', '--output', '%s_homework.pdf' % fname]
-    cmd = ['/home/filipe/bin/pandoc'] +  OPTS + FROM + TO
+    cmd = ['/home/filipe/bin/pandoc'] + OPTS + FROM + TO
     os.chdir(DIRECTORY)
-    subprocess.check_call(cmd)
+    check_call(cmd)
     return None
 
 
 if __name__ == '__main__':
-    args = docopt(__doc__, version='0.1.0')
+    args = docopt(__doc__, version='0.2.0')
 
     # Globals.
     TODAY = date.today().strftime("%Y_%m_%d")
@@ -166,7 +170,7 @@ if __name__ == '__main__':
     DIR = os.path.split(DIRECTORY)[-1]
     COMP = args.get('--compile')
 
-    fname = '%s_OM_%s' % (TODAY, DIR)  # Output file names.
+    fname = '%s_OM_%s' % (DIR, TODAY)  # Output file names.
 
     if COMP == 'slides':
         compile_tex('%s/lecture.tex' % DIRECTORY, d_type='slides')
