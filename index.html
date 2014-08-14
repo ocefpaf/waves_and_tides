@@ -1,0 +1,255 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Waves and tides by ocefpaf</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Waves and tides</h1>
+        <p class="header">Waves and Tides lectures.</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/ocefpaf/waves_and_tides/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/ocefpaf/waves_and_tides/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/ocefpaf/waves_and_tides">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/ocefpaf">ocefpaf</a></p>
+
+
+      </header>
+      <section>
+        <h1>
+<a name="curso-de-ondas-e-mar%C3%A9s-lecionado-na-unimonte-no-segundo-semestre-de-2013" class="anchor" href="#curso-de-ondas-e-mar%C3%A9s-lecionado-na-unimonte-no-segundo-semestre-de-2013"><span class="octicon octicon-link"></span></a>Curso de Ondas e Marés lecionado na unimonte no segundo semestre de 2013.</h1>
+
+<h2>
+<a name="reposit%C3%B3rios-com-aulas-slides-notas-e-exerc%C3%ADcios" class="anchor" href="#reposit%C3%B3rios-com-aulas-slides-notas-e-exerc%C3%ADcios"><span class="octicon octicon-link"></span></a>Repositórios com aulas, slides, notas e exercícios.</h2>
+
+<p>~ Filipe Fernandes ~</p>
+
+<p>Para compilar as aulas use o script <code>make_lecture.py</code></p>
+
+<div class="highlight highlight-python"><pre><span class="n">Make</span> <span class="n">lecture</span> <span class="n">slides</span><span class="p">,</span> <span class="n">handout</span> <span class="ow">and</span> <span class="n">homework</span><span class="o">.</span>
+
+<span class="n">Usage</span><span class="p">:</span>
+    <span class="n">make_lecture</span> <span class="p">(</span><span class="n">DIR</span><span class="p">)</span> <span class="p">[</span><span class="o">--</span><span class="nb">compile</span><span class="o">=</span><span class="n">DOC</span><span class="p">]</span>
+    <span class="n">make_lecture</span> <span class="p">(</span><span class="o">-</span><span class="n">h</span> <span class="o">|</span> <span class="o">--</span><span class="n">help</span> <span class="o">|</span> <span class="o">--</span><span class="n">version</span><span class="p">)</span>
+
+<span class="n">Examples</span><span class="p">:</span>
+    <span class="n">make_lecture</span> <span class="n">Aula_01</span> <span class="o">--</span><span class="nb">compile</span><span class="o">=</span><span class="n">slides</span>
+    <span class="n">make_lecture</span> <span class="n">Aula_01</span> <span class="o">--</span><span class="nb">compile</span><span class="o">=</span><span class="n">handout</span>
+    <span class="n">make_lecture</span> <span class="n">Aula_01</span> <span class="o">--</span><span class="nb">compile</span><span class="o">=</span><span class="n">homework</span>
+    <span class="n">make_lecture</span> <span class="n">Aula_01</span> <span class="o">--</span><span class="nb">compile</span><span class="o">=</span><span class="nb">all</span>
+
+<span class="n">Arguments</span><span class="p">:</span>
+  <span class="n">DIR</span>      <span class="n">Lecture</span> <span class="n">directory</span><span class="o">.</span>
+
+<span class="n">Options</span><span class="p">:</span>
+  <span class="o">-</span><span class="n">c</span> <span class="o">--</span><span class="nb">compile</span><span class="o">=</span><span class="n">DOC</span>   <span class="n">slides</span><span class="p">,</span> <span class="n">handout</span><span class="p">,</span> <span class="n">homework</span> <span class="ow">or</span> <span class="nb">all</span> <span class="p">[</span><span class="n">default</span><span class="p">:</span> <span class="n">slides</span><span class="p">]</span>
+  <span class="o">--</span><span class="n">version</span>   <span class="n">Show</span> <span class="n">version</span><span class="o">.</span>
+  <span class="o">---</span><span class="n">help</span>     <span class="n">Show</span> <span class="n">this</span> <span class="n">screen</span><span class="o">.</span>
+</pre></div>
+
+<h3>
+<a name="1-plano-de-aula" class="anchor" href="#1-plano-de-aula"><span class="octicon octicon-link"></span></a>1. Plano de Aula</h3>
+
+<p>Disciplina: Ondas e Marés (Curso: Oceanografia / Ciclo/mod: 3/3B)</p>
+
+<p>Professor: Filipe Fernandes</p>
+
+<p>Turno: Matutino</p>
+
+<p>Semestre: 2º -- 2013</p>
+
+<p>Turma: OCE3BM-VMA1</p>
+
+<h4>
+<a name="ementa" class="anchor" href="#ementa"><span class="octicon octicon-link"></span></a>Ementa</h4>
+
+<p>Introdução às oscilações da superfície do mar, Ondas superficiais de gravidade,
+ondas geradas pelo vento, teoria de ondas superficiais, dispersão e formação em
+grupo de ondas, ondas em aproximação da costa; principais processos costeiros
+(reflexão, difração, refração);  Dispersão de energia e acoplamento ao
+transporte litorâneo (interação com a disciplina de Morfodinâmica Costeira);
+Marés: forças geradoras; interações entre marés lunares e solares; análise
+harmônica e marés reais.</p>
+
+<h4>
+<a name="bibliografia-b%C3%A1sica" class="anchor" href="#bibliografia-b%C3%A1sica"><span class="octicon octicon-link"></span></a>Bibliografia básica</h4>
+
+<ul>
+<li>GARRISON, Tom; MIYAJI, Cíntia (Trad.). Fundamentos de oceanografia. São Paulo: Cengage Learning, 2009. 426 p. ISBN 9788522106776</li>
+<li>NUSSENZVEIG, H. Moyses. Curso de física básica: volume 2 : fluídos, oscilações e ondas, calor. 4. ed. rev. São Paulo: Edgard Blücher, 2002. xii, 328 p. ISBN 9788521202981</li>
+<li>SVERDRUP, K. A., Duxbury A. B., Duxbury, A. C. 2006. Fundamentals of Oceanography. McGraw Hill, 5th edition. Número de Chamada: 551.46 S968f 2006</li>
+</ul><h4>
+<a name="bibliografia-complementar" class="anchor" href="#bibliografia-complementar"><span class="octicon octicon-link"></span></a>Bibliografia complementar</h4>
+
+<ul>
+<li>BOCAFOLI. Física: cinemática, estática e dinâmica. São Paulo: FTD, 1990. 238 p. ISBN 8532202926.</li>
+<li>HALLIDAY, David;  RESNICK, Robert;  WALKER, Jearl.  Fundamentos de fisica: mecânica. 7. ed.  Rio de Janeiro:  LTC,  2006. v.1</li>
+<li>STEWART, R. H. 2002. Introduction to Physical Oceanography. Department of Oceanography. Texas A. M. University.</li>
+<li>The Open University. 1989. Ocean Circulation, Pergamon Press, 2nd edition</li>
+<li>WRIGHT, John R.; COLLING, Angela; PARK, Dave. Waves, tides, and shallow-water processes. 2. ed. Oxford: Boston: Butterworth Heinemann, in association with the Open University, 2006. 227 p.</li>
+</ul><h3>
+<a name="cronograma" class="anchor" href="#cronograma"><span class="octicon octicon-link"></span></a>Cronograma</h3>
+
+<table>
+<thead><tr>
+<th align="center">Aula</th>
+<th align="left">Data</th>
+<th align="left">Conteúdo</th>
+<th align="right">Lista/Prova</th>
+</tr></thead>
+<tbody>
+<tr>
+<td align="center">01</td>
+<td align="left">2013-08-09</td>
+<td align="left">O que são ondas e como são geradas 1</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="center">02</td>
+<td align="left">2013-08-16</td>
+<td align="left">O que são ondas e como são geradas 2</td>
+<td align="right">Lista 1</td>
+</tr>
+<tr>
+<td align="center">03</td>
+<td align="left">2013-08-23</td>
+<td align="left">Ondas na superfície do mar 1</td>
+<td align="right">Lista 2</td>
+</tr>
+<tr>
+<td align="center">04</td>
+<td align="left">2013-08-30</td>
+<td align="left">Ondas na superfície do mar 2</td>
+<td align="right">Lista 3</td>
+</tr>
+<tr>
+<td align="center">05</td>
+<td align="left">2013-09-06</td>
+<td align="left">Ondas de gravidade 1</td>
+<td align="right">Lista 4</td>
+</tr>
+<tr>
+<td align="center">06</td>
+<td align="left">2013-09-13</td>
+<td align="left">Ondas de gravidade 2</td>
+<td align="right">Lista 5</td>
+</tr>
+<tr>
+<td align="center">07</td>
+<td align="left">2013-09-20</td>
+<td align="left">Ondas de gravidade 3</td>
+<td align="right">Lista 6</td>
+</tr>
+<tr>
+<td align="center">08</td>
+<td align="left">2013-09-27</td>
+<td align="left">Fenômeno associados à propagação</td>
+<td align="right">Lista 7</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left">2013-10-04</td>
+<td align="left"></td>
+<td align="right">Prova 1</td>
+</tr>
+<tr>
+<td align="center">11</td>
+<td align="left">2013-10-11</td>
+<td align="left">Energia de ondas</td>
+<td align="right">Revisão Prova 1</td>
+</tr>
+<tr>
+<td align="center">12</td>
+<td align="left">2013-10-18</td>
+<td align="left">Ondas estacionárias</td>
+<td align="right">Lista 8</td>
+</tr>
+<tr>
+<td align="center">13</td>
+<td align="left">2013-10-25</td>
+<td align="left">Ondas internas</td>
+<td align="right">Lista 9</td>
+</tr>
+<tr>
+<td align="center">14</td>
+<td align="left">2013-11-01</td>
+<td align="left">Ondas infl. pela rotação da Terra 1</td>
+<td align="right">Lista 10</td>
+</tr>
+<tr>
+<td align="center">15</td>
+<td align="left">2013-11-08</td>
+<td align="left">Ondas infl. pela rotação da Terra 2</td>
+<td align="right">Análise de dados</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left">2013-11-15</td>
+<td align="left"></td>
+<td align="right">Feriado</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="left">2013-11-22</td>
+<td align="left">Marés</td>
+<td align="right">Lista 11</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left">2013-11-29</td>
+<td align="left">Marés</td>
+<td align="right">Seminário</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left">2013-12-06</td>
+<td align="left"></td>
+<td align="right">Prova 2</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left">2013-12-13</td>
+<td align="left"></td>
+<td align="right">Revisão</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="left">2013-12-20</td>
+<td align="left"></td>
+<td align="right">Prova Alternativa</td>
+</tr>
+</tbody>
+</table>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		          <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-9133259-16");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
